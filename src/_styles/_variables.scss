@@ -1,0 +1,45 @@
+/* Breakpoints */
+$bpMobile: 320px;
+$bpTablet: 768px;
+$bpDesktop: 1024px;
+$bpLgDesktop: 1280px;
+$bpXLgDesktop: 1366px;
+
+/* Font */
+$primaryFont: 'SegoeUI', Arial, Helvetica, sans-serif;
+$secondaryFont: 'Open Sans', sans-serif;
+$base-fontsize: 16px;
+$base-lineheight: 1.3;
+$thin: 100;
+$light: 200;
+$book: 300;
+$normal: 400;
+$medium: 500;
+$semibold: 600;
+$bold: 700;
+$heavy: 800;
+$black: 900;
+
+/* Colors */
+$sgRed: #D80808;
+$sgGray: #F0F0F0;
+$negro: #404040;
+$white: #ffffff;
+$grey: #9A9A9A;
+$darkGrey: #333333;
+$purple: #A05CBF;
+$red: #E81F76;
+$orange: #FF9015;
+
+/* Gradient */
+$gradientOrange: linear-gradient(90deg, $orange 0%, $red 98.21%);
+
+/* Expo */
+$easeInOutExpo: cubic-bezier(0.75, 0, 0, 0.75);
+$easeInOutBack: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+/* Shadow */
+$cardShadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+$cardShadowHover: 0 6px 6px rgba(0, 0, 0, 0.3);
+$buttonShadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+$buttonShadowHover: 0 6px 6px rgba(0, 0, 0, 0.3);
