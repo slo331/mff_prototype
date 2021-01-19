@@ -1,0 +1,7 @@
+{
+  "generator-yolo": {
+    "project": "heybaby_revamp",
+    "author": "mff_prototype_revamp",
+    "jsPreprocessor": "ES6(using babel)"
+  }
+}
