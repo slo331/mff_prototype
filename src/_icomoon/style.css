@@ -1,0 +1,81 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?2r8ncz');
+  src:  url('fonts/icomoon.eot?2r8ncz#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?2r8ncz') format('truetype'),
+    url('fonts/icomoon.woff?2r8ncz') format('woff'),
+    url('fonts/icomoon.svg?2r8ncz#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-facebook:before {
+  content: "\ea90";
+}
+.icon-whatsapp:before {
+  content: "\ea93";
+}
+.icon-twitter:before {
+  content: "\ea96";
+}
+.icon-linkedin:before {
+  content: "\eaca";
+}
+.icon-email:before {
+  content: "\eacb";
+}
+.icon-sgcrest:before {
+  content: "\eacc";
+}
+.icon-youtube:before {
+  content: "\eacd";
+}
+.icon-larrow-up:before {
+  content: "\eace";
+}
+.icon-larrow-down:before {
+  content: "\ead4";
+}
+.icon-larrow-left:before {
+  content: "\ead5";
+}
+.icon-larrow-right:before {
+  content: "\ead6";
+}
+.icon-arrow-up:before {
+  content: "\ead3";
+}
+.icon-arrow-down:before {
+  content: "\eacf";
+}
+.icon-arrow-left:before {
+  content: "\ead0";
+}
+.icon-arrow-right:before {
+  content: "\ead1";
+}
+.icon-search:before {
+  content: "\ead2";
+}
+.icon-close:before {
+  content: "\ead7";
+}
+.icon-box-arrow:before {
+  content: "\ead8";
+}
