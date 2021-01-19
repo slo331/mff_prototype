@@ -28,17 +28,19 @@
         &-links,
         &-copyright {
           width: 100%;
-          line-height: 1.8;
+          line-height: 1.5;
         }
 
         &-left {
-          h2 {
+          .footer-title {
+            font-size: calc-em(24px);
+            font-weight: $bold;
             margin: 0;
           }
         }
 
         &-right {
-          font-size: calc-em(15px);
+          // font-size: calc-em(15px);
 
           @include desktop {
             text-align: right;
@@ -73,6 +75,11 @@
                   margin: 0 0 0 1em;
                 }
               }
+
+              a {
+                font-size: calc-em(18px);
+                font-weight: $medium;
+              }
             }
           }
 
@@ -82,16 +89,33 @@
             @include desktop {
               display: inline-block;
             }
-            
-            .icon {
-              font-size: calc-em(20px);
+
+            li {
+              @include desktop {
+                display: inline-block;
+                margin: 0 0.5em;
+              }
+
+              &:last-child {
+                margin: 0.5em 0 0 0;
+
+                @include desktop {
+                  margin: 0 0 0 0.5em;
+                }
+              }
+
+              a {
+                font-size: calc-em(20px);
+                font-weight: $medium;
+              }
             }
           }
         }
 
         &-links,
         &-copyright {
-          font-size: calc-em(14px);
+          font-size: calc-em(16px);
+          font-weight: $medium;
         }
 
         &-links {
@@ -106,14 +130,14 @@
 
               @include desktop {
                 display: inline-block;
-                margin: 0 1em;
+                margin: 0 0.5em;
               }
 
               &:first-child {
-                margin: 0 0 1em 0;
+                margin: 0 0 0.5em 0;
 
                 @include desktop {
-                  margin: 0 1em 0 0;
+                  margin: 0 0.5em 0 0;
                 }
               }
             }

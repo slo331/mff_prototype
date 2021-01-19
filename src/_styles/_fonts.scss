@@ -1,87 +1,77 @@
-// /* SegoeUI Font Family */
 @font-face {
-  font-family: 'SegoeUI';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('/assets/fonts/SegoeUI.eot'); /* IE9 Compat Modes */
-  src: local('SegoeUI'), local('SegoeUI'),
-       url('/assets/fonts/SegoeUI.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/assets/fonts/SegoeUI.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/assets/fonts/SegoeUI.woff') format('woff'), /* Modern Browsers */
-       url('/assets/fonts/SegoeUI.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('/assets/fonts/SegoeUI.svg#SegoeUI') format('svg'); /* Legacy iOS */
-}
-
-@font-face {
-  font-family: 'SegoeUI';
+  font-family: 'Helvetica Neue';
+  src: url('/assets/fonts/HelveticaNeue-BoldItalic.eot');
+  src: url('/assets/fonts/HelveticaNeue-BoldItalic.eot?#iefix') format('embedded-opentype'),
+      url('/assets/fonts/HelveticaNeue-BoldItalic.woff2') format('woff2'),
+      url('/assets/fonts/HelveticaNeue-BoldItalic.woff') format('woff'),
+      url('/assets/fonts/HelveticaNeue-BoldItalic.ttf') format('truetype'),
+      url('/assets/fonts/HelveticaNeue-BoldItalic.svg#HelveticaNeue-BoldItalic') format('svg');
+  font-weight: bold;
   font-style: italic;
-  font-weight: 400;
   font-display: swap;
-  src: url('/assets/fonts/SegoeUI-Italic.eot'); /* IE9 Compat Modes */
-  src: local('SegoeUI-Italic'), local('SegoeUI-Italic'),
-       url('/assets/fonts/SegoeUI-Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/assets/fonts/SegoeUI-Italic.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/assets/fonts/SegoeUI-Italic.woff') format('woff'), /* Modern Browsers */
-       url('/assets/fonts/SegoeUI-Italic.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('/assets/fonts/SegoeUI-Italic.svg#SegoeUI-Italic') format('svg'); /* Legacy iOS */
 }
 
 @font-face {
-  font-family: 'SegoeUI';
+  font-family: 'Helvetica Neue';
+  src: url('/assets/fonts/HelveticaNeue.eot');
+  src: url('/assets/fonts/HelveticaNeue.eot?#iefix') format('embedded-opentype'),
+      url('/assets/fonts/HelveticaNeue.woff2') format('woff2'),
+      url('/assets/fonts/HelveticaNeue.woff') format('woff'),
+      url('/assets/fonts/HelveticaNeue.ttf') format('truetype'),
+      url('/assets/fonts/HelveticaNeue.svg#HelveticaNeue') format('svg');
+  font-weight: normal;
   font-style: normal;
-  font-weight: 700;
   font-display: swap;
-  src: url('/assets/fonts/SegoeUI-Bold.eot'); /* IE9 Compat Modes */
-  src: local('SegoeUI-Bold'), local('SegoeUI-Bold'),
-       url('/assets/fonts/SegoeUI-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/assets/fonts/SegoeUI-Bold.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/assets/fonts/SegoeUI-Bold.woff') format('woff'), /* Modern Browsers */
-       url('/assets/fonts/SegoeUI-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('/assets/fonts/SegoeUI-Bold.svg#SegoeUI-Bold') format('svg'); /* Legacy iOS */
 }
 
 @font-face {
-  font-family: 'SegoeUI';
-  font-style: italic;
-  font-weight: 700;
-  font-display: swap;
-  src: url('/assets/fonts/SegoeUI-BoldItalic.eot'); /* IE9 Compat Modes */
-  src: local('SegoeUI-BoldItalic'), local('SegoeUI-BoldItalic'),
-       url('/assets/fonts/SegoeUI-BoldItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/assets/fonts/SegoeUI-BoldItalic.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/assets/fonts/SegoeUI-BoldItalic.woff') format('woff'), /* Modern Browsers */
-       url('/assets/fonts/SegoeUI-BoldItalic.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('/assets/fonts/SegoeUI-BoldItalic.svg#SegoeUI-BoldItalic') format('svg'); /* Legacy iOS */
-}
-
-@font-face {
-  font-family: 'SegoeUI';
+  font-family: 'Helvetica Neue';
+  src: url('/assets/fonts/HelveticaNeue-Bold.eot');
+  src: url('/assets/fonts/HelveticaNeue-Bold.eot?#iefix') format('embedded-opentype'),
+      url('/assets/fonts/HelveticaNeue-Bold.woff2') format('woff2'),
+      url('/assets/fonts/HelveticaNeue-Bold.woff') format('woff'),
+      url('/assets/fonts/HelveticaNeue-Bold.ttf') format('truetype'),
+      url('/assets/fonts/HelveticaNeue-Bold.svg#HelveticaNeue-Bold') format('svg');
+  font-weight: bold;
   font-style: normal;
-  font-weight: 900;
   font-display: swap;
-  src: url('/assets/fonts/SegoeUIBlack.eot'); /* IE9 Compat Modes */
-  src: local('SegoeUIBlack'), local('SegoeUIBlack'),
-       url('/assets/fonts/SegoeUIBlack.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/assets/fonts/SegoeUIBlack.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/assets/fonts/SegoeUIBlack.woff') format('woff'), /* Modern Browsers */
-       url('/assets/fonts/SegoeUIBlack.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('/assets/fonts/SegoeUIBlack.svg#SegoeUIBlack') format('svg'); /* Legacy iOS */
 }
 
 @font-face {
-  font-family: 'SegoeUI';
+  font-family: 'Helvetica Neue';
+  src: url('/assets/fonts/HelveticaNeue-MediumItalic.eot');
+  src: url('/assets/fonts/HelveticaNeue-MediumItalic.eot?#iefix') format('embedded-opentype'),
+      url('/assets/fonts/HelveticaNeue-MediumItalic.woff2') format('woff2'),
+      url('/assets/fonts/HelveticaNeue-MediumItalic.woff') format('woff'),
+      url('/assets/fonts/HelveticaNeue-MediumItalic.ttf') format('truetype'),
+      url('/assets/fonts/HelveticaNeue-MediumItalic.svg#HelveticaNeue-MediumItalic') format('svg');
+  font-weight: 500;
   font-style: italic;
-  font-weight: 900;
   font-display: swap;
-  src: url('/assets/fonts/SegoeUIBlack-Italic.eot'); /* IE9 Compat Modes */
-  src: local('SegoeUIBlack-Italic'), local('SegoeUIBlack-Italic'),
-       url('/assets/fonts/SegoeUIBlack-Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/assets/fonts/SegoeUIBlack-Italic.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/assets/fonts/SegoeUIBlack-Italic.woff') format('woff'), /* Modern Browsers */
-       url('/assets/fonts/SegoeUIBlack-Italic.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('/assets/fonts/SegoeUIBlack-Italic.svg#SegoeUIBlack-Italic') format('svg'); /* Legacy iOS */
 }
 
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('/assets/fonts/HelveticaNeue-Medium.eot');
+  src: url('/assets/fonts/HelveticaNeue-Medium.eot?#iefix') format('embedded-opentype'),
+      url('/assets/fonts/HelveticaNeue-Medium.woff2') format('woff2'),
+      url('/assets/fonts/HelveticaNeue-Medium.woff') format('woff'),
+      url('/assets/fonts/HelveticaNeue-Medium.ttf') format('truetype'),
+      url('/assets/fonts/HelveticaNeue-Medium.svg#HelveticaNeue-Medium') format('svg');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
 
-@import url('//fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700;1,800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('/assets/fonts/HelveticaNeue-Italic.eot');
+  src: url('/assets/fonts/HelveticaNeue-Italic.eot?#iefix') format('embedded-opentype'),
+      url('/assets/fonts/HelveticaNeue-Italic.woff2') format('woff2'),
+      url('/assets/fonts/HelveticaNeue-Italic.woff') format('woff'),
+      url('/assets/fonts/HelveticaNeue-Italic.ttf') format('truetype'),
+      url('/assets/fonts/HelveticaNeue-Italic.svg#HelveticaNeue-Italic') format('svg');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}

@@ -70,7 +70,7 @@ export default class SiteNav {
           $el.on('click', e => {
             e.preventDefault();
             if(!$sibling.hasClass('expanded')) {
-              $gparent.addClass('active');
+              $parent.addClass('active');
               $sibling.addClass('expanded')
               $sibling.slideDown('slow');
               $el.addClass('rotate');
@@ -78,7 +78,7 @@ export default class SiteNav {
               $el.removeClass('rotate');
               $sibling.removeClass('expanded')
               $sibling.slideUp('slow');
-              $gparent.removeClass('active');
+              $parent.removeClass('active');
             }
           });
         });

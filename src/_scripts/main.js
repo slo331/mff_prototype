@@ -26,7 +26,7 @@ $(() => {
   }
 
   if($('.mega-menu').length) {
-    new MegaMenu();
+    new MegaMenu(config);
   }
 
   if($('.scroll-top').length) {

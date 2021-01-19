@@ -21,6 +21,7 @@ export default class SiteSearch {
         $searchBtn.removeClass('active');
         $icon.removeClass('icon-close').addClass('icon-search');
         $siteSearch.removeClass('expanded');
+        $searchInput.val('');
         $searchInput.blur();
       }      
     })

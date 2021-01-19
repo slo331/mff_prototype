@@ -23,10 +23,11 @@ html {
 }
 
 body {
-  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-family: $primaryFont;
   margin: 0;
   padding: 0;
   color: $negro;
+  line-height: $base-lineheight;
 
   &.fixed {
     overflow: hidden;
@@ -43,6 +44,14 @@ body {
   }
 
   h1 {
+    font-size: calc-em(30px);
+  
+    @include desktop {
+      font-size: calc-em(30px);
+    }
+  }
+
+  h2 {
     font-size: calc-em(28px);
   
     @include desktop {
@@ -50,19 +59,11 @@ body {
     }
   }
 
-  h2 {
+  h3 {
     font-size: calc-em(24px);
   
     @include desktop {
       font-size: calc-em(24px);
-    }
-  }
-
-  h3 {
-    font-size: calc-em(22px);
-  
-    @include desktop {
-      font-size: calc-em(22px);
     }
   }
 
