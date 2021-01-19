@@ -1,0 +1,63 @@
+//mega-menu styles 
+.mega-menu {
+  $p: &;
+  display: none;
+
+  @include desktop {
+    display: block;
+    position: absolute;
+    padding: 2.5em 0 2em;
+    width: 100%;
+    height: 0;
+    z-index: 1;
+    background: $white;
+    box-shadow: none;
+    transition: all .2s ease-in-out;
+
+    &.expanded {
+      box-shadow: 0px 0px 9px 1px rgba(0,0,0,0.10);
+      height: auto;
+
+      #{$p}__content {
+        &.active {
+          display: flex;
+          align-items: flex-start;
+        } 
+      }
+    }
+  }
+
+  &__content {
+    display: none;
+
+    #{$p}__title {
+      width: 40%;
+
+      .title {
+        margin: 0;
+      }
+    }
+
+    #{$p}__links {
+      .mega {
+        &-links {
+          margin: 5px 0 0 3em;
+          padding: 0;
+          list-style-type: none;
+          column-count: 2;
+          column-gap: 4em;
+        }
+
+        &-item {
+          margin: 0 0 1.5em;
+          color: $negro;
+          transition: all .2s ease-in-out;
+
+          &:hover {
+            color: $red;
+          }
+        }
+      }
+    }
+  }
+}

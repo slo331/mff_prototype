@@ -1,0 +1,283 @@
+//site-nav styles 
+.nav {
+  $p: &;
+
+  &-wrap {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    @include tablet {
+      width: 100%;
+    }
+
+    @include desktop {
+      width: 100%;
+      display: inline-block;
+      text-align: right;
+    }
+
+    #{$p}-mobile {
+      position: relative;
+      z-index: 3;
+
+      @include tablet {
+        display: inline-block;
+      }
+
+      #{$p}-menu {
+        .hamburger-menu {
+          position: relative;
+          width: 30px;
+          height: 20px;
+          cursor: pointer;
+
+          &.active {
+            #{$p}-line {
+              background: $black;
+              transition: all .5s ease-in-out;
+
+              &.l1, &.l3 {
+                top: 8px;
+              }
+
+              &.l2 {
+                display: none;
+              }
+            }
+
+            &.rotate {
+              .l1 {
+                transform: rotate(45deg);
+              }
+
+              .l3 {
+                width: 100%;
+                transform: rotate(-45deg);
+              }
+            }
+          }
+
+          #{$p}-line {
+            width: 30px;
+            height: 3px;
+            border-radius: 4px;
+            background: $red;
+            transition: all .4s linear;
+            position: absolute;
+            left: 0;
+
+            &.l1 {
+              top: 0;
+            }
+
+            &.l2 {
+              display: block;
+              top: 8px;
+            }
+
+            &.l3 {
+              top: 16px;
+            }
+          }
+        }
+      }
+    }
+
+    #{$p}-links {
+      display: none;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 61px;
+      background: $white;
+      // transition: all .2s ease-in-out;
+
+      &.expanded {
+        right: 0;
+      }
+
+      @include desktop {
+        display: block;
+        position: relative;
+        left: unset;
+        top: unset;
+        background: transparent;
+        width: auto;
+      }
+
+      &__wrap {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        padding: 0 0 50px;
+        height: calc(100vh - 61px);
+        overflow-y: scroll;
+
+        @include desktop {
+          height: auto;
+          position: relative;
+          padding: 0;
+          flex-flow: row;
+          justify-content: flex-end;
+          overflow-y: unset;
+        }
+
+        .links {
+          display: block;
+          width: 100%;
+          // height: 100vh;
+          list-style-type: none;
+          padding: 25px 20px 50px;
+          margin: 0;
+          position: relative;
+          // left: 0;
+          order: 2;
+
+          @include desktop {
+            width: auto;
+            height: auto;
+            display: inline-flex;
+            padding: 0;
+            margin: 0 65px 0 0;
+            // position: absolute;
+          }
+  
+          &-item {
+            margin: 0px;
+            line-height: 1;
+            padding: 20px 0;
+            border-bottom: 1px solid $grey;
+
+            &:first-child {
+              padding: 0 0 20px;
+            }
+
+            @include desktop {
+              margin: 0 22px;
+              padding: 0;
+              border-bottom: none;
+
+              &:first-child {
+                margin: 0 22px 0 0;
+                padding: 0;
+              }
+    
+              &:last-child {
+                margin: 0 0 0 22px;
+              }
+    
+              &.active {
+                .item {
+                  &__parent {
+                    &:after {
+                      width: 100%;
+                    }
+                  }
+                }
+              }
+            }
+  
+            .item {
+              &__parent {
+                position: relative;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                @include desktop {
+                  width: auto;
+                  display: block;
+                  padding: 0;
+                }
+
+                a {
+                  font-size: calc-em(18px);
+                }
+
+                @include desktop {
+                  a {
+                    text-transform: uppercase;
+                    font-size: calc-em(14px);
+                  }
+    
+                  &:after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    width: 0;
+                    height: 5px;
+                    border-radius: 10em;
+                    background: $red;
+                    z-index: 1;
+                    bottom: -32px;
+                    transition: all .5s ease-in-out;
+                  }
+    
+                  &:hover {
+                    &:after {
+                      width: 100%;
+                    }
+                  }
+                }
+  
+                .btn {
+                  &--mobileSub {
+                    padding: 0;
+                    border: none;
+                    font-size: calc-em(22px);
+                    color: $negro;
+                    line-height: 0;
+                    
+                    @include desktop {
+                      display: none;
+                    }
+
+                    .icon {
+                      display: block;
+                      transition: all .5s ease-in-out;
+                    }
+
+                    &.rotate {
+                      .icon {
+                        transform: rotate(180deg);
+                      }
+                    }
+                  }
+                }
+              }
+  
+              &__sub {
+                display: none;
+
+                .links-sub__container {
+                  .sub-links__wrap {
+                    .sublinks {
+                      list-style-type: none;
+                      margin: 0;
+                      padding: 10px 0 10px 15px;
+
+                      &-item {
+                        margin: 2em 0;
+
+                        &:first-child {
+                          margin: 1em 0 2em;
+                        }
+
+                        &:last-child {
+                          margin: 2em 0 0;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

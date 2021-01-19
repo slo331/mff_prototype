@@ -1,0 +1,9 @@
+mixin sg-banner(spec)
+	- spec = spec || {}
+	- spec.__class = spec.__class || ''
+
+	.sg-gov_banner(class=spec.__class)&attributes(attributes)
+		.container
+			a(href="https://www.gov.sg" target="_blank" title="Singapore Goverment Website")
+				i.icon.icon-sgcrest
+				span A Singapore Government Agency Website

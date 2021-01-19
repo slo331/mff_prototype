@@ -1,0 +1,87 @@
+//site-search styles 
+.site-search {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  width: 100%;
+  transition: all .5s ease-in-out;
+
+  @include desktop {
+    position: absolute;
+    width: 0%;
+    right: 0;
+  }
+
+  &.expanded {
+    width: 100%;
+  }
+
+  .search {
+    &-wrap {
+      width: 100%;
+      padding: 8px 20px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid $grey;
+
+      @include desktop {
+        padding: 0;
+        display: block;
+        align-items: center;
+        justify-content: flex-start;
+        border-bottom: none;
+      }
+
+      .icon-search {
+        display: inline-block;
+        line-height: 0;
+        font-size: calc-em(26px);
+
+        @include desktop {
+          display: none;
+        }
+      }
+      
+      .search {
+        &__input {
+          width: 100%;
+          padding: 15px 0 15px 10px;
+          border: none;
+
+          @include desktop {
+            border-bottom: 3px solid $grey;
+            padding: 15px 0;
+          }
+
+          &:hover,
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+    &-button {
+      display: none;
+
+      @include desktop {
+        display: inline-block;
+      }
+
+      .btn {
+        &--header-search {
+          padding: 5px;
+          line-height: 0;
+          border: none;
+          font-size: calc-em(26px);
+          color: $negro;
+          transition: all .2s ease-in-out;
+
+          &:hover {
+            color: $red;
+          }
+        }
+      }
+    }
+  }
+}

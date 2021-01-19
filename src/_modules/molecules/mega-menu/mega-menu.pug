@@ -1,0 +1,16 @@
+mixin mega-menu(spec)
+	- spec = spec || {}
+	- spec.__class = spec.__class || ''
+
+	.mega-menu(class=spec.__class)&attributes(attributes)
+		.container
+			each item, index in spec.items
+				if item.sub
+					.mega-menu__content(id="menu-" + (index + 1))
+						.mega-menu__title
+							h3.title= item.title
+						.mega-menu__links
+							ul.mega-links
+								each sub, index in item.sub
+									li.mega-item
+										a(href= sub.url)= sub.name

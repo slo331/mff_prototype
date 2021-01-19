@@ -1,0 +1,18 @@
+include ../../atoms/button/button
+
+mixin site-search(spec)
+  - spec = spec || {}
+  - spec.__class = spec.__class || ''
+
+  .site-search(class=spec.__class)&attributes(attributes)
+    .search-wrap(data-action="/search-results")
+      i.icon.icon-search
+      input.search__input(type="search" placeholder="Search..." name="searchQuery")
+    .search-button
+      +button({
+        '__text': '',
+        '__type': 'button',
+        '__class': 'btn--header-search',
+        '__iconAfter': 'icon-search'
+      })
+
