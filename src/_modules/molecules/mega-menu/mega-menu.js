@@ -63,16 +63,34 @@ export default class MegaMenu {
   }
 
   openMegaMenu(target) {
-    this.$megaMenu.addClass('expanded');
-    this.$megaMenuContents.removeClass('active');
-    
-    $('#' + target).addClass('active');
-    $('#' + target).fadeIn('slow');
+    let $slideDown = () => {
+      this.$megaMenuContents.removeClass('active');
+      $('#' + target).addClass('active');
+    };
+
+    $.when($slideDown())
+    .done(() => {
+      setTimeout(() => {
+        this.$megaMenu.slideDown('slow');
+      }, 300);
+    })
+    .done(() => {
+      this.$megaMenu.addClass('expanded');
+    });
   }
 
   closeMegaMenu() {
-    this.$siteNavItems.removeClass('active');
-    this.$megaMenu.removeClass('expanded');
-    this.$megaMenuContents.removeClass('active');
+    let $slideUp = () => {
+      this.$megaMenu.slideUp('slow');
+    };
+
+    $.when($slideUp())
+    .done(() => {
+      setTimeout(() => {
+        this.$siteNavItems.removeClass('active');
+        this.$megaMenu.removeClass('expanded');
+        this.$megaMenuContents.removeClass('active');
+      }, 500);
+    });
   }
 }
