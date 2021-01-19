@@ -1,0 +1,28 @@
+//scroll-top styles 
+.scroll-top {
+  position: absolute;
+  right: 20px;
+  top: -4em;
+
+  @include desktop {
+    right: 30px;
+  }
+
+  .btn {
+    &--scrolltop {
+      padding: 5px;
+      background: $red;
+      color: $white;
+      line-height: 0;
+      font-size: calc-em(22px);
+      transition: all .2s ease-in-out;
+
+      &:hover {
+        @include desktop {
+          background: $orange;
+          border-color: $orange;
+        }        
+      }
+    }
+  }
+}

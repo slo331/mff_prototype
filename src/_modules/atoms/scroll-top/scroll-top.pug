@@ -1,0 +1,13 @@
+include ../../atoms/button/button
+
+mixin scroll-top(spec)
+  - spec = spec || {}
+  - spec.__class = spec.__class || ''
+
+  .scroll-top(class=spec.__class)&attributes(attributes)
+    +button({
+      '__text': '',
+      '__type': 'button',
+      '__class': 'btn--scrolltop',
+      '__iconAfter': 'icon-arrow-up'
+    })
