@@ -1,0 +1,77 @@
+{
+  "primaryNav": [
+    {
+      "name": "Home",
+      "url": "/"
+    },
+    {
+      "name": "About Us",
+      "url": "#",
+      "title": "About Us",
+      "sub": [
+        {
+          "name": "Adopt the Made For Families brand mark ",
+          "url": "#"
+        },
+        {
+          "name": "Our Partners",
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "name": "Support Measures",
+      "url": "#",
+      "title": "Support Measures for Families",
+      "sub": [
+        {
+          "name": "Marriage",
+          "url": "#"
+        },
+        {
+          "name": "Housing",
+          "url": "#"
+        },
+        {
+          "name": "Community and Workplace Support",
+          "url": "#"
+        },
+        {
+          "name": "Preschool and Education",
+          "url": "#"
+        },
+        {
+          "name": "Healthcare",
+          "url": "#"
+        },
+        {
+          "name": "Child Raising Support",
+          "url": "#"
+        },
+        {
+          "name": "Transport and Infrastructure",
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "name": "Resources",
+      "url": "#",
+      "title": "Resources",
+      "sub": [
+        {
+          "name": "Made For Families Stories",
+          "url": "#"
+        },
+        {
+          "name": "Other Materials",
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "name": "Contact Us",
+      "url": "#"
+    }
+  ]
+}

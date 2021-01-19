@@ -1,8 +1,13 @@
+include ../_modules/organisms/site-header/site-header
+include ../_modules/organisms/site-footer/site-footer
+
 //- Custom Configuration
 block config
-  //- Otherwise default to relative pathing
-  - var baseUrl = './'
-  - var site = htmlWebpackPlugin.options
+	//- Otherwise default to relative pathing
+	- var pageTitle = 'Made For Families'
+	- var isHome = false
+	- var baseUrl = './'
+	- var site = htmlWebpackPlugin.options
 
 doctype html
 
@@ -14,23 +19,30 @@ doctype html
 <!--<![endif]-->
 
 head
-  meta(charset='utf-8')
-  meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
-  title heybaby_revamp
-  meta(name='description', content= 'Media Literacy Council')
-  meta(name='viewport', content='width=device-width, initial-scale=1.0')
-  block stylesheets
-    link(rel='stylesheet', href= '/assets/styles/main.css')
+	meta(charset='utf-8')
+	meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+	title= (isHome) ? pageTitle : 'Made For Families | ' + pageTitle
+	meta(name='description', content= 'Media Literacy Council')
+	meta(name='viewport', content='width=device-width, initial-scale=1.0')
+	block stylesheets
+		link(rel='stylesheet', href= '/assets/styles/main.css')
 
 body
-  <!--[if lt IE 9]>
-  <p class='browsehappy'>You are using an <strong>outdated</strong> browser. Please <a href='http://browsehappy.com/'>upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
+	<!--[if lt IE 9]>
+	<p class='browsehappy'>You are using an <strong>outdated</strong> browser. Please <a href='http://browsehappy.com/'>upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
 
-  .site-wrapper
-    block content
+	header
+		+site-header()
 
-  block scripts
-    script(src= '/assets/scripts/main.js')
+	main
+		section.main-content
+			block content
+
+	footer
+		+site-footer()
+
+	block scripts
+		script(src= '/assets/scripts/main.js')
 
 </html>

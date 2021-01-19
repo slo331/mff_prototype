@@ -1,25 +1,89 @@
 //Normalize styles
 @import '../../node_modules/normalize.css/normalize';
 
+@import "./_mixins";
+@import "./_variables";
+@import "./_helpers";
 @import "./_fonts";
+
+//Icomoon
+@import "../_icomoon/variables";
+@import "../_icomoon/style";
+
+*,
+*:before,
+*:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+  font-size: $base-fontsize;
+}
 
 body {
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
-}
+  color: $negro;
 
-.yolo-info {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  min-height: 100vh;
-  .logo {
-    width: 100px;
-    height: auto;
-    margin: 0 auto;
+  &.fixed {
+    overflow: hidden;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover,
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  h1 {
+    font-size: calc-em(28px);
+  
+    @include desktop {
+      font-size: calc-em(28px);
+    }
+  }
+
+  h2 {
+    font-size: calc-em(24px);
+  
+    @include desktop {
+      font-size: calc-em(24px);
+    }
+  }
+
+  h3 {
+    font-size: calc-em(22px);
+  
+    @include desktop {
+      font-size: calc-em(22px);
+    }
+  }
+
+  h4 {
+    font-size: calc-em(16px);
+  
+    @include desktop {
+      font-size: calc-em(16px);
+    }
+  }
+
+  main {
+    min-height: 500px;
   }
 }
 
-@import "../_modules/button/button";
+@import "../_modules/atoms/sg-banner/sg-banner";
+@import "../_modules/atoms/button/button";
+@import "../_modules/atoms/scroll-top/scroll-top";
+@import "../_modules/molecules/site-nav/site-nav";
+@import "../_modules/molecules/site-search/site-search";
+@import "../_modules/molecules/mega-menu/mega-menu";
+@import "../_modules/organisms/site-header/site-header";
+@import "../_modules/organisms/site-footer/site-footer";
