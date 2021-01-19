@@ -1,5 +1,6 @@
 //Normalize styles
 @import '../../node_modules/normalize.css/normalize';
+@import '../../node_modules/slick-carousel/slick/slick';
 
 @import "./_mixins";
 @import "./_variables";
@@ -88,3 +89,4 @@ body {
 @import "../_modules/molecules/mega-menu/mega-menu";
 @import "../_modules/organisms/site-header/site-header";
 @import "../_modules/organisms/site-footer/site-footer";
+@import "../_modules/organisms/home-carousel/home-carousel";

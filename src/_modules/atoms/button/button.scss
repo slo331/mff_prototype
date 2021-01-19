@@ -3,12 +3,12 @@
   padding: 10px 10px;
   line-height: 1.5;
 	display: inline-block;
-	font-size: calc-em(14px);
-  font-weight: 700;
+	font-size: calc-em(15px);
+  font-weight: $bold;
   cursor: pointer;
   color: $red;
   border: 3px solid $red;
-  border-radius: 10rem;
+  border-radius: 8px;
   background: transparent;
   position: relative;
 	z-index: 0;
@@ -25,4 +25,17 @@
 
 .btn {
   @extend %btn;
+
+  &--bg {
+    border: none;
+    background-image: $gradientOrange;
+    background-size: 300% 100%;
+    color: $white;
+    padding: 10px 30px;
+    transition: all .8s ease-in-out;
+
+    &:hover {
+      background-position: 100% 0;
+    }
+  }
 }

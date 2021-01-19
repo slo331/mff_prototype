@@ -3,6 +3,8 @@
   background: $darkGrey;
   padding: 3em 0;
   color: $white;
+  position: relative;
+  z-index: 4;
 
   .footer {
     &-top,

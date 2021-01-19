@@ -7,7 +7,7 @@ $bpXLgDesktop: 1366px;
 
 /* Font */
 $primaryFont: 'Helvetica Neue', Arial, Helvetica, sans-serif;
-$base-fontsize: 16px;
+$base-fontsize: 17px;
 $base-lineheight: 1.5;
 $thin: 100;
 $light: 200;
@@ -31,7 +31,9 @@ $red: #E81F76;
 $orange: #FF9015;
 
 /* Gradient */
-$gradientOrange: linear-gradient(90deg, $orange 0%, $red 98.21%);
+// $gradientOrange: linear-gradient(90deg, $orange 0%, $red 98.21%);
+// $gradientOrange: linear-gradient(to right, $orange 0%, $red 51%, $red 100%);
+$gradientOrange: linear-gradient(90deg, #FF9015, $red, #E81F76, $orange);
 
 /* Expo */
 $easeInOutExpo: cubic-bezier(0.75, 0, 0, 0.75);

@@ -1,6 +1,6 @@
 extends _layouts/base
 
-//- include ./_modules/button/button
+include ./_modules/organisms/home-carousel/home-carousel
 
 block config
   - isHome = true
@@ -9,3 +9,29 @@ block config
   - var site = htmlWebpackPlugin.options //global site data
 
 block content
+  +home-carousel({
+    'carousel': [
+      {
+        'title': 'Making Singapore A Great Place For Families',
+        'desc': 'The Government will provide a one-off Baby Support Grant of $3,000 to supplement the existing Baby Bonus Cash Gift, for children born from 1 Oct 2020 to 30 Sep 2022.',
+        'btnTitle': 'Learn More',
+        'btnURL': '#',
+        'imgDk': '/assets/images/homepage/carousel-img-01.png',
+        'imgDkTitle': 'Carousel Img 1',
+        'imgMb': '/assets/images/homepage/carousel-img-01.png',
+        'imgMbTitle': 'Carousel Img 1'
+      },
+      {
+        'title': 'Baby Support Grant',
+        'desc': 'The Government will provide a one-off Baby Support Grant of $3,000 to supplement the existing Baby Bonus Cash Gift, for children born from 1 Oct 2020 to 30 Sep 2022.',
+        'btnTitle': 'Learn More',
+        'btnURL': '#',
+        'imgDk': '/assets/images/homepage/carousel-img-02.png',
+        'imgDkTitle': 'Carousel Img 2',
+        'imgMb': '/assets/images/homepage/carousel-img-02.png',
+        'imgMbTitle': 'Carousel Img 2'
+      }
+    ],
+    'auto': 'false',
+    'speed': '3000'
+  })
