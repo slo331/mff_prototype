@@ -1,0 +1,46 @@
+include ../../atoms/scroll-top/scroll-top
+
+mixin site-footer(spec)
+  - spec = spec || {}
+  - spec.__class = spec.__class || ''
+
+  .site-footer(class=spec.__class)&attributes(attributes)
+    .container
+      +scroll-top()
+
+      .footer-top
+        .footer-left
+          h2 Made For Families
+        .footer-right
+          ul.quicklinks
+            li.links
+              a(href='#') Contact Us
+            li.links
+              a(href='#') Feedback
+            li.links
+              a(href='#') FAQ
+            li.links
+              a(href='#') Sitemap
+          ul.sociallinks
+            li.links
+              a(href="#" target="_blank")
+                i.icon.icon-facebook
+            li.links
+              a(href="#" target="_blank")
+                i.icon.icon-youtube
+      .footer-bottom
+        .footer-links
+          ul.bottomlinks
+            li.links
+              a(href='#') Report Vulnerability 
+                i.icon.icon-box-arrow
+            li.links
+              a(href='#') Terms of Use
+            li.links
+              a(href='#') Privacy Statement
+            li.links
+              a(href='#') Rate this Site
+        .footer-copyright
+          | © 2020 Government of Singapore
+          br
+          | Last updated on 17 April 2020

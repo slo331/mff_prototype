@@ -1,0 +1,143 @@
+//site-footer styles 
+.site-footer {
+  background: $darkGrey;
+  padding: 3em 0;
+  color: $white;
+
+  .footer {
+    &-top,
+    &-bottom {
+      display: block;
+      width: 100%;
+
+      @include desktop {
+        display: inline-flex;
+      }
+
+      li {
+        transition: all .2s ease-in-out;
+
+        &:hover {
+          color: $red;
+        }
+      }
+
+      .footer {
+        &-left,
+        &-right,
+        &-links,
+        &-copyright {
+          width: 100%;
+          line-height: 1.8;
+        }
+
+        &-left {
+          h2 {
+            margin: 0;
+          }
+        }
+
+        &-right {
+          font-size: calc-em(15px);
+
+          @include desktop {
+            text-align: right;
+            padding: 5em 0 0;
+          }
+
+          .quicklinks,
+          .sociallinks {
+            display: block;
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+
+            @include desktop {
+              display: inline-block;
+              margin: 0 0 0 1em;
+            }
+
+            li {
+              display: block;
+              margin: 1em 0;
+
+              @include desktop {
+                display: inline-block;
+                margin: 0 1em;
+              }
+
+              &:last-child {
+                margin: 1em 0 0 0;
+
+                @include desktop {
+                  margin: 0 0 0 1em;
+                }
+              }
+            }
+          }
+
+          .sociallinks {
+            display: none;
+
+            @include desktop {
+              display: inline-block;
+            }
+            
+            .icon {
+              font-size: calc-em(20px);
+            }
+          }
+        }
+
+        &-links,
+        &-copyright {
+          font-size: calc-em(14px);
+        }
+
+        &-links {
+          .bottomlinks {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+
+            li {
+              display: block;
+              margin: 1em 0;
+
+              @include desktop {
+                display: inline-block;
+                margin: 0 1em;
+              }
+
+              &:first-child {
+                margin: 0 0 1em 0;
+
+                @include desktop {
+                  margin: 0 1em 0 0;
+                }
+              }
+            }
+          }
+        }
+
+        &-copyright {
+          margin: 2em 0 0;
+
+          @include desktop {
+            margin: 0;
+            text-align: right;
+          }
+        }
+      }
+    }
+
+    &-top {
+      padding: 0 0 25px 0;
+      border-bottom: 1px solid #636363;
+    }
+
+    &-bottom {
+      padding: 25px 0 0 0;
+    }
+  }
+}
