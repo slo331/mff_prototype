@@ -1,0 +1,84 @@
+//article-block styles 
+.content-block {
+  $p: &;
+
+  &__main {
+    aside {
+      width: 100%;
+      margin: 0 0 2em;
+      border-bottom: 1px solid $grey;
+
+      @include tablet {
+        float: left;
+        width: 10%;
+        text-align: center;
+        margin: 0;
+        border-bottom: none;
+      } 
+
+      @include desktop {
+        float: left;
+        width: 10%;
+        text-align: center;
+        margin: 0;
+        border-bottom: none;
+      } 
+    }
+
+    article {
+      width: 100%;
+
+      @include tablet {
+        float: right;
+        width: 90%;
+        padding: 0 2em;
+      }
+
+      @include desktop {
+        float: right;
+        width: 90%;
+        padding: 0 4em;
+      }
+      
+      .tags {
+        margin: 2em 0 0;
+
+        &-wrap {
+          display: flex;
+          font-size: calc-em(14px);
+          font-weight: $medium;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+
+          .tags-title {
+            margin: 0 10px 0 0;
+          }
+
+          .list {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+
+            li {
+              display: inline-block;
+              color: $red;
+
+              &:after {
+                content: '/';
+                display: inline-block;
+                color: $negro;
+                margin: 0 2px 0 6px;
+              }
+
+              &:last-child {
+                &:after {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

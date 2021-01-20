@@ -1,0 +1,32 @@
+include ../../molecules/article-header/article-header
+include ../../molecules/share/share
+
+mixin article-block(spec)
+  - spec = spec || {}
+  - spec.__class = spec.__class || ''
+
+  .content-block(class=spec.__class)&attributes(attributes)
+    +article-header({
+      'title': 'Parenting Beyond Academic Achievements',
+      'subtitle': 'Support for Marriage and Parenthood',
+      'masthead': '/assets/images/article/article-masthead-img.png'
+    })
+
+    .content-block__main
+      aside
+        +share()
+      article
+        if block
+          block
+        else
+          | This is an example paragraph for the article-block module
+        
+        .tags
+          .tags-wrap
+            .tags-title Tags:
+            .tags-list
+              ul.list
+                li.list-item
+                  a.list-link(href='#') Child Development
+                li.list-item
+                  a.list-link(href='#') Child Education
