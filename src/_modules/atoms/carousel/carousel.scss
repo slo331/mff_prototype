@@ -1,0 +1,164 @@
+//carousel styles 
+.carousel {
+  $p: &;
+  position: relative;
+
+  &-wrap {
+    position: relative;
+
+    #{$p} {
+      &-item {
+        height: 350px;
+
+        @include tablet {
+          height: 500px;
+        }
+
+        @include desktop {
+          height: 625px;
+        }
+
+        .item {
+          height: 350px;
+
+          @include tablet {
+            height: 500px;
+          }
+
+          @include desktop {
+            height: 625px;
+          }
+
+          &-img {
+            width: 100%;
+            height: 350px;
+
+            @include tablet {
+              height: 500px;
+            }
+
+            @include desktop {
+              height: 625px;
+            }
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: center center;
+            }
+          }
+
+          &-desc {
+            text-align: center;
+            margin: 15px 0 0;          
+            
+            .title {
+              font-weight: $bold;
+              font-size: calc-em(14px);
+              line-height: 1.3;
+              padding: 0 20px;
+            }
+
+            .file {
+              font-style: italic;
+              font-size: calc-em(14px);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &-pagination {
+    margin: 2em 0 0;
+    text-align: center;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+    @include desktop {
+      margin: 20px 0 0;
+    }
+
+    .icon {
+      width: auto;
+      display: inline-block;
+
+      border: 2px solid $red;
+      padding: 5px 6px 6px 5px;
+      line-height: 1;
+      border-radius: 10rem;
+      color: $red;
+      background: transparent;
+      font-size: calc-em(19px);
+      cursor: pointer;
+
+      transition: all .2s ease-in-out;
+
+      &.prev {
+        margin: 0 1em 0 0;
+      }
+
+      &.next {
+        margin: 0 0 0 1em;
+      }
+
+      &:hover {
+        color: $white;
+        background: $red;
+      }
+    }
+
+    .dots {
+      width: auto;
+      display: inline-block;
+
+      .slick-dots {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+
+        li {
+          display: inline-block;
+          margin: 0 5px;
+
+          &.slick-active {
+            button {
+              background: linear-gradient(90deg, $orange 0%, $red 98.21%);
+            }
+          }
+
+          button {
+            text-indent: -99999px;
+            border: none;
+            background: #E0E0E0;
+            border-radius: 10rem;
+            line-height: 0;
+            padding: 6px;
+            width: 14px;
+            height: 14px;
+            cursor: pointer;
+            transition: all .2s ease-in-out;
+
+            @include desktop {
+              width: 12px;
+              height: 12px;
+            }
+
+            &:hover,
+            &:focus {
+              outline: none;
+            }
+
+            &:hover {
+              // background-position: 100% 0;
+              background: linear-gradient(90deg, $orange 0%, $red 98.21%);
+            }
+          }
+        }
+      }
+    }
+  }
+}

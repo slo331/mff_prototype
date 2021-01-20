@@ -1,0 +1,61 @@
+//breadcrumbs styles 
+.breadcrumb {
+  $p: &;
+
+  display: none;
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  border-bottom: 1px solid #E3E2E0;
+
+  @include desktop {
+    display: inline-block;
+    width: 99.2vw;
+  }
+
+  @include lgDesktop {
+    width: 99.45vw;
+  }
+
+  &-wrap {
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 10px 0 12px;
+
+      li {
+        display: inline-block;
+        margin: 0 5px 0 0;
+        font-size: calc-em(14px);
+
+        span {
+          font-weight: $bold;
+        }
+
+        a {
+          color: $negro;
+          transition: all .2s ease-in-out;
+
+          &:hover {
+            color: $red;
+          }
+        }
+
+        &:after {
+          display: inline-block;
+          content: '/';
+          margin: 0 0 0 8px;
+        }
+
+        &:last-child {
+          &:after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

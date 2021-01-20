@@ -1,0 +1,8 @@
+mixin video-player(spec)
+  - spec = spec || {}
+  - spec.__class = spec.__class || ''
+
+  .video(class=spec.__class)&attributes(attributes)
+    .video-wrap
+      if block
+        block

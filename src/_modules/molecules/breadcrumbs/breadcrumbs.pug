@@ -1,0 +1,24 @@
+mixin breadcrumbs(spec)
+	- spec = spec || {}
+	- spec.__class = spec.__class || ''
+
+	.breadcrumb(class=spec.__class)&attributes(attributes)
+		.container
+			.breadcrumb-wrap
+				ul
+					li.home
+						a(href='/') Home
+					if !spec.level2
+						li
+							span=spec.level1
+					else
+						li
+							a(href='#')=spec.level1
+						if !spec.level3
+							li
+								span=spec.level2
+						else
+							li
+								a(href='/')=spec.level2
+							li
+								span=spec.level3

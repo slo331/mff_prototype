@@ -1,0 +1,32 @@
+mixin carousel(spec)
+  - spec = spec || {}
+  - spec.__class = spec.__class || ''
+
+  .carousel(class=spec.__class)&attributes(attributes)
+    .carousel-wrap
+      each item, index in spec.carousel
+        .carousel-item
+          if spec.type == 'social'
+            .item
+              .fb-page(data-href=item.datahref data-tabs=item.datatabs data-adapt-container-width='true' data-small-header='false' data-hide-cover='false' data-show-facepile='true' data-height='700' data-width='500')
+                blockquote(cite=item.cite class='fb-xfbml-parse-ignore')
+                  a(href=item.href)= item.socialTitle
+          else if spec.type == 'gallery'
+            .item(data-index=(index + 1))
+              a.item-link(href=item.href rel='noopener' target='_blank')
+                .item-img
+                  img(src=item.img alt=item.imgTitle title=item.imgTitle)
+                .item-desc
+                  .title
+                    span= item.title
+                  .file
+                    |(
+                    span.filetype= item.filetype
+                    |, 
+                    span.filesize= item.filesize
+                    |)
+
+    .carousel-pagination
+      i.icon.prev.icon-arrow-left
+      .dots
+      i.icon.next.icon-arrow-right

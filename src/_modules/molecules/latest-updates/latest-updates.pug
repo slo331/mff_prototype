@@ -1,0 +1,15 @@
+include ../../atoms/carousel/carousel
+
+mixin latest-updates(spec)
+  - spec = spec || {}
+  - spec.__class = spec.__class || ''
+
+  .latest-updates(class=spec.__class)&attributes(attributes)
+    h3 Latest Updates
+    .updates-wrap
+      each item, index in spec.items
+        .updates-item
+          +carousel({
+            'type': item.type,
+            'carousel': item.carousel
+          })

@@ -1,0 +1,13 @@
+mixin two-column(spec)
+  - spec = spec || {}
+  - spec.__class = spec.__class || ''
+
+  .two-col(class=spec.__class)&attributes(attributes)
+    if spec.img
+      .two-col-img
+        img(src=spec.img alt=spec.imgTitle title=spec.imgTitle)
+    
+    .two-col-content
+      if block
+        block
+      
