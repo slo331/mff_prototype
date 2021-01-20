@@ -1,0 +1,8 @@
+include ../../atoms/article-header/article-header
+
+mixin article-block(spec)
+  - spec = spec || {}
+  - spec.__class = spec.__class || ''
+
+  .content-block(class=spec.__class)&attributes(attributes)
+    +article-header()
