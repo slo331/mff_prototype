@@ -2,6 +2,9 @@
   "generator-yolo": {
     "project": "heybaby_revamp",
     "author": "EYD",
-    "jsPreprocessor": "ES6(using babel)"
+    "jsPreprocessor": "ES6(using babel)",
+    "pages": [
+      "article-page"
+    ]
   }
 }
