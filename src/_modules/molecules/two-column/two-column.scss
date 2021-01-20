@@ -18,7 +18,7 @@
     width: 100%;
 
     @include desktop {
-      width: 30%;
+      width: 50%;
     }
 
     @include lgDesktop {
@@ -38,7 +38,7 @@
     width: 100%;
 
     @include desktop {
-      width: 70%;
+      width: 50%;
       margin: 0 0 0 2em;
     }
 

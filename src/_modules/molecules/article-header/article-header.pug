@@ -2,5 +2,11 @@ mixin article-header(spec)
   - spec = spec || {}
   - spec.__class = spec.__class || ''
 
-  div(class=spec.__class)&attributes(attributes)
-    p This is an example paragraph for the article-header module
+  .content-block__header(class=spec.__class)&attributes(attributes)
+    .header-title
+      .subtitle= spec.subtitle
+      h1.title= spec.title
+    
+    if spec.masthead
+      .header-banner
+        img(src=spec.masthead alt=spec.imgTitle title=spec.Title)

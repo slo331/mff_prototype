@@ -82,6 +82,14 @@ body {
 
   main {
     min-height: 500px;
+
+    .rte {
+      p {
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
   }
 }
 
@@ -96,6 +104,9 @@ body {
 @import "../_modules/molecules/breadcrumbs/breadcrumbs";
 @import "../_modules/molecules/two-column/two-column";
 @import "../_modules/molecules/latest-updates/latest-updates";
+@import "../_modules/molecules/article-header/article-header";
+@import "../_modules/molecules/share/share";
+@import "../_modules/organisms/article-block/article-block";
 @import "../_modules/organisms/site-header/site-header";
 @import "../_modules/organisms/site-footer/site-footer";
 @import "../_modules/organisms/home-carousel/home-carousel";
