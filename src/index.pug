@@ -1,5 +1,8 @@
 extends _layouts/base
 
+include ./_modules/atoms/video-player/video-player
+include ./_modules/molecules/two-column/two-column
+include ./_modules/molecules/latest-updates/latest-updates
 include ./_modules/organisms/home-carousel/home-carousel
 
 block config
@@ -30,8 +33,143 @@ block content
         'imgDkTitle': 'Carousel Img 2',
         'imgMb': '/assets/images/homepage/carousel-img-02.png',
         'imgMbTitle': 'Carousel Img 2'
+      },
+      {
+        'title': 'Making Singapore A Great Place For Families 2',
+        'desc': 'The Government will provide a one-off Baby Support Grant of $3,000 to supplement the existing Baby Bonus Cash Gift, for children born from 1 Oct 2020 to 30 Sep 2022.',
+        'btnTitle': 'Learn More',
+        'btnURL': '#',
+        'imgDk': '/assets/images/homepage/carousel-img-01.png',
+        'imgDkTitle': 'Carousel Img 3',
+        'imgMb': '/assets/images/homepage/carousel-img-01.png',
+        'imgMbTitle': 'Carousel Img 3'
       }
     ],
     'auto': 'false',
     'speed': '3000'
+  })
+
+  +two-column({
+    'img': '/assets/images/homepage/homepage_img1.png'
+  })
+    h2 Building a Singapore that is Made For Families
+    p Families are the backbone of our society, and supporting Singaporeans in their marriage and parenthood journey remains an important national priority. In doing so, we need to weave efforts across the whole of society – the Government, employers and co-workers, corporate and community partners, extended family and friends. On this site, you will be able to find out more about the comprehensive suite of support measures available to support marriage and parenthood, partners who have come onboard, and how you can 
+      strong join us to play a part in creating a Singapore that is Made For Families!
+
+  +video-player()
+    iframe(width="100%" height="100%" src="https://www.youtube.com/embed/8xtLyNQddM0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture")    
+  
+  +latest-updates({
+    'items': [
+      {
+        'type': 'gallery',
+        'carousel': [
+          {
+            'title': 'Key Leave Support for Parents',
+            'filetype': 'PDF',
+            'filesize': '1MB',
+            'img': '/assets/images/homepage/updates/key-leave-support-for-parents.png',
+            'imgTitle': 'Key Leave Support for Parents',
+            'href': '#'
+          },
+          {
+            'title': 'Pregnancy & COVID-19 FAQs',
+            'filetype': 'PDF',
+            'filesize': '3MB',
+            'img': '/assets/images/homepage/updates/pregnancy-covid19-cover.png',
+            'imgTitle': 'Pregnancy & COVID-19 FAQs',
+            'href': '#'
+          },
+          {
+            'title': 'Marriage & Parenthood Booklet',
+            'filetype': 'PDF',
+            'filesize': '4MB',
+            'img': '/assets/images/homepage/updates/m-p-booklet-cover.png',
+            'imgTitle': 'Marriage & Parenthood Booklet',
+            'href': '#'
+          },
+          {
+            'title': 'Comprehensive M&P Support Measures Infographic',
+            'filetype': 'PDF',
+            'filesize': '2MB',
+            'img': '/assets/images/homepage/updates/comprehensive-support-infographic_v7-01.png',
+            'imgTitle': 'Comprehensive M&P Support Measures Infographic',
+            'href': '#'
+          },
+          {
+            'title': 'Overview Infographic',
+            'filetype': 'PDF',
+            'filesize': '761KB',
+            'img': '/assets/images/homepage/updates/overview-cover-page-01.png',
+            'imgTitle': 'Overview Infographic',
+            'href': '#'
+          },
+          {
+            'title': 'Marriage & Parenthood Survey 2020',
+            'filetype': 'PDF',
+            'filesize': '188KB',
+            'img': '/assets/images/homepage/updates/nptd-cover-page-01.png',
+            'imgTitle': 'Marriage & Parenthood Survey 2020',
+            'href': '#'
+          },
+          {
+            'title': 'Making Singapore A Great Place For Families Infographic',
+            'filetype': 'PDF',
+            'filesize': '2MB',
+            'img': '/assets/images/homepage/updates/making-singapore-a-great-place-for-families-cover-page-01.png',
+            'imgTitle': 'Making Singapore A Great Place For Families Infographic',
+            'href': '#'
+          },
+          {
+            'title': 'Infographic on Key Findings from Marriage and Parenthood Survey 2016 (on Parenthood)',
+            'filetype': 'PDF',
+            'filesize': '2MB',
+            'img': '/assets/images/homepage/updates/mp-survey-infographic-parenthood-thumb.jpg',
+            'imgTitle': 'Infographic on Key Findings from Marriage and Parenthood Survey 2016 (on Parenthood)',
+            'href': '#'
+          },
+          {
+            'title': 'Infographic on Key Findings from Marriage and Parenthood Survey 2016 (on Marriage)',
+            'filetype': 'PDF',
+            'filesize': '2MB',
+            'img': '/assets/images/homepage/updates/mp-survey-infographic-marriage-thumb.jpg',
+            'imgTitle': 'Infographic on Key Findings from Marriage and Parenthood Survey 2016 (on Marriage)',
+            'href': '#'
+          }
+        ]
+      },
+      {
+        'type': 'social',
+        'carousel': [
+          {
+            'datahref': 'https://www.facebook.com/madeforfamiliessg',
+            'datatabs': 'timeline',
+            'cite': 'https://www.facebook.com/facebook',
+            'socialTitle': 'Facebook',
+            'href': 'https://www.facebook.com/facebook'
+          },
+          {
+            'datahref': 'https://www.facebook.com/DadsforLife/',
+            'datatabs': 'timeline',
+            'cite': 'https://www.facebook.com/facebook',
+            'socialTitle': 'Facebook',
+            'href': 'https://www.facebook.com/facebook'
+          },
+          {
+            'datahref': 'https://www.facebook.com/BabyBonusParenting/',
+            'datatabs': 'timeline',
+            'cite': 'https://www.facebook.com/facebook',
+            'socialTitle': 'Facebook',
+            'href': 'https://www.facebook.com/facebook'
+          },
+          {
+            'datahref': 'https://www.facebook.com/BeanstalkSingapore/',
+            'datatabs': 'timeline',
+            'cite': 'https://www.facebook.com/facebook',
+            'socialTitle': 'Facebook',
+            'href': 'https://www.facebook.com/facebook'
+          }
+        ]
+      }
+    ]
   })

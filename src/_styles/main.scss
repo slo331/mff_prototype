@@ -44,11 +44,15 @@ body {
     }
   }
 
+  h1,h2,h3,h4 {
+    line-height: 1.2;
+  }
+
   h1 {
     font-size: calc-em(30px);
   
     @include desktop {
-      font-size: calc-em(30px);
+      font-size: calc-em(40px);
     }
   }
 
@@ -56,7 +60,7 @@ body {
     font-size: calc-em(28px);
   
     @include desktop {
-      font-size: calc-em(28px);
+      font-size: calc-em(36px);
     }
   }
 
@@ -64,7 +68,7 @@ body {
     font-size: calc-em(24px);
   
     @include desktop {
-      font-size: calc-em(24px);
+      font-size: calc-em(28px);
     }
   }
 
@@ -84,9 +88,14 @@ body {
 @import "../_modules/atoms/sg-banner/sg-banner";
 @import "../_modules/atoms/button/button";
 @import "../_modules/atoms/scroll-top/scroll-top";
+@import "../_modules/atoms/video-player/video-player";
+@import "../_modules/atoms/carousel/carousel";
 @import "../_modules/molecules/site-nav/site-nav";
 @import "../_modules/molecules/site-search/site-search";
 @import "../_modules/molecules/mega-menu/mega-menu";
+@import "../_modules/molecules/breadcrumbs/breadcrumbs";
+@import "../_modules/molecules/two-column/two-column";
+@import "../_modules/molecules/latest-updates/latest-updates";
 @import "../_modules/organisms/site-header/site-header";
 @import "../_modules/organisms/site-footer/site-footer";
 @import "../_modules/organisms/home-carousel/home-carousel";

@@ -1,6 +1,7 @@
 //site-footer styles 
 .site-footer {
   background: $darkGrey;
+  margin: 3em 0 0;
   padding: 3em 0;
   color: $white;
   position: relative;
@@ -35,7 +36,7 @@
 
         &-left {
           .footer-title {
-            font-size: calc-em(24px);
+            font-size: calc-em(28px);
             font-weight: $bold;
             margin: 0;
           }
