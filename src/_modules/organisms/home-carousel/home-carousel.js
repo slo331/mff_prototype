@@ -16,15 +16,15 @@ export default class HomeCarousel {
       autoplay: $autoPlay,
       autoplaySpeed: $speed,
       fade: false,
-      draggable: false,
+      draggable: true,
       pauseOnDotsHover: true,
       dots: true,
       arrows: true,
       mobileFirst: true,
       appendDots: $('.carousel-dots'),
       appendArrows: $('.carousel-arrows'),
-      // prevArrow: $('.progress-arrows .prev'),
-      // nextArrow: $('.progress-arrows .next'),
+      prevArrow: $('.carousel-arrows .prev'),
+      nextArrow: $('.carousel-arrows .next')
     });
   }
 }

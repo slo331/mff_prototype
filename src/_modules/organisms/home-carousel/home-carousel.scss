@@ -4,157 +4,377 @@
   
   &-home {
     position: relative;
-  }
 
-  &-wrap {
-    #{$p}-item {
-      &__wrap {
-        height: 435px;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        position: relative;
-        
-        @include desktop {
-          height: 500px;
-        }
-
-        #{$p} {
-          &-info {
-            width: 100%;
-            position: absolute;
-            z-index: 2;
-  
-            .info {
-              width: 100%;
-  
-              @include desktop {
-                width: 500px;
-              } 
-  
-              &-title {
-                font-size: calc-em(24px);
-                font-weight: $bold;
-                margin: 0 0 20px;
-                line-height: 1.2;
-  
-                @include desktop {
-                  font-size: calc-em(40px);
-                }
-              }
-  
-              &-desc {
-                font-size: calc-em(16px);
-                margin: 0 0 20px;
-  
-                @include desktop {
-                  font-size: calc-em(18px);
-                } 
-              }
-            }
-          }
-  
-          &-img {
-            position: relative;
-            z-index: 1;
-            // width: 100%;
-            // height: 500px;
-            // overflow: hidden;
-  
-            img {
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
-              object-position: center center;
-
-              &.desktop-only {
-                display: none !important;
-
-                @include desktop {
-                  display: block !important;
-                }
-              }
-
-              &.mobile-only {
-                display: block !important;
-
-                @include tablet {
-                  display: block !important;
-                }
-
-                @include desktop {
-                  display: none !important;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
-  &-dots {
-    position: absolute;
-    z-index: 1;
-    bottom: 30px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-
-    .slick-dots {
-      padding: 0;
-      margin: 0;
-      list-style-type: none;
-
-      li {
-        display: inline-block;
-        margin: 0 5px;
-
-        &.slick-active {
-          button {
-            background: linear-gradient(90deg, $orange 0%, $red 98.21%);
-          }
-        }
-
-        button {
-          text-indent: -99999px;
-          border: none;
-          // background-image: linear-gradient(90deg, $orange 0%, $red 98.21%);
-          // background-size: 300% 100%;
-          background: rgba(255,255,255,0.6);
-          border-radius: 10rem;
-          line-height: 0;
-          padding: 6px;
-          width: 18px;
-          height: 18px;
-          transition: all .2s ease-in-out;
-
-          &:hover,
-          &:focus {
-            outline: none;
-          }
-
-          &:hover {
-            // background-position: 100% 0;
-            background: linear-gradient(90deg, $orange 0%, $red 98.21%);
-          }
-        }
-      }
-    }
-  }
-
-  &-arrows {
-    z-index: 1;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
-    padding: 0px 20px;
-    display: none;
+    width: 100vw;
+    left: 50%;
+    // left: 49.3%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
 
     @include desktop {
-      display: flex;
-      justify-content: space-between;
+      width: 99.2vw;
+    }
+
+    @include lgDesktop {
+      width: 99.45vw;
+    }
+
+    #{$p} {
+      &-wrap {
+        #{$p} {
+          &-item {
+            height: auto;
+
+            &__wrap {
+              // height: 435px;
+              height: 500px;
+              width: 100%;
+              display: block;
+              position: relative;
+
+              @include tablet {
+                height: 400px;
+              }
+              
+              @include desktop {
+                height: 500px;
+                display: flex;
+                align-items: center;
+              }
+      
+              #{$p} {
+                &-info {
+                  width: 100%;
+                  position: absolute;
+                  z-index: 2;
+                  top: 50px;
+                  left: 0;
+
+                  @include tablet {
+                    width: 50%; 
+                  }
+
+                  @include desktop {
+                    top: unset;
+                    left: unset;
+                  }
+        
+                  .info {
+                    width: 100%;
+        
+                    @include desktop {
+                      width: 500px;
+                    } 
+        
+                    &-title {
+                      font-size: calc-em(24px);
+                      font-weight: $bold;
+                      margin: 0 0 20px;
+                      line-height: 1.2;
+        
+                      @include desktop {
+                        font-size: calc-em(40px);
+                      }
+                    }
+        
+                    &-desc {
+                      font-size: calc-em(15px);
+                      margin: 0 0 20px;
+        
+                      @include desktop {
+                        font-size: calc-em(18px);
+                      } 
+                    }
+                  }
+                }
+        
+                &-img {
+                  position: relative;
+                  z-index: 1;
+                  width: 100%;
+                  height: 500px;
+                  // overflow: hidden;
+        
+                  img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center center;
+      
+                    &.desktop-only {
+                      display: none !important;
+      
+                      @include desktop {
+                        display: block !important;
+                      }
+                    }
+      
+                    &.mobile-only {
+                      display: block !important;
+      
+                      @include tablet {
+                        display: block !important;
+                      }
+      
+                      @include desktop {
+                        display: none !important;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &-dots {
+        position: absolute;
+        z-index: 1;
+        bottom: 30px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    
+        .slick-dots {
+          padding: 0;
+          margin: 0;
+          list-style-type: none;
+    
+          li {
+            display: inline-block;
+            margin: 0 5px;
+    
+            &.slick-active {
+              button {
+                background: linear-gradient(90deg, $orange 0%, $red 98.21%);
+              }
+            }
+    
+            button {
+              text-indent: -99999px;
+              border: none;
+              // background-image: linear-gradient(90deg, $orange 0%, $red 98.21%);
+              // background-size: 300% 100%;
+              background: rgba(255,255,255,0.6);
+              border-radius: 10rem;
+              line-height: 0;
+              padding: 6px;
+              width: 16px;
+              height: 16px;
+              cursor: pointer;
+              transition: all .2s ease-in-out;
+    
+              &:hover,
+              &:focus {
+                outline: none;
+              }
+    
+              &:hover {
+                // background-position: 100% 0;
+                background: linear-gradient(90deg, $orange 0%, $red 98.21%);
+              }
+            }
+          }
+        }
+      }
+    
+      &-arrows {
+        z-index: 1;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        padding: 0px 40px;
+        display: none;
+    
+        @include desktop {
+          display: none;
+        }
+    
+        @include lgDesktop {
+          display: flex;
+          justify-content: space-between;
+        }
+    
+        .icon {
+          border: 3px solid $white;
+          padding: 8px 9px 9px 8px;
+          line-height: 1;
+          border-radius: 10rem;
+          color: $white;
+          font-size: calc-em(20px);
+          cursor: pointer;
+        }
+      }
     }
   }
+
+  // &-wrap {
+  //   #{$p}-item {
+  //     &__wrap {
+  //       height: 435px;
+  //       width: 100%;
+  //       display: flex;
+  //       align-items: center;
+  //       position: relative;
+        
+  //       @include desktop {
+  //         height: 500px;
+  //       }
+
+  //       #{$p} {
+  //         &-info {
+  //           width: 100%;
+  //           position: absolute;
+  //           z-index: 2;
+  
+  //           .info {
+  //             width: 100%;
+  
+  //             @include desktop {
+  //               width: 500px;
+  //             } 
+  
+  //             &-title {
+  //               font-size: calc-em(24px);
+  //               font-weight: $bold;
+  //               margin: 0 0 20px;
+  //               line-height: 1.2;
+  
+  //               @include desktop {
+  //                 font-size: calc-em(40px);
+  //               }
+  //             }
+  
+  //             &-desc {
+  //               font-size: calc-em(16px);
+  //               margin: 0 0 20px;
+  
+  //               @include desktop {
+  //                 font-size: calc-em(18px);
+  //               } 
+  //             }
+  //           }
+  //         }
+  
+  //         &-img {
+  //           position: relative;
+  //           z-index: 1;
+  //           width: 100%;
+  //           // height: 500px;
+  //           // overflow: hidden;
+  
+  //           img {
+  //             width: 100%;
+  //             height: 100%;
+  //             object-fit: cover;
+  //             object-position: center center;
+
+  //             &.desktop-only {
+  //               display: none !important;
+
+  //               @include desktop {
+  //                 display: block !important;
+  //               }
+  //             }
+
+  //             &.mobile-only {
+  //               display: block !important;
+
+  //               @include tablet {
+  //                 display: block !important;
+  //               }
+
+  //               @include desktop {
+  //                 display: none !important;
+  //               }
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+
+  // &-dots {
+  //   position: absolute;
+  //   z-index: 1;
+  //   bottom: 30px;
+  //   width: 100%;
+  //   display: flex;
+  //   justify-content: center;
+
+  //   .slick-dots {
+  //     padding: 0;
+  //     margin: 0;
+  //     list-style-type: none;
+
+  //     li {
+  //       display: inline-block;
+  //       margin: 0 5px;
+
+  //       &.slick-active {
+  //         button {
+  //           background: linear-gradient(90deg, $orange 0%, $red 98.21%);
+  //         }
+  //       }
+
+  //       button {
+  //         text-indent: -99999px;
+  //         border: none;
+  //         // background-image: linear-gradient(90deg, $orange 0%, $red 98.21%);
+  //         // background-size: 300% 100%;
+  //         background: rgba(255,255,255,0.6);
+  //         border-radius: 10rem;
+  //         line-height: 0;
+  //         padding: 6px;
+  //         width: 16px;
+  //         height: 16px;
+  //         cursor: pointer;
+  //         transition: all .2s ease-in-out;
+
+  //         &:hover,
+  //         &:focus {
+  //           outline: none;
+  //         }
+
+  //         &:hover {
+  //           // background-position: 100% 0;
+  //           background: linear-gradient(90deg, $orange 0%, $red 98.21%);
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+
+  // &-arrows {
+  //   z-index: 1;
+  //   position: absolute;
+  //   top: 50%;
+  //   transform: translateY(-50%);
+  //   width: 100%;
+  //   padding: 0px 40px;
+  //   display: none;
+
+  //   @include desktop {
+  //     display: none;
+  //   }
+
+  //   @include lgDesktop {
+  //     display: flex;
+  //     justify-content: space-between;
+  //   }
+
+  //   .icon {
+  //     border: 3px solid $white;
+  //     padding: 8px 9px 9px 8px;
+  //     line-height: 1;
+  //     border-radius: 10rem;
+  //     color: $white;
+  //     font-size: calc-em(20px);
+  //     cursor: pointer;
+  //   }
+  // }
 }

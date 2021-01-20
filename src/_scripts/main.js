@@ -3,6 +3,7 @@
 'use strict';
 
 // Import Modules
+import Carousel from '../_modules/atoms/carousel/carousel';
 import ScrollTop from '../_modules/atoms/scroll-top/scroll-top';
 import SiteNav from '../_modules/molecules/site-nav/site-nav';
 import MegaMenu from '../_modules/molecules/mega-menu/mega-menu';
@@ -36,6 +37,10 @@ $(() => {
 
   if($('.carousel-home').length) {
     new HomeCarousel();
+  }
+
+  if($('.carousel').length) {
+    new Carousel();
   }
 });
 
