@@ -1,0 +1,10 @@
+mixin custom-checkbox(spec)
+	- spec = spec || {}
+	- spec.__class = spec.__class || ''
+
+	if spec.disabled == true
+		input.custom-checkbox&attributes(attributes)(id= spec.id, type="checkbox", value= spec.value, name= spec.name, disabled)
+		label(for= spec.id)= spec.label
+	else
+		input.custom-checkbox&attributes(attributes)(id= spec.id, type="checkbox", value= spec.value, name= spec.name)
+		label(for= spec.id)= spec.label

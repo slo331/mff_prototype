@@ -93,6 +93,7 @@ body {
   }
 }
 
+@import "../_modules/atoms/custom-checkbox/custom-checkbox";
 @import "../_modules/atoms/sg-banner/sg-banner";
 @import "../_modules/atoms/button/button";
 @import "../_modules/atoms/scroll-top/scroll-top";
@@ -106,6 +107,11 @@ body {
 @import "../_modules/molecules/latest-updates/latest-updates";
 @import "../_modules/molecules/article-header/article-header";
 @import "../_modules/molecules/share/share";
+@import "../_modules/molecules/pagination/pagination";
+@import '../_modules/molecules/list-filter/list-filter';
+@import "../_modules/molecules/listing/listing";
+@import "../_modules/molecules/multi-filter/multi-filter";
+@import "../_modules/molecules/select-dropdown/select-dropdown";
 @import "../_modules/organisms/article-block/article-block";
 @import "../_modules/organisms/site-header/site-header";
 @import "../_modules/organisms/site-footer/site-footer";

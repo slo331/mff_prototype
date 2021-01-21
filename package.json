@@ -49,6 +49,8 @@
     "enquire.js": "^2.1.6",
     "jquery": "^3.4.1",
     "jquery-match-height": "^0.7.2",
+    "js-cookie": "^2.2.1",
+    "moment": "^2.21.0",
     "normalize.css": "^8.0.1",
     "object-fit-images": "^3.2.4",
     "slick-carousel": "^1.8.1"

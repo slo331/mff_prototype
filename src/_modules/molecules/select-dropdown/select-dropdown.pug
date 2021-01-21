@@ -1,0 +1,15 @@
+include ../../atoms/custom-select/custom-select
+
+mixin select-dropdown(spec)
+	- spec = spec || {}
+	- spec.__class = spec.__class || ''
+
+	.select-dropdown(class=spec.__class)&attributes(attributes)
+		.filter-control
+			.filter-control__label
+				label(for= spec.input.id)= spec.input.label
+		.filter-options
+			+custom-select({
+				'id': spec.input.id,
+				'options': spec.options
+			})

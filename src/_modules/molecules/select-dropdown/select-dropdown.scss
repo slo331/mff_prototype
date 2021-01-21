@@ -1,0 +1,142 @@
+//select-dropdown styles 
+.select-dropdown {
+  position: relative;
+  width: 100%;
+  margin: 0 0 20px 0;
+
+  @include tablet {
+    width: 45%;
+    display: inline-block;
+    margin: 0 10px 0 0;
+  }
+
+  @include desktop {
+    width: 25%;
+    display: inline-block;
+    margin: 0 20px 0 0;
+  }
+
+  .filter-control {
+    height: 100%;
+    // padding: 20px 10px;
+    // text-align: center;
+
+    label {
+      padding-right: 25px;
+      text-transform: uppercase;
+      font-weight: $medium;
+      font-size: calc-em(14px);
+      position: relative;
+      letter-spacing: 1px;
+
+      i {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    }
+
+    input {
+      text-align: center;
+      width: 100%;
+      font-weight: 400;
+      display: none;
+
+      &:focus {
+        outline: 0;
+      }
+    }
+
+    p {
+      margin: 0;
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &__label {
+      display: block;
+    }
+
+    &__text {
+      display: inline-flex;
+      align-items: center;
+      width: 100%;
+      border: 1px solid $grey;
+      border-radius: 6px;
+      margin: 10px 0 0;
+      padding: 12px;
+      cursor: pointer;
+    }
+  }
+
+  select {
+    display: none;
+  }
+
+  .dropdown-select {
+    position: relative;
+
+    &:hover,
+    &:focus {
+      outline: 0;
+    }
+
+    .selected-option {
+      display: inline-flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      border: 1px solid $grey;
+      border-radius: 6px;
+      margin: 10px 0 0;
+      padding: 12px;
+      cursor: pointer;
+    }
+
+    .list {
+      display: none;
+      width: 100%;
+      margin: 5px 0 0;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 1;
+      border-radius: 6px;
+      background-color: $white;
+      box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.25);
+
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+
+        // min-height: 100px;
+        max-height: 240px;
+        overflow-y: auto;
+        background-color: $white;
+        border: 1px solid $grey;
+        border-radius: 6px;
+
+        li {
+          background-color: $white;
+          padding: 10px;
+          position: relative;
+          transition: all .25s ease-in;
+
+          cursor: pointer;
+          font-size: calc-em(14px);
+          display: block;
+
+          &:hover,
+          &.selected,
+          &:focus {
+            outline: 0;
+            background: #F3F3F3;
+          }
+        }
+      }
+    }
+  }
+}

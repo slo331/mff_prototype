@@ -1,0 +1,27 @@
+extends ../_layouts/base
+
+include ../_modules/molecules/breadcrumbs/breadcrumbs
+include ../_modules/molecules/listing/listing
+
+block config
+	//- Correct base url pathing for this page
+	- isHome = false
+	- var pageTitle = 'Made For Families Stories'
+	- var page = 'resources'
+	- var site = htmlWebpackPlugin.options //global site data
+	- var baseUrl = '../'
+
+block content
+	+breadcrumbs({
+		'level1': 'Resources',
+		'level2': 'Made For Families Stories'
+	})
+
+	+listing({
+		'title': 'Made For Families Stories',
+		'endpoint': '/api/storiesListing.json',
+		'filter': true,
+		'pagination': true
+	})
+
+	+listingItem()

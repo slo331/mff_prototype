@@ -1,0 +1,75 @@
+include ../../molecules/multi-filter/multi-filter
+include ../../molecules/select-dropdown/select-dropdown
+
+mixin list-filter(spec)
+	- spec = spec || {}
+	- spec.__class = spec.__class || ''
+
+	.filter(class=spec.__class)&attributes(attributes)
+		.filter-wrap
+			+multi-filter({
+				"name": "category",
+				"input": {
+					"id": "category",
+					"label": "Category",
+					"value": "all",
+					"valueText": "All"
+				},
+				"all": {
+					"id": "all_cat",
+					"value": "all",
+					"label": "All"
+				},
+				"options": [
+					{
+						"id": "cat-op1",
+						"value": "cat-op1",
+						"label": "Community Support"
+					},
+					{
+						"id": "cat-op2",
+						"value": "cat-op2",
+						"label": "Support for Marriage and Parenthood"
+					},
+					{
+						"id": "cat-op3",
+						"value": "cat-op3",
+						"label": "Work-life Harmony"
+					}
+				]
+			}).category-filter
+
+			+select-dropdown({
+				"input": {
+					"id": "sortby",
+					"label": "Sort By"
+				},
+				"options": [
+					{
+						'label': 'Latest',
+						'value': 'latest'
+					},
+					{
+						'label': 'Popularity',
+						'value': 'popularity'
+					}
+				]
+			}).sortby-filter
+
+			//- +select-dropdown({
+			//- 	"input": {
+			//- 		"id": "sortby",
+			//- 		"label": "Sort By 2"
+			//- 	},
+			//- 	"options": [
+			//- 		{
+			//- 			'label': 'Popularity',
+			//- 			'value': 'popularity'
+			//- 		},
+			//- 		{
+			//- 			'label': 'Latest',
+			//- 			'value': 'latest'
+			//- 		}
+			//- 	]
+			//- }).sortby-filter2
+

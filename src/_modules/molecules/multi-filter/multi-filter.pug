@@ -1,0 +1,38 @@
+include ../../atoms/custom-checkbox/custom-checkbox
+
+mixin multi-filter(spec)
+	- spec = spec || {}
+	- spec.__class = spec.__class || ''
+
+	.multi-filter(class=spec.__class)&attributes(attributes)
+		.filter-control
+			.filter-control__label
+				label(for= spec.input.id)= spec.input.label
+				input(id= spec.input.id, type="text" value= spec.input.value)
+			.filter-control__text
+				p= spec.input.valueText
+				i.icon-arrow-down
+		.filter-options
+			if (spec.all)
+				.all-checkbox
+					.all-checkbox__wrap
+						+custom-checkbox({
+							"id": spec.all.id,
+							"value": spec.all.value,
+							"name": spec.name,
+							"label": spec.all.label,
+							"figure": spec.all.figure,
+							"disabled": spec.all.disabled
+						}).all-check
+							
+			ul
+				each option in spec.options
+					li
+						+custom-checkbox({
+							"id": option.id,
+							"value": option.value,
+							"name": spec.name,
+							"label": option.label,
+							"figure": option.figure,
+						})
+		

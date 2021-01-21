@@ -8,6 +8,7 @@ import ScrollTop from '../_modules/atoms/scroll-top/scroll-top';
 import SiteNav from '../_modules/molecules/site-nav/site-nav';
 import MegaMenu from '../_modules/molecules/mega-menu/mega-menu';
 import SiteSearch from '../_modules/molecules/site-search/site-search';
+import Listing from '../_modules/molecules/listing/listing';
 import HomeCarousel from '../_modules/organisms/home-carousel/home-carousel';
 
 $(() => {
@@ -41,6 +42,14 @@ $(() => {
 
   if($('.carousel').length) {
     new Carousel();
+  }
+
+  if($('.listing').length) {
+    let $listing = $('.listing');
+
+		$listing.map((i, ele) => {
+			new Listing($(ele));
+    });
   }
 });
 

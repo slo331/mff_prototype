@@ -1,0 +1,65 @@
+mixin pagination(spec)
+    - spec = spec || {}
+    - spec.__class = spec.__class || ''
+
+    ul.pagination(class=spec.__class)&attributes(attributes)
+      li.pagination__prev
+        a(href="/listing/?q=&sortby=&year=&prev")
+          i(class="icon-angle-left")
+          span.visuallyHidden Go to Previous Page
+      li.pagination__dots ...
+      li.pagination__page.page--current 4
+      li.pagination__page
+        a(href="/listing/?q=&sortby=&year=&page=5")
+          | 5
+          span.visuallyHidden Go to Page 5
+      li.pagination__page
+        a(href="/listing/?q=&sortby=&year=&page=6")
+          | 6
+          span.visuallyHidden Go to Page 6
+      li.pagination__dots ...
+      li.pagination__next
+        a(href="/listing/?q=&sortby=&year=&next")
+          i(class="icon-angle-right")
+          span.visuallyHidden Go to Next Page
+
+mixin pagination-api(spec)
+  - var pageUrl = spec.pageUrl || ''
+  - var paddingSize = spec.paddingSize || 4
+  - var currentPage = spec.currentPage || 1
+  - var totalPages = spec.totalPages || 10
+
+  ul.pagination-wrap
+    if (currentPage > 1)
+      li.pagination-prev
+        a(href= pageUrl + '?page=' + (currentPage - 1), title='Go to page ' + (currentPage - 1)) 
+          i(class="icon-angle-left")
+
+    li(class= (currentPage == 1) ? 'active' : '')
+      a(href= pageUrl + '?page=1', title='Go to page 1') 1
+
+    - var start = (currentPage - paddingSize >= 2) ? currentPage - paddingSize : 2
+    - var end = (currentPage + paddingSize >= totalPages - 1) ? totalPages - 1 : currentPage + paddingSize
+
+    if (currentPage - paddingSize > 2 && start > 2)
+      li.pagination-ellipsis
+        span ...
+
+    - var i = start;
+    while (i <= end)
+      li(class= (currentPage == i) ? 'active' : '')
+        a(href= pageUrl + '?page=' + i, title = 'Go to page ' + i) #{i}
+      - i++
+
+    if (currentPage + paddingSize < totalPages - 1 && end < totalPages - 1)
+      li.pagination-ellipsis
+        span ...
+
+    if (totalPages > 1)
+      li(class= (currentPage == totalPages) ? 'active' : '')
+        a(href= pageUrl + '?page=' + totalPages, title= 'Go to page ' + totalPages)= totalPages
+
+    if (currentPage < totalPages)
+      li.pagination-next
+        a(href= pageUrl + '?page=' + (currentPage + 1), title = 'Go to page ' + (currentPage + 1))
+          i(class="icon-angle-right")

@@ -1,0 +1,103 @@
+//pagination styles 
+.pagination {
+  $p: &;
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+  margin: 3em 0 1em;
+
+  &-wrap {
+    display: inline-block;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    
+    @include desktop {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    li {
+      display: inline-block;
+      line-height: 1;
+      margin: 0 5px;
+      border-radius: 10rem;
+      font-weight: $medium;
+      color: $negro;
+      background: transparent;
+      vertical-align: middle;
+      transition: all .2s ease-in-out;
+      cursor: pointer;
+
+      &.pagination-ellipsis {
+        background: transparent;
+        color: $negro;
+        margin: 0 3px;
+        // padding: 12px 0px;
+        width: auto;
+        height: auto;
+        cursor: default;
+
+        &:hover {
+          background: transparent;
+          color: $negro;
+        }
+
+        span {
+          display: block;
+          padding: 5px 8px;
+          width: auto;
+          height: 35px;
+
+          @include desktop {
+            padding: 12px 8px;
+            width: auto;
+            height: 50px;
+          }
+        }
+      }
+
+      &:hover,
+      &.active {
+        background: $red;
+        color: $white;
+      }
+
+      span, a {
+        display: block;
+        padding: 9px;
+        width: 35px;
+        height: 35px;
+
+        @include desktop {
+          padding: 16px;
+          width: 50px;
+          height: 50px;
+        }
+      }
+
+      &.arrows {
+        span, a {
+          display: block;
+          padding: 0px;
+          width: auto;
+          height: auto;
+        }
+        
+        .icon {
+          font-size: calc-em(30px);
+          color: $negro;
+        }
+
+        &:hover {
+          background: transparent;
+          
+          .icon {
+            color: $red;
+          }
+        }
+      }
+    }
+  }
+}
