@@ -1,0 +1,12 @@
+extends ../_layouts/base
+
+block config
+	//- Correct base url pathing for this page
+	- isHome = false
+	- var pageTitle = 'Made For Families Partners'
+	- var page = 'resources'
+	- var site = htmlWebpackPlugin.options //global site data
+	- var baseUrl = '../'
+
+block content
+	p partners-page page
