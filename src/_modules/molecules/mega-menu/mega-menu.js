@@ -71,7 +71,7 @@ export default class MegaMenu {
     $.when($slideDown())
     .done(() => {
       setTimeout(() => {
-        this.$megaMenu.slideDown('slow');
+        this.$megaMenu.slideDown('fast');
       }, 300);
     })
     .done(() => {
@@ -81,7 +81,7 @@ export default class MegaMenu {
 
   closeMegaMenu() {
     let $slideUp = () => {
-      this.$megaMenu.slideUp('slow');
+      this.$megaMenu.slideUp('fast');
     };
 
     $.when($slideUp())
@@ -90,7 +90,7 @@ export default class MegaMenu {
         this.$siteNavItems.removeClass('active');
         this.$megaMenu.removeClass('expanded');
         this.$megaMenuContents.removeClass('active');
-      }, 500);
+      }, 300);
     });
   }
 }

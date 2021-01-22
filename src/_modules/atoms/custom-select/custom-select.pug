@@ -2,7 +2,7 @@ mixin custom-select(spec)
   - spec = spec || {}
   - spec.__class = spec.__class || ''
 
-  select.custom-select(id= spec.id class=spec.__class)&attributes(attributes)
+  select.custom-select(id= spec.id class=spec.__class name= spec.name)&attributes(attributes)
     each option, index in spec.options
       option(value= option.value, selected= (index == 0) ? "selected" : false)= option.label
 

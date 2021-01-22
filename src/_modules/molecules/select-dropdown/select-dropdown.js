@@ -28,10 +28,12 @@ export default class SelectDropdown {
 					$(this).find('.option').attr('tabindex', 0);
           $(this).find('.selected').focus();
           $(this).find('.list').slideDown('slow');
+          $(this).find('.icon-arrow-down').addClass('rotate');
 				} else {
 					$(this).find('.option').removeAttr('tabindex');
           $(this).focus();
           $(this).find('.list').slideUp('slow');
+          $(this).find('.icon-arrow-down').removeClass('rotate');
 				}	
 			}
     });
@@ -42,6 +44,7 @@ export default class SelectDropdown {
 				$('.dropdown-select').removeClass('open');
         $('.dropdown-select .option').removeAttr('tabindex');
         $('.dropdown-select').find('.list').slideUp('slow');
+        $('.dropdown-select').find('.icon-arrow-down').removeClass('rotate');
 			}
 			event.stopPropagation();
     });
@@ -52,7 +55,9 @@ export default class SelectDropdown {
 			$(this).addClass('selected');
 			var text = $(this).data('display-text') || $(this).text();
 			$(this).closest('.dropdown-select').find('.current').text(text);
-			$(this).closest('.dropdown-select').prev('.select-field').val($(this).data('value')).trigger('change');
+      $(this).closest('.dropdown-select').prev('.custom-select').val($(this).data('value')).trigger('change');
+
+      console.log($(this).closest('.dropdown-select').prev('.custom-select').val($(this).data('value')).trigger('change'));
 		});
   }
 

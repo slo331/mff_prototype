@@ -36,6 +36,28 @@ export default class Listing extends ListingBase {
     /* 2. Setup the listener (the following is available in the ListingBase, can reuse) */
     this.setupListeners(this.allFields);
 
+    let $filterOpt = $('.filter-options', $selector);
+    
+    $filterOpt.map((i,el) => {
+      let $el = $(el);
+      let $checkBox = $('.checkbox', $el);
+      let $dropDown = $('select', $el);
+
+      $checkBox.map((i,el) => {
+        let $thisCB = $(el);
+  
+        $thisCB.on('click', e => {
+          this.parameters = this.getParameters(this.allFields);
+  
+          this.getUrlQueries();
+          this.getData();
+          this.updateURL();
+
+          console.log(this.parameters);
+        });
+      });
+    });
+
     this.totalPages = 1;
     this.setupPagination('page');
 

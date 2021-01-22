@@ -13,12 +13,12 @@ mixin breadcrumbs(spec)
 							span=spec.level1
 					else
 						li
-							a(href='#')=spec.level1
+							a(href=spec.level1URL)=spec.level1
 						if !spec.level3
 							li
 								span=spec.level2
 						else
 							li
-								a(href='/')=spec.level2
+								a(href=spec.level2URL)=spec.level2
 							li
 								span=spec.level3

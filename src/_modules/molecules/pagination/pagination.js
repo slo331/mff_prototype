@@ -9,6 +9,21 @@ export default class Pagination {
     this.page = 1;
 
     this.$list = $selector;
+    
+    // let $pageBtn = this.$list.find('li');
+
+    // $pageBtn.map((i,el) => {
+    //   let $el = $(el);
+    //   let $anchor = $('a', $el);
+
+    //   $anchor.on('click', e => {
+    //     console.log('Pagination Click');
+
+    //     $('html, body').animate({
+    //       scrollTop: $('.main-content').offset().top
+    //     }, 400);
+    //   });
+    // });
   }
 
   update(page, totalPages, callback) {

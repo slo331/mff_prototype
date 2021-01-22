@@ -74,6 +74,15 @@
       margin: 10px 0 0;
       padding: 12px;
       cursor: pointer;
+
+      .icon-arrow-down {
+        display: block;
+        transition: all .2s ease-in-out;
+        
+        &.rotate {
+          transform: rotate(180deg);
+        }
+      }
     }
   }
 

@@ -10,9 +10,9 @@ mixin multi-filter(spec)
 				label(for= spec.input.id)= spec.input.label
 				input(id= spec.input.id, type="text" value= spec.input.value)
 			.filter-control__text
-				p= spec.input.valueText
+				p.current= spec.input.valueText
 				i.icon-arrow-down
-		.filter-options
+		.filter-options.checkboxes
 			if (spec.all)
 				.all-checkbox
 					.all-checkbox__wrap

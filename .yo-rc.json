@@ -5,7 +5,8 @@
     "jsPreprocessor": "ES6(using babel)",
     "pages": [
       "article-page",
-      "listing-filter"
+      "listing-filter",
+      "partners-page"
     ]
   }
 }

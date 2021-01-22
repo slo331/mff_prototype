@@ -122,7 +122,13 @@ export default class ListingBase {
     if (toAppend) {
       $container.append(dotTemplate);
     } else {
-      $container.html(dotTemplate);
+      $.when($container.empty())
+      .done(() => {
+        // setTimeout(() => {
+        //   $container.html(dotTemplate);
+        // }, 1000);
+        $container.html(dotTemplate);
+      });
     }
   }
 
@@ -212,7 +218,6 @@ export default class ListingBase {
           $this.prop('checked', true);
         } else {
           $this.prop('checked', false);
-
         }
       });
     } else {
@@ -278,59 +283,12 @@ export default class ListingBase {
           } else {
             if ($(`input[name="${fieldName}"]:checked`).length == 0) {
               /* when no checkbox is checked, ALL will be checked automatically */
-              $(`input[name="${fieldName}"][value="all"]`).prop(
-                "checked",
-                true
-              );
+              $(`input[name="${fieldName}"][value="all"]`).prop("checked", true);
             }
           }
         }
       });
     });
-
-    // let checkingTimeout;
-    // $(`input[name="${fieldName}"]`).map((i, ele) => {
-    //   let $this = $(ele);
-    //   $this.on('change', e => {
-    //     if ($this.prop('checked') == true) {
-    //       if ($this.val() == 'all') {
-    //         /* uncheck all other checkbox when ALL is checked, and hide all subgroups */
-    //         $(`input[name="${fieldName}"]`).prop('checked', false);
-    //         $this.prop('checked', true);
-    //         this.parameters[fieldName] = this.getCheckboxValues(fieldName);
-    //         this.parameters.page = 1;
-    //         this.getData();
-    //         this.updateURL();
-    //       } else {
-    //         $(`input[name="${fieldName}"][value="all"]`).prop('checked', false);
-    //         clearTimeout(checkingTimeout);
-    //         checkingTimeout = setTimeout(() => {
-    //           this.parameters[fieldName] = this.getCheckboxValues(fieldName);
-    //           this.parameters.page = 1;
-    //           this.getData();
-    //           this.updateURL();
-    //         }, 300);
-    //       }
-    //     } else {
-    //       if ($this.val() == 'all') {
-    //         /* ALL checkbox cannot be unchecked */
-    //         $this.prop('checked', true);
-    //       } else {
-    //         if ($(`input[name="${fieldName}"]:checked`).length == 0) {
-    //           /* when no checkbox is checked, ALL will be checked automatically */
-    //           $(`input[name="${fieldName}"][value="all"]`).prop('checked', true);
-    //         }
-    //         clearTimeout(checkingTimeout);
-    //         checkingTimeout = setTimeout(() => {
-    //           this.parameters[fieldName] = this.getCheckboxValues(fieldName);
-    //           this.parameters.page = 1;
-    //           this.getData();
-    //           this.updateURL();
-    //         }, 300);
-    //       }
-    //     }
-    //   });
-    // });
   }
 
   setupSearchbar(fieldName) {
@@ -403,17 +361,6 @@ export default class ListingBase {
         this.updateURL();
       });
     });
-
-    // $(`input[name="${fieldName}"]`).map((i, ele) => {
-    //   let $this = $(ele);
-    //   $this.on('change', e => {
-    //     if ($this.prop('checked') == true) {
-    //       this.parameters[fieldName] = $this.val();
-    //     }
-    //     this.getData();
-    //     this.updateURL();
-    //   });
-    // });
   }
 
   setupPagination(fieldName) {
@@ -427,6 +374,10 @@ export default class ListingBase {
     }
 
     this.updatePaginationView(pagination, currentPage, totalPages, callback);
+
+    $('html, body').animate({
+      scrollTop: $('header').offset().top
+    }, 400);
 
   }
 
@@ -480,9 +431,12 @@ export default class ListingBase {
   updateSortView(fieldName) {
     $(`select[name="${fieldName}"]`).val(this.parameters[fieldName]);
 
-    const triggerLabel = $(`select[name="${fieldName}"]`).next().find('.label');
+    const triggerLabel = $(`select[name="${fieldName}"]`).next().find('.current');
+    const triggerOption = $(`select[name="${fieldName}"]`).next().find(`.option[data-value="${ this.parameters[fieldName] }"]`);
 
     triggerLabel.text($(`select[name="${fieldName}"]`).find(`option[value="${ this.parameters[fieldName] }"]`).text());
+    $('.option').removeClass('selected');
+    triggerOption.addClass('selected');
   }
 
   _addSortListener(fieldName) {
@@ -579,6 +533,8 @@ export default class ListingBase {
       allFields = this.makeOptionObject($parent.find('.checkboxes'), "checkbox", allFields);
     if ($parent.find('.radio-buttons').length)
       allFields = this.makeOptionObject($parent.find('.radio-buttons'), "radio", allFields);
+
+    // console.log(allFields);
 
     return allFields;
   }

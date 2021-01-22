@@ -20,7 +20,8 @@
 			top: 50%;
 			transform: translateY(-50%);
 			right: 100%;
-			border: 1px solid $grey;
+      border: 1px solid $grey;
+      transition: all .2s ease-in-out;
 		}
 
 		&:after {
@@ -38,25 +39,45 @@
 			content: "\ead9";
 			display: inline-block;
       color: $white;
-      background: $red;
+      // background: $red;
+      background: transparent;
 			opacity: 0;
 			position: absolute;
 			top: 50%;
-			transform: translate(-15px, -50%);
+      // transform: translate(-15px, -50%);
+      
+      transform: scale(0);
+      transition: transform .15s $easeInOutExpo, opacity .15s ease-in-out, visibility .15s ease-in-out;
+      visibility: hidden;
+
 			right: 100%;
       font-size: calc-em(17px);
       width: 24px;
       height: 24px;
       margin-right: -5px;
-      border: 1px solid $red;
+      border: 1px solid $grey;
       border-radius: 4px;
+      // padding: 4px;
+
       padding: 4px;
+      top: 0px;
+      left: -34px;
 		}
 	}
 
 	&:checked + label {
+    &:before {
+      background: $red;
+      border: 1px solid $red;
+    }
+    
 		&:after {
-			opacity: 1;
+      // opacity: 1;
+      background: $red;
+      border: 1px solid $red;
+      opacity: 1;
+      transform: scale(1);
+      visibility: visible;
 		}
 	}
 }

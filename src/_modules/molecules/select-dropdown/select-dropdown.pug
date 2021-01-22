@@ -11,5 +11,6 @@ mixin select-dropdown(spec)
 		.filter-options
 			+custom-select({
 				'id': spec.input.id,
+        'name': spec.input.name,
 				'options': spec.options
 			})

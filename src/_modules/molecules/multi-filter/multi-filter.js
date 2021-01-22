@@ -6,7 +6,8 @@ export default class MultiFilter {
   constructor($selector, config) {
 		this.$selector = $selector;
 		let $filterControl = $('.filter-control', $selector);
-		let $filterOptions = $('.filter-options', $selector);
+    let $filterOptions = $('.filter-options', $selector);
+    let $iconArrow = $('.icon-arrow-down', $filterControl);
     let $options = $('li', $filterOptions);
 		let $allCheckbox = $('.all-checkbox', $filterOptions);
 		let $allOption = $('.all-checkbox__wrap', $allCheckbox);
@@ -21,6 +22,7 @@ export default class MultiFilter {
     this.$input = $('input', $filterControl);
     
     this.$filterOptions = $filterOptions;
+    this.$iconArrow = $iconArrow;
 
 		$filterControl.find('.filter-control__text').on('click', e => {
       if (this.$selector.hasClass('options-shown')) {
@@ -71,11 +73,7 @@ export default class MultiFilter {
 			
       $input.prop('checked', true);
       
-      // if($input.hasClass('all-check')) {
-      //   $input.prop('checked', true);
-      // }
-
-			$input.on('change', e => {
+      $input.on('change', e => {
 				let $optTarget = $(e.target);
 				let $parent = $optTarget.parents('ul');
 				let $sibling = $parent.siblings('.all-checkbox');
@@ -84,9 +82,9 @@ export default class MultiFilter {
 				clearTimeout(checkingTimeout);
 
 				checkingTimeout = setTimeout(() => {	
-					if(!$optTarget.is(":checked")){
-						$chckBox.prop('checked', false);
-					}				 
+					// if(!$optTarget.is(":checked")){
+					// 	$chckBox.prop('checked', false);
+					// }				 
 					
           this._updateLabel();
           this._hideOptions();
@@ -103,20 +101,22 @@ export default class MultiFilter {
 				let $sibling = $parent.siblings('ul');
 				let $chckBox = $sibling.find('li').children('input');
 
-				if($chckTarget.is(":checked")) {
-					$chckBox.map((i, ele) => {
-						let $thisChck = $(ele);
-            $thisChck.prop('checked', true);
-					})
-				} else {
-					$chckBox.map((i, ele) => {
-						let $thisChck = $(ele);
-            $thisChck.prop('checked', false);
-					})
-				}
+				// if($chckTarget.is(":checked")) {
+				// 	$chckBox.map((i, ele) => {
+				// 		let $thisChck = $(ele);
+        //     $thisChck.prop('checked', true);
+				// 	})
+				// } else {
+				// 	$chckBox.map((i, ele) => {
+				// 		let $thisChck = $(ele);
+        //     $thisChck.prop('checked', false);
+				// 	})
+        // }
+        
         this._updateLabel();
         this._hideOptions();
       });
+
       $thisAll.prop('checked', true);
 		});
 	}
@@ -124,8 +124,8 @@ export default class MultiFilter {
 	_updateLabel() {
 		let selected = [];
 		let noOfOptions = this.$options.length;
-        let checkedNo = 0;
-        let allCheck = this.$options.parents('ul').siblings('.all-checkbox').children('.all-checkbox__wrap').find('input');
+    let checkedNo = 0;
+    let allCheck = this.$options.parents('ul').siblings('.all-checkbox').children('.all-checkbox__wrap').find('input');
 
 		this.$options.map((j, option) => {
 			let $option = $(option);
@@ -179,6 +179,7 @@ export default class MultiFilter {
     
     $.when($showOpt())
     .done(() => {
+      this.$iconArrow.addClass('rotate');
       this.$filterOptions.slideDown('slow');
     })
 	}
@@ -191,6 +192,7 @@ export default class MultiFilter {
     
     $.when($hideOpt())
     .done(() => {
+      this.$iconArrow.removeClass('rotate');
       this.$filterOptions.slideUp('slow');
     })
 	}
