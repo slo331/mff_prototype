@@ -1,7 +1,7 @@
-extends ../_layouts/base
+extends ../../_layouts/base
 
-include ../_modules/molecules/breadcrumbs/breadcrumbs
-include ../_modules/organisms/article-block/article-block
+include ../../_modules/molecules/breadcrumbs/breadcrumbs
+include ../../_modules/organisms/article-block/article-block
 
 block config
   //- Correct base url pathing for this page
@@ -9,12 +9,14 @@ block config
   - var pageTitle = 'Parenting Beyond Academic Achievements'
   - var page = 'resources'
   - var site = htmlWebpackPlugin.options //global site data
-  - var baseUrl = '../'
+  - var baseUrl = '../../'
 
 block content
   +breadcrumbs({
     'level1': 'Resources',
+    'level1URL': '#',
     'level2': 'Made For Families Stories',
+    'level2URL': '/listing-filter',
     'level3': 'Parenting Beyond Academic Achievements'
   })
 
