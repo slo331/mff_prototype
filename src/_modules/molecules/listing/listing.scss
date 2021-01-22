@@ -145,13 +145,17 @@
               line-height: 0;
 
               .btn {
+                position: relative;
                 padding: 0;
                 border: none;
                 font-size: calc-em(38px);
                 line-height: 0;
+                transform: translateX(0px);
+                transition: all .2s ease-in-out;
 
                 &:hover {
-                  animation: pullRight .8s ease-in-out infinite;
+                  // animation: pullRight .8s ease-in-out infinite;
+                  transform: translateX(5px);
                 }
               }
             }

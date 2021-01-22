@@ -7,7 +7,6 @@
 
     width: 100vw;
     left: 50%;
-    // left: 49.3%;
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
@@ -70,7 +69,7 @@
                     } 
 
                     @include lgDesktop {
-                      padding: 0 0 0 80px;
+                      // padding: 0 0 0 80px;
                     }
         
                     &-title {

@@ -61,8 +61,7 @@
 
             li {
               display: inline-block;
-              color: $red;
-
+              
               &:after {
                 content: '/';
                 display: inline-block;
@@ -73,6 +72,17 @@
               &:last-child {
                 &:after {
                   display: none;
+                }
+              }
+            }
+
+            &-link {
+              transition: all .2s ease-in-out;
+              color: $red;
+
+              &:hover {
+                @include desktop {
+                  color: $orange;
                 }
               }
             }

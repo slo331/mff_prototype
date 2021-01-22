@@ -31,6 +31,8 @@
 
       #{$p}-link {
         font-size: calc-em(20px);
+        transition: all .2s ease-in-out;
+        color: $negro;
 
         @include tablet {
           font-size: calc-em(22px);
@@ -38,6 +40,17 @@
 
         @include desktop {
           font-size: calc-em(28px);
+        }
+
+        &:hover,
+        &:focus {
+          outline: 0;
+        }
+
+        &:hover {
+          @include desktop {
+            color: $red;
+          }
         }
       }
     }
