@@ -13,17 +13,17 @@ mixin multi-filter(spec)
 				p.current= spec.input.valueText
 				i.icon-arrow-down
 		.filter-options.checkboxes
-			if (spec.all)
-				.all-checkbox
-					.all-checkbox__wrap
-						+custom-checkbox({
-							"id": spec.all.id,
-							"value": spec.all.value,
-							"name": spec.name,
-							"label": spec.all.label,
-							"figure": spec.all.figure,
-							"disabled": spec.all.disabled
-						}).all-check
+			//- if (spec.all)
+			//- 	.all-checkbox
+			//- 		.all-checkbox__wrap
+			//- 			+custom-checkbox({
+			//- 				"id": spec.all.id,
+			//- 				"value": spec.all.value,
+			//- 				"name": spec.name,
+			//- 				"label": spec.all.label,
+			//- 				"figure": spec.all.figure,
+			//- 				"disabled": spec.all.disabled
+			//- 			}).all-check
 							
 			ul
 				each option in spec.options

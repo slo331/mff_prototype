@@ -71,7 +71,7 @@ export default class MultiFilter {
 			let $label = $('label', $this);
 			let $input = $('input', $this);
 			
-      $input.prop('checked', true);
+      // $input.prop('checked', true);
       
       $input.on('change', e => {
 				let $optTarget = $(e.target);
@@ -117,7 +117,7 @@ export default class MultiFilter {
         this._hideOptions();
       });
 
-      $thisAll.prop('checked', true);
+      // $thisAll.prop('checked', true);
 		});
 	}
 

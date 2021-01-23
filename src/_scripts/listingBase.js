@@ -215,6 +215,7 @@ export default class ListingBase {
         let $this = $(ele);
 
         if ($this.val() == 'all') {
+          // $this.trigger('change');
           $this.prop('checked', true);
         } else {
           $this.prop('checked', false);
@@ -227,6 +228,7 @@ export default class ListingBase {
         let $this = $(ele);
 
         if (values.indexOf($this.val()) !== -1) {
+          $this.trigger('change');
           $this.prop('checked', true);
         } else {
           $this.prop('checked', false);
@@ -269,24 +271,30 @@ export default class ListingBase {
       let $this = $(ele);
       $this.on("change", (e) => {
         if ($this.prop("checked") == true) {
-          if ($this.val() == "all") {
+          if ($this.val() === "all") {
             /* uncheck all other checkbox when ALL is checked, and hide all subgroups */
             $(`input[name="${fieldName}"]`).prop("checked", false);
+            $this.trigger('change');
             $this.prop("checked", true);
           } else {
             $(`input[name="${fieldName}"][value="all"]`).prop("checked", false);
           }
+
+          if ($(`input[name="${fieldName}"]:checked`).length === $(`input[name="${fieldName}"]`).length - 1) {
+            $(`input[name="${fieldName}"]`).prop("checked", false);
+            $(`input[name="${fieldName}"][value="all"]`).trigger('change');
+          }
         } else {
-          if ($this.val() == "all") {
-            /* ALL checkbox cannot be unchecked */
-            $this.prop("checked", true);
-          } else {
-            if ($(`input[name="${fieldName}"]:checked`).length == 0) {
-              /* when no checkbox is checked, ALL will be checked automatically */
-              $(`input[name="${fieldName}"][value="all"]`).prop("checked", true);
-            }
+          /* when no checkbox is checked, ALL will be checked automatically */
+          if ($(`input[name="${fieldName}"]:checked`).length === 0) {
+            $(`input[name="${fieldName}"][value="all"]`).prop("checked", true);
           }
         }
+        
+        this.parameters = this.getParameters(this.allFields);
+        this.parameters.page = 1;
+        this.getData();
+        this.updateURL();
       });
     });
   }

@@ -120,9 +120,9 @@
       padding: 0;
       background-color: $white;
       border: 1px solid $grey;
-      border-top: none;
-      border-bottom-left-radius: 6px;
-      border-bottom-right-radius: 6px;
+      border-radius: 6px;
+      // border-bottom-left-radius: 6px;
+      // border-bottom-right-radius: 6px;
 
 			&::-webkit-scrollbar {
 				-webkit-appearance: none;
