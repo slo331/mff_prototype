@@ -11,7 +11,7 @@
 			"type": "image/png"
 		}
 	],
-	"start_url": "http://mff-prototype.southeastasia.cloudapp.azure.com/",
+	"start_url": "http://localhost:3001/",
 	"scope": "/",
 	"display": "standalone",
 	"orientation": "portrait-primary",
