@@ -1,0 +1,20 @@
+{
+	"lang": "en",
+	"dir": "ltr",
+	"name": "Made for Families",
+	"description": "Building A Singapore That Is Made For Families",
+	"short_name": "Made for Families",
+	"icons": [
+		{
+			"src": "/assets/images/icons/app-icon-256x256.png",
+			"sizes": "256x256",
+			"type": "image/png"
+		}
+	],
+	"start_url": "http://mff-prototype.southeastasia.cloudapp.azure.com/",
+	"scope": "/",
+	"display": "standalone",
+	"orientation": "portrait-primary",
+	"background_color": "#fff",
+	"theme_color": "#e81f76"
+}
