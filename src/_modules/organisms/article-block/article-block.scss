@@ -3,6 +3,12 @@
   $p: &;
 
   &__main {
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
     aside {
       width: 100%;
       margin: 0 0 2em;

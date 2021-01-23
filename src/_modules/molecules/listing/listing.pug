@@ -7,7 +7,7 @@ mixin listing(spec)
 	- spec.__class = spec.__class || ''
 
 	.listing(class=spec.__class)&attributes(attributes)
-		h1.title=spec.title
+		//- h1.title=spec.title
 		.listing-wrap(data-endpoint=spec.endpoint)
 			if spec.filter == true
 				+list-filter()

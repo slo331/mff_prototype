@@ -1,6 +1,7 @@
 extends ../_layouts/base
 
 include ../_modules/molecules/breadcrumbs/breadcrumbs
+include ../_modules/molecules/title/title
 include ../_modules/molecules/listing/listing
 
 block config
@@ -14,8 +15,12 @@ block config
 block content
 	+breadcrumbs({
 		'level1': 'Resources',
-    'level1URL': '#',
+		'level1URL': '#',
 		'level2': 'Made For Families Stories'
+	})
+
+	+title({
+		'title': 'Made For Families Stories'
 	})
 
 	+listing({

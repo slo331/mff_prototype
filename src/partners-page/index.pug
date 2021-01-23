@@ -1,12 +1,29 @@
 extends ../_layouts/base
 
+include ../_modules/molecules/breadcrumbs/breadcrumbs
+include ../_modules/molecules/title/title
+include ../_modules/molecules/spotlight/spotlight
+
 block config
 	//- Correct base url pathing for this page
 	- isHome = false
 	- var pageTitle = 'Made For Families Partners'
-	- var page = 'resources'
+	- var page = 'about us'
 	- var site = htmlWebpackPlugin.options //global site data
 	- var baseUrl = '../'
 
 block content
-	p partners-page page
+	+breadcrumbs({
+		'level1': 'About Us',
+		'level1URL': '#',
+		'level2': 'Made For Families Partners'
+	})
+
+	+title({
+		'title': 'Deals Made For Families',
+		'desc': 'Click on the Brands below to find out more about the various deals that are Made For Families!'
+	})
+
+	+spotlight()
+
+
