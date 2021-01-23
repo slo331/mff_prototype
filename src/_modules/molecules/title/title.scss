@@ -1,0 +1,40 @@
+//title styles 
+.title-block {
+  padding: 2em 0 0;
+
+  @include tablet {
+    padding: 3em 0 0;
+  }
+
+  @include desktop {
+    padding: 3em 0 0;
+  }
+  
+  .subtitle {
+    color: $red;
+    text-transform: uppercase;
+    font-weight: $medium;
+    font-size: calc-em(12px);
+    letter-spacing: 1px;
+    margin: 0 0 5px;
+
+    @include desktop {
+      font-size: calc-em(14px);
+    }
+  }
+
+  .title {
+    font-weight: $bold;
+    font-size: calc-em(24px);
+    // margin: 0 0 25px;
+    margin: 0;
+    padding: 0 20px 0 0;
+
+    @include desktop {
+      font-size: calc-em(42px);
+      // margin: 0 0 35px;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+mixin title(spec)
+	- spec = spec || {}
+	- spec.__class = spec.__class || ''
+
+	.title-block(class=spec.__class)&attributes(attributes)
+		if spec.subtitle
+			.subtitle= spec.subtitle
+
+		h1.title= spec.title
+
+		if spec.desc
+			p.desc= spec.desc
