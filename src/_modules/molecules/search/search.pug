@@ -1,0 +1,18 @@
+include ../../atoms/button/button
+mixin search(spec)
+	- spec = spec || {}
+	- spec.__class = spec.__class || ''
+
+	.seach-bar(class=spec.__class)&attributes(attributes)
+		if spec.input.label
+			.filter-control
+				.filter-control__label
+					label(for= spec.input.id)= spec.input.label
+		.filter-options.text-field 
+			input.search-input.input-text(id=spec.input.id type="text" placeholder=spec.input.placeholder data-url=spec.input.url name=spec.input.name)
+			+button({
+				'__text': '',
+				'__type': 'button',
+				'__class': 'btn--search-bar',
+				'__iconAfter': 'icon-search'
+			})

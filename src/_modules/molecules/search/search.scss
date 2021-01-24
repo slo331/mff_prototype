@@ -1,0 +1,118 @@
+//search styles 
+.seach {
+  $p: &;
+
+  &-bar {
+    position: relative;
+    width: 100%;
+    margin: 0 0 20px 0;
+
+    @include tablet {
+      width: 45%;
+      display: inline-block;
+      margin: 0 10px 0 0;
+    }
+
+    @include desktop {
+      width: 25%;
+      display: inline-block;
+      margin: 0 20px 0 0;
+    }
+
+    .filter-control {
+      height: 100%;
+      margin: 15px 0 0;
+
+      @include desktop {
+        margin: 0;
+      }
+  
+      label {
+        padding-right: 25px;
+        text-transform: uppercase;
+        font-weight: $medium;
+        font-size: calc-em(14px);
+        position: relative;
+        letter-spacing: 1px;
+  
+        i {
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
+      }
+  
+      input {
+        text-align: center;
+        width: 100%;
+        font-weight: 400;
+        display: none;
+  
+        &:focus {
+          outline: 0;
+        }
+      }
+  
+      p {
+        margin: 0;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+  
+      &__label {
+        display: block;
+      }
+  
+      &__text {
+        display: inline-flex;
+        align-items: center;
+        width: 100%;
+        border: 1px solid $grey;
+        border-radius: 6px;
+        margin: 10px 0 0;
+        padding: 12px;
+        cursor: pointer;
+      }
+    }
+
+    .text-field {
+      position: relative;
+
+      .input-text {
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        border: 1px solid $grey;
+        border-radius: 6px;
+        margin: 10px 0 0;
+        padding: 16px 51px 16px 16px;
+
+        &:hover,
+        &:focus {
+          outline: 0;
+        }
+      }
+
+      .btn {
+        position: absolute;
+        border: none;
+        padding: 11px;
+        font-size: calc-em(28px);
+        color: $negro;
+        right: 2px;
+        top: 11px;
+        line-height: 1;
+        transition: all .2s ease-in-out;
+
+        &:hover {
+          @include desktop {
+            color: $red;
+          }
+        }
+      }
+    }
+  }
+}
