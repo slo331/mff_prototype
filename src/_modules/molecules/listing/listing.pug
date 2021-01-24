@@ -1,16 +1,26 @@
 include ../../atoms/button/button
+include ../../atoms/card/card
 include ../../molecules/list-filter/list-filter
 include ../../molecules/pagination/pagination
 
 mixin listing(spec)
 	- spec = spec || {}
 	- spec.__class = spec.__class || ''
+	- spec.filter = spec.filter || ''
 
 	.listing(class=spec.__class)&attributes(attributes)
-		//- h1.title=spec.title
+		if spec.title
+		.listing-title
+			h2.title=spec.title
+
+			if spec.desc
+				p=spec.desc
+
 		.listing-wrap(data-endpoint=spec.endpoint)
-			if spec.filter == true
-				+list-filter()
+			if spec.filter
+				+list-filter({
+					'filter': spec.filter
+				})
 			
 			.list
 				.row
@@ -31,28 +41,17 @@ mixin listingItem(spec)
 	script(type="text/x-dot-template" id="listingItem")
 		|{{? it}}
 		|{{~ it.listing :item}}
-		.list-item.col-md-6.col-sm-6.col-xs-12
-			.list-wrap
-				.list-header
-					img(src='{{= item.img}}' alt='{{= item.imgTitle}}' title='{{= item.imgTitle}}')
-				.list-content
-					.list-title
-						.subtitle {{= item.subtitle}}
-						.title {{= item.title}}
-						.desc {{= item.desc}}
-				
-					.details-info
-						.details
-							span.date(data-time='{{= item.date}}') {{= item.date}} 
-							span.shares {{= item.shares}} Shares
-							span.views {{= item.views}} Views
-						.cta
-							+button({
-								'__text': '',
-								'__type': 'anchor',
-								'__link': '{{= item.url}}',
-								'__class': 'btn--listItem',
-								'__iconAfter': 'icon-larrow-right'
-							})
+		+card({
+			'img': '{{= item.img}}',
+			'imgTitle': '{{= item.imgTitle}}',
+			'subtitle': '{{= item.subtitle}}',
+			'title': '{{= item.title}}',
+			'desc': '{{= item.desc}}',
+			'details': '{{= item.details}}',
+			'date': '{{= item.details.date}}',
+			'shares': '{{= item.details.shares}}',
+			'views': '{{= item.details.views}}',
+			'url': '{{= item.url}}'
+		}).col-md-6.col-sm-6.col-xs-12
 		|{{~}}
 		|{{?}}

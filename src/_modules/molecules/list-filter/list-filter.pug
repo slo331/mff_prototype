@@ -4,63 +4,16 @@ include ../../molecules/select-dropdown/select-dropdown
 mixin list-filter(spec)
 	- spec = spec || {}
 	- spec.__class = spec.__class || ''
+	- spec.filter = spec.filter || ''
 
 	.filter(class=spec.__class)&attributes(attributes)
 		.filter-wrap
-			+multi-filter({
-				"name": "category",
-				"input": {
-					"id": "category",
-					"label": "Category",
-					"value": "all",
-					"valueText": "All"
-				},
-				"all": {
-					"id": "all_cat",
-					"value": "all",
-					"label": "All"
-				},
-				"options": [
-          {
-						"id": "cat-op0",
-						"value": "all",
-						"label": "All"
-					},
-					{
-						"id": "cat-op1",
-						"value": "cat-op1",
-						"label": "Community Support"
-					},
-					{
-						"id": "cat-op2",
-						"value": "cat-op2",
-						"label": "Support for Marriage and Parenthood"
-					},
-					{
-						"id": "cat-op3",
-						"value": "cat-op3",
-						"label": "Work-life Harmony"
-					}
-				]
-			}).category-filter
+			each item, index in spec.filter
+				if item.type == 'checkbox'
+					+multi-filter(item.settings).category-filter
 
-			+select-dropdown({
-				"input": {
-          "name": "sortby",
-					"id": "sortby",
-					"label": "Sort By"
-				},
-				"options": [
-					{
-						'label': 'Latest',
-						'value': 'latest'
-					},
-					{
-						'label': 'Popularity',
-						'value': 'popularity'
-					}
-				]
-			}).sortby-filter
+				if item.type == 'select'
+					+select-dropdown(item.settings).sortby-filter
 
 			//- +select-dropdown({
 			//- 	"input": {

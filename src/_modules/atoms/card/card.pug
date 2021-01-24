@@ -1,6 +1,47 @@
-mixin card(spec)
-  - spec = spec || {}
-  - spec.__class = spec.__class || ''
+include ../../atoms/button/button
 
-  div(class=spec.__class)&attributes(attributes)
-    p This is an example paragraph for the card module
+mixin card(spec)
+	- spec = spec || {}
+	- spec.__class = spec.__class || ''
+
+	.list-item(class=spec.__class)&attributes(attributes)
+		.list-wrap
+			.list-header
+				img(src=spec.img alt=spec.imgTitle title=spec.imgTitle)
+			.list-content
+				.list-title
+					if spec.subtitle
+						.subtitle= spec.subtitle
+					
+					.title= spec.title
+					
+					if spec.desc
+						.desc= spec.desc
+					
+					if spec.logo
+						.logo
+							img(src=spec.logo alt=spec.logoTitle title=spec.logoTitle)
+			
+				.details-info
+					if spec.details
+						.details
+							span.date(data-time= spec.date)= spec.date 
+							span.shares= spec.shares 
+								| Shares
+							span.views= spec.views 
+								| Views
+					.cta
+						+button({
+							'__text': '',
+							'__type': 'anchor',
+							'__link': spec.url,
+							'__class': 'btn--listItem',
+							'__iconAfter': 'icon-larrow-right'
+						})
+
+mixin card-spotlight(spec)
+	- spec = spec || {}
+	- spec.__class = spec.__class || ''
+
+	div(class=spec.__class)&attributes(attributes)
+		p This is an example paragraph for the card module

@@ -9,7 +9,7 @@
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  border-bottom: 1px solid #E3E2E0;
+  border-bottom: 1px solid $lightGrey;
 
   @include desktop {
     display: inline-block;
