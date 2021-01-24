@@ -1,6 +1,27 @@
-mixin spotlight(spec)
-  - spec = spec || {}
-  - spec.__class = spec.__class || ''
+include ../../atoms/card/card
 
-  div(class=spec.__class)&attributes(attributes)
-    p This is an example paragraph for the spotlight module
+mixin spotlight(spec)
+	- spec = spec || {}
+	- spec.__class = spec.__class || ''
+
+	.spotlight(class=spec.__class)&attributes(attributes)
+		h2.title=spec.title
+		.spotlight-wrap
+			.spotlight-arrows
+				.arrows.prev.icon-arrow-left
+				.arrows.next.icon-arrow-right
+				
+			.spotlight-carousel
+				each item, index in spec.items
+					.spotlight-item
+						+card({
+							'img': item.img,
+							'imgTitle': item.imgTitle,
+							'title': item.title,
+							'logo': item.logo,
+							'logoTitle': item.logoTitle,
+							'url': item.url
+						})
+
+		.spotlight-dots
+

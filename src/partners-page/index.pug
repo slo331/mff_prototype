@@ -3,6 +3,7 @@ extends ../_layouts/base
 include ../_modules/molecules/breadcrumbs/breadcrumbs
 include ../_modules/molecules/title/title
 include ../_modules/molecules/spotlight/spotlight
+include ../_modules/molecules/listing/listing
 
 block config
 	//- Correct base url pathing for this page
@@ -24,6 +25,113 @@ block content
 		'desc': 'Click on the Brands below to find out more about the various deals that are Made For Families!'
 	})
 
-	+spotlight()
+	+spotlight({
+		'title': 'In the Spotlight',
+		'items': [
+			{
+				'img': '/assets/images/spotlight/spotlight-img1.png',
+				'imgTitle': 'Image 1',
+				'title': 'Building Strong Family Ties',
+				'logo': '/assets/images/spotlight/ohmyhome-logo.png',
+				'logoTitle': 'Oh My Home',
+				'url': '#'
+			},
+			{
+				'img': '/assets/images/spotlight/spotlight-img2.png',
+				'imgTitle': 'Image 2',
+				'title': 'Meeting the Challenges: The Future of the Family in Singapore',
+				'logo': '/assets/images/spotlight/mothercare-logo.png',
+				'logoTitle': 'Mothercare',
+				'url': '#'
+			},
+			{
+				'img': '/assets/images/spotlight/spotlight-img3.png',
+				'imgTitle': 'Image 3',
+				'title': 'Happily Married? A 10-Step Relationship Assessment',
+				'logo': '/assets/images/spotlight/fathering-logo.png',
+				'logoTitle': 'Centre for Fathering',
+				'url': '#'
+			},
+			{
+				'img': '/assets/images/spotlight/spotlight-img2.png',
+				'imgTitle': 'Image 2',
+				'title': 'Meeting the Challenges: The Future of the Family in Singapore 2',
+				'logo': '/assets/images/spotlight/mothercare-logo.png',
+				'logoTitle': 'Mothercare',
+				'url': '#'
+			},
+			{
+				'img': '/assets/images/spotlight/spotlight-img1.png',
+				'imgTitle': 'Image 1',
+				'title': 'Building Strong Family Ties 2',
+				'logo': '/assets/images/spotlight/ohmyhome-logo.png',
+				'logoTitle': 'Oh My Home',
+				'url': '#'
+			},
+			{
+				'img': '/assets/images/spotlight/spotlight-img3.png',
+				'imgTitle': 'Image 3',
+				'title': 'Happily Married? A 10-Step Relationship Assessment 2',
+				'logo': '/assets/images/spotlight/fathering-logo.png',
+				'logoTitle': 'Centre for Fathering',
+				'url': '#'
+			}
+		]
+	})
+
+	+listing({
+		'endpoint': '/api/partnersListing.json',
+		'filter': [
+			{
+				'type': 'select',
+				'settings': {
+					"input": {
+						"name": "category",
+						"id": "categoty",
+						"label": "Category"
+					},
+					"options": [
+						{
+							'label': 'All',
+							'value': 'all'
+						},
+						{
+							'label': 'Community Group',
+							'value': 'cat-op01'
+						},
+						{
+							'label': 'Finance',
+							'value': 'cat-op02'
+						},
+						{
+							'label': 'Food & Beverage',
+							'value': 'cat-op03'
+						},
+						{
+							'label': 'Government Agencies',
+							'value': 'cat-op04'
+						},
+						{
+							'label': 'Healthcare',
+							'value': 'cat-op05'
+						},
+						{
+							'label': 'Hospitality',
+							'value': 'cat-op06'
+						},
+						{
+							'label': 'Information Site',
+							'value': 'cat-op07'
+						},
+						{
+							'label': 'Leisure& Entertainment',
+							'value': 'cat-op08'
+						}
+					]
+				}
+			}
+		],
+		'pagination': true
+	})
 
 

@@ -1,1 +1,143 @@
 //spotlight styles 
+.spotlight {
+  $p: &;
+
+  padding: 1em 0;
+  margin: 1em 0;
+  border-bottom: 1px solid $lightGrey;
+  
+
+  .title {
+    margin: 10px 0;
+  }
+
+  &-wrap {
+    position: relative;
+    display: block;
+
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+
+    margin-top: 2em;
+    margin-bottom: 1em;
+
+    @include desktop {
+      width: 100%;
+      left: unset;
+      right: unset;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    #{$p} {
+      &-carousel {
+        display: block;
+        padding: 0;
+
+        @include desktop {
+          padding: 0px 45px;
+        }
+
+        #{$p}-item {
+          padding: 0 10px;
+        }
+      }
+
+      &-arrows {
+        display: none;
+        
+        @include desktop {
+          display: inline-block;
+        }
+
+        .arrows {
+          position: absolute;
+          transform: translateY(50%);
+          cursor: pointer;
+          top: 50%;
+          z-index: 2;
+          border: 1px solid $red;
+          background: transparent;
+          color: $red;
+          line-height: 1;
+          font-size: calc-em(21px);
+          width: 35px;
+          height: 35px;
+          padding: 5px;
+          border-radius: 10rem;
+          text-align: center;
+          transition: all .2s ease-in-out;
+
+          &.prev {
+            left: 0;
+          }
+
+          &.next {
+            right: 0;
+          }
+
+          &:hover {
+            background: $red;
+            color: $white;
+            border: 1px solid $white;
+          }
+
+          &.slick-disabled {
+            background: transparent;
+            color: $grey;
+            border: 1px solid $grey;
+          }
+        }
+      }
+    }
+  }
+
+  &-dots {
+    text-align: center;
+    margin: 1em 0;
+
+    .slick-dots {
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+
+      li {
+        display: inline-block;
+        margin: 0 3px;
+
+        &.slick-active {
+          button {
+            background: linear-gradient(90deg, $orange 0%, $red 98.21%);
+          }
+        }
+
+        button {
+          text-indent: -99999px;
+          border: none;
+          background: #e0e0e0;
+          border-radius: 10rem;
+          line-height: 0;
+          padding: 6px;
+          width: 14px;
+          height: 14px;
+          cursor: pointer;
+          transition: all .2s ease-in-out;
+
+          &:hover,
+          &:focus {
+            outline: none;
+          }
+
+          @include desktop {
+            &:hover {
+              background: linear-gradient(90deg, $orange 0%, $red 98.21%);
+            }
+          }
+        }
+      }
+    }
+  }
+}

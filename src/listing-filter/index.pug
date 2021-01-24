@@ -24,9 +24,63 @@ block content
 	})
 
 	+listing({
-		'title': 'Made For Families Stories',
 		'endpoint': '/api/storiesListing.json',
-		'filter': true,
+		'filter': [
+			{
+				'type': 'checkbox',
+				'settings': {
+					"name": "category",
+					"input": {
+						"id": "category",
+						"label": "Category",
+						"value": "all",
+						"valueText": "All"
+					},
+					"options": [
+						{
+							"id": "cat-op0",
+							"value": "all",
+							"label": "All"
+						},
+						{
+							"id": "cat-op1",
+							"value": "cat-op1",
+							"label": "Community Support"
+						},
+						{
+							"id": "cat-op2",
+							"value": "cat-op2",
+							"label": "Support for Marriage and Parenthood"
+						},
+						{
+							"id": "cat-op3",
+							"value": "cat-op3",
+							"label": "Work-life Harmony"
+						}
+					]
+				}
+			},
+			{
+				'type': 'select',
+				'settings': {
+					"input": {
+						"name": "sortby",
+						"id": "sortby",
+						"label": "Sort By"
+					},
+					"options": [
+						{
+							'label': 'Latest',
+							'value': 'latest'
+						},
+						{
+							'label': 'Popularity',
+							'value': 'popularity'
+						}
+					]
+				}
+			}
+		],
 		'pagination': true
 	})
 

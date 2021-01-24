@@ -9,6 +9,7 @@ import SiteNav from '../_modules/molecules/site-nav/site-nav';
 import MegaMenu from '../_modules/molecules/mega-menu/mega-menu';
 import SiteSearch from '../_modules/molecules/site-search/site-search';
 import Listing from '../_modules/molecules/listing/listing';
+import Spotlight from '../_modules/molecules/spotlight/spotlight';
 import HomeCarousel from '../_modules/organisms/home-carousel/home-carousel';
 
 $(() => {
@@ -47,8 +48,18 @@ $(() => {
   if($('.listing').length) {
     let $listing = $('.listing');
 
-		$listing.map((i, ele) => {
-			new Listing($(ele));
+		$listing.map((i,el) => {
+      let $el = $(el);
+			new Listing($el);
+    });
+  }
+
+  if($('.spotlight').length) {
+    let $spotlight = $('.spotlight');
+
+    $spotlight.map((i,el) => {
+      let $el = $(el);
+      new Spotlight($el);
     });
   }
 });

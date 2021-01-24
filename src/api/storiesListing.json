@@ -8,9 +8,11 @@
       "subtitle": "Support for Marriage and Parenthood",
       "title": "Parenting beyond academic achievements",
       "desc": "In Singapore’s high-pressure education system, it’s easy to get caught up in a whirlwind of chasing grades.",
-      "date": "2020-10-30 15:00:26.49117",
-      "shares": "145",
-      "views": "546",
+      "details": {
+        "date": "2020-10-30 15:00:26.49117",
+        "shares": "145",
+        "views": "546"
+      },
       "url": "/listing-filter/article-page"
     },
     {
@@ -19,9 +21,11 @@
       "subtitle": "Work-life Harmony",
       "title": "Everyday tips to keep the romance alive",
       "desc": "Although life has a way of getting us down with its endless responsibilities and pressures, we have come up with a few...",
-      "date": "2020-10-28 15:00:26.49117",
-      "shares": "123",
-      "views": "394",
+      "details": {
+        "date": "2020-10-28 15:00:26.49117",
+        "shares": "123",
+        "views": "394"
+      },
       "url": "/listing-filter/article-page"
     },
     {
@@ -30,9 +34,11 @@
       "subtitle": "Work-life Harmony",
       "title": "5 Tips for couples travelling together",
       "desc": "Make it through your couple holiday without wanting to call it quits with these 5 tips to know before travelling together.​",
-      "date": "2020-10-26 15:00:26.49117",
-      "shares": "98",
-      "views": "300",
+      "details": {
+        "date": "2020-10-26 15:00:26.49117",
+        "shares": "98",
+        "views": "300"
+      },
       "url": "/listing-filter/article-page"
     },
     {
@@ -41,9 +47,11 @@
       "subtitle": "Support for Marriage and Parenthood",
       "title": "Parenting a highly sensitive child",
       "desc": "Parenting a highly sensitive child and keeping up with the demands of a post Covid-19 world can be overwhelming.​",
-      "date": "2020-10-26 15:00:26.49117",
-      "shares": "85",
-      "views": "216",
+      "details": {
+        "date": "2020-10-26 15:00:26.49117",
+        "shares": "85",
+        "views": "216"
+      },
       "url": "/listing-filter/article-page"
     },
     {
@@ -52,9 +60,11 @@
       "subtitle": "Support for Marriage and Parenthood",
       "title": "How to prioritise your marriage",
       "desc": "There are no buts about prioritising your marriage for couples who want their marriage to work out.​",
-      "date": "2020-10-22 15:00:26.49117",
-      "shares": "76",
-      "views": "194",
+      "details": {
+        "date": "2020-10-22 15:00:26.49117",
+        "shares": "76",
+        "views": "194"
+      },
       "url": "/listing-filter/article-page"
     },
     {
@@ -63,9 +73,11 @@
       "subtitle": "Support for Marriage and Parenthood",
       "title": "Marriage after a baby: Top tips to keep the flame alive",
       "desc": "Taking care of a child is harder than most first-time parents expect, and can strain a marriage.​",
-      "date": "2020-10-20 15:00:26.49117",
-      "shares": "61",
-      "views": "103",
+      "details": {
+        "date": "2020-10-20 15:00:26.49117",
+        "shares": "61",
+        "views": "103"
+      },
       "url": "/listing-filter/article-page"
     }
   ]
