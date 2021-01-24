@@ -3,10 +3,52 @@
   "noOfPages": 2,
   "listing": [
     {
-      "img": "/assets/images/stories/img01.png",
-      "imgTitle": "Image 01",
+      "img": "/assets/images/partners/partner01.png",
+      "imgTitle": "Partners 01",
       "title": "Absolute Kinetics Consultancy",
       "desc": "Absolute Kinetics Consultancy (Singapore) Pte Ltd (AKC) is an Approved Risk Consultants & Accredited Workplace Safety & Health (WSH) Training Provider appointed by the Ministry of Manpower (MOM) and SkillsFuture Singapore (SSG) to provide a wide range of courses for various industries. AKC is also Made For Families; with flexible working arrangements and family-friendly initiatives – such as Leaving Early Family Time and Enhanced Company Childcare Leave, which offers 2 additional days on top of childcare leave currently provided by law. Different departments are cross-trained so staff can cover for one another as well, providing more relief to working parents who need to take time out for their families."
+    },
+    {
+      "img": "/assets/images/partners/partner02.png",
+      "imgTitle": "Partners 02",
+      "title": "ByKido",
+      "desc": "BYKidO is a platform for parents to discover events and experiences for their families. We do this by updating families with information on the latest places to go and the best things to do, and as a platform for families to purchase the latest deals and promotions too! Our aim is not just to make parenting easier, but we make parenting more fun!"
+    },
+    {
+      "img": "/assets/images/partners/partner03.png",
+      "imgTitle": "Partners 03",
+      "title": "Centre for Fathering",
+      "desc": "<p>Centre for Fathering (CFF) is a non-profit organisation founded in 2000 to promote active and involved fathering and address issues caused by fatherlessness in Singapore. The organisation aims to turn the hearts of children towards their fathers by empowering more fathers to be better role models and an enduring inspiration to their children.</p><p>Since 2015, CFF has been the driving force behind Singapore’s nation-wide fathering movement - DADs for Life which seeks to inspire and mobilise fathers to become more involved with and a good influence to their children... for life. Under the DADs for Life umbrella are initiatives such as DADs@School, Back to School with DAD, Eat With Your Family Day and Celebrating Fathers – to encourage fathers to spend time with their families and create a culture that promotes active fathering.</p><p>MUMs for Life is a ground-up movement to celebrate a mum’s unique identity as a woman, daughter, wife & mother. Our key partner is DADs for Life because we believe that mums and dads play irreplaceable and complementary roles in parenting together.</p>"
+    },
+    {
+      "img": "/assets/images/partners/partner04.png",
+      "imgTitle": "Partners 04",
+      "title": "KK Women’s and Children’s Hospital",
+      "desc": "<p>KK Women’s and Children’s Hospital (KKH) is Singapore's largest academic medical centre specialising in women's and children's health. KKH is also Made For Families; with various flexible work arrangements (FWAs) and family-friendly initiatives in place.</p><p>With a predominantly female workforce, KKH has implemented work-life strategies including a wide range of FWAs to enable employees to better harmonise both work and personal commitments. These FWAs includes flexible working hours, compressed work week, job sharing and part-time employment options.</p><p>KKH adopts various family-friendly practices such as providing a workplace childcare centre for infants and young children from two months to six years of age. KKH also offers fully-equipped nursing facilities to support mothers returning to work.</p><p>To engage our employees, KKH organises regular workshops on health awareness, mental wellness as well as parenting forums.</p>"
+    },
+    {
+      "img": "/assets/images/partners/partner01.png",
+      "imgTitle": "Partners 01",
+      "title": "Absolute Kinetics Consultancy",
+      "desc": "Absolute Kinetics Consultancy (Singapore) Pte Ltd (AKC) is an Approved Risk Consultants & Accredited Workplace Safety & Health (WSH) Training Provider appointed by the Ministry of Manpower (MOM) and SkillsFuture Singapore (SSG) to provide a wide range of courses for various industries. AKC is also Made For Families; with flexible working arrangements and family-friendly initiatives – such as Leaving Early Family Time and Enhanced Company Childcare Leave, which offers 2 additional days on top of childcare leave currently provided by law. Different departments are cross-trained so staff can cover for one another as well, providing more relief to working parents who need to take time out for their families."
+    },
+    {
+      "img": "/assets/images/partners/partner02.png",
+      "imgTitle": "Partners 02",
+      "title": "ByKido",
+      "desc": "BYKidO is a platform for parents to discover events and experiences for their families. We do this by updating families with information on the latest places to go and the best things to do, and as a platform for families to purchase the latest deals and promotions too! Our aim is not just to make parenting easier, but we make parenting more fun!"
+    },
+    {
+      "img": "/assets/images/partners/partner03.png",
+      "imgTitle": "Partners 03",
+      "title": "Centre for Fathering",
+      "desc": "<p>Centre for Fathering (CFF) is a non-profit organisation founded in 2000 to promote active and involved fathering and address issues caused by fatherlessness in Singapore. The organisation aims to turn the hearts of children towards their fathers by empowering more fathers to be better role models and an enduring inspiration to their children.</p><p>Since 2015, CFF has been the driving force behind Singapore’s nation-wide fathering movement - DADs for Life which seeks to inspire and mobilise fathers to become more involved with and a good influence to their children... for life. Under the DADs for Life umbrella are initiatives such as DADs@School, Back to School with DAD, Eat With Your Family Day and Celebrating Fathers – to encourage fathers to spend time with their families and create a culture that promotes active fathering.</p><p>MUMs for Life is a ground-up movement to celebrate a mum’s unique identity as a woman, daughter, wife & mother. Our key partner is DADs for Life because we believe that mums and dads play irreplaceable and complementary roles in parenting together.</p>"
+    },
+    {
+      "img": "/assets/images/partners/partner04.png",
+      "imgTitle": "Partners 04",
+      "title": "KK Women’s and Children’s Hospital",
+      "desc": "<p>KK Women’s and Children’s Hospital (KKH) is Singapore's largest academic medical centre specialising in women's and children's health. KKH is also Made For Families; with various flexible work arrangements (FWAs) and family-friendly initiatives in place.</p><p>With a predominantly female workforce, KKH has implemented work-life strategies including a wide range of FWAs to enable employees to better harmonise both work and personal commitments. These FWAs includes flexible working hours, compressed work week, job sharing and part-time employment options.</p><p>KKH adopts various family-friendly practices such as providing a workplace childcare centre for infants and young children from two months to six years of age. KKH also offers fully-equipped nursing facilities to support mothers returning to work.</p><p>To engage our employees, KKH organises regular workshops on health awareness, mental wellness as well as parenting forums.</p>"
     }
   ]
 }

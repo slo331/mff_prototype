@@ -2,7 +2,7 @@
 .multi-filter {
   position: relative;
   width: 100%;
-  margin: 0 0 20px 0;
+  margin: 0 0 5px 0;
 
   @include tablet {
     width: 45%;
@@ -24,8 +24,11 @@
   
   .filter-control {
     height: 100%;
-    // padding: 20px 10px;
-    // text-align: center;
+    margin: 15px 0 0;
+
+    @include desktop {
+      margin: 0;
+    }
 
     label {
       padding-right: 25px;

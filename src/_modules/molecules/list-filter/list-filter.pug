@@ -1,5 +1,6 @@
 include ../../molecules/multi-filter/multi-filter
 include ../../molecules/select-dropdown/select-dropdown
+include ../../molecules/search/search
 
 mixin list-filter(spec)
 	- spec = spec || {}
@@ -14,6 +15,10 @@ mixin list-filter(spec)
 
 				if item.type == 'select'
 					+select-dropdown(item.settings).sortby-filter
+
+				if item.type == 'search'
+					+search(item.settings).search-filter
+
 
 			//- +select-dropdown({
 			//- 	"input": {

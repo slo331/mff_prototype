@@ -87,7 +87,7 @@ block content
 				'settings': {
 					"input": {
 						"name": "category",
-						"id": "categoty",
+						"id": "category",
 						"label": "Category"
 					},
 					"options": [
@@ -129,9 +129,19 @@ block content
 						}
 					]
 				}
+			},
+			{
+				'type': 'search',
+				'settings': {
+					"input": {
+						"name": "q",
+						"id": "partners-search",
+						"placeholder": "Search"
+					}
+				}
 			}
 		],
-		'pagination': true
+		'pagination': 'partners-page'
 	})
 
-
+	+partnerList()

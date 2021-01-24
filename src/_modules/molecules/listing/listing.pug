@@ -25,13 +25,13 @@ mixin listing(spec)
 			.list
 				.row
 			
-			if spec.pagination == true
+			if spec.pagination
 				.pagination
 					+pagination-api({
 						"currentPage": 1,
 						"totalPages": 10,
 						"paddingSize": 2,
-						"pageUrl": "/listing-filter"
+						"pageUrl": spec.pagination
 					})
 	
 mixin listingItem(spec)
@@ -53,5 +53,33 @@ mixin listingItem(spec)
 			'views': '{{= item.details.views}}',
 			'url': '{{= item.url}}'
 		}).col-md-6.col-sm-6.col-xs-12
+		|{{~}}
+		|{{?}}
+	
+mixin partnerList(spec)
+	- spec = spec || {}
+	- spec.__class = spec.__class || ''
+	
+	script(type="text/x-dot-template" id="listingItem")
+		|{{? it}}
+		|{{~ it.listing :item}}
+		.partners-item.col-md-3.col-sm-3.col-xs-6
+			.partners-wrap
+				.partners-logo
+					img(src='{{= item.img}}' alt='{{= item.imgTitle}}' title='{{= item.imgTitle}}')
+				.partners-content
+					.partners-content__wrap
+						+button({
+							'__text': '',
+							'__type': 'button',
+							'__class': 'btn--close',
+							'__iconAfter': 'icon-close'
+						})
+						.partners-info
+							.info-img
+								img(src='{{= item.img}}' alt='{{= item.imgTitle}}' title='{{= item.imgTitle}}')
+							.info-content
+								.title {{= item.title}}
+								.desc {{= item.desc}}
 		|{{~}}
 		|{{?}}

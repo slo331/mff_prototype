@@ -82,6 +82,39 @@ export default class Listing extends ListingBase {
           byRow: false
         });
 
+        // Partners Func
+        let $partnersItem = $('.partners-item');
+        let $partnersWrap = $('.partners-wrap', $partnersItem);
+
+        $partnersWrap.map((i,el) => {
+          let $el = $(el);
+          let $content = $('.partners-content', $el);
+          let $wrap = $('.partners-content__wrap', $content);
+          
+          $el.on('click', e => {
+            if(!$content.hasClass('expanded')) {
+              let $slideUp = () => {
+                $('.partners-content').removeClass('expanded').slideUp('fast');
+                $('.partners-wrap').css({
+                  height: '155px'
+                }).removeAttr('style');
+              }
+
+              let $slideDown = () => {
+                $content.slideDown('fast').addClass('expanded');
+                $el.css({
+                  height: $wrap.outerHeight() + 155
+                });
+              }
+
+              $.when($slideUp())
+              .done(() => {
+                $slideDown();
+              });
+            }
+          });
+        });
+
         this.totalPages = res.noOfPages;
         this.reInitPagination('page', this.pagination, $pagination, this.parameters.page, this.totalPages);
       });
