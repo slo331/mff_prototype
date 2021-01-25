@@ -1,0 +1,10 @@
+mixin partners-logo(spec)
+  - spec = spec || {}
+  - spec.__class = spec.__class || ''
+
+  .partners-logo(class=spec.__class)&attributes(attributes)
+    .row
+      each logo, index in spec.logos
+        .partners-logo__item.col-md-3.col-sm-3.col-xs-6
+          a.logo-link(href=logo.url target='_blank')
+            img(src=logo.img alt=logo.imgTitle title=logo.imgTitle)
