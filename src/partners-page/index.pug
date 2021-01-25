@@ -4,6 +4,8 @@ include ../_modules/molecules/breadcrumbs/breadcrumbs
 include ../_modules/molecules/title/title
 include ../_modules/molecules/spotlight/spotlight
 include ../_modules/molecules/listing/listing
+include ../_modules/molecules/partners-logo/partners-logo
+include ../_modules/organisms/home-carousel/home-carousel
 
 block config
 	//- Correct base url pathing for this page
@@ -23,6 +25,43 @@ block content
 	+title({
 		'title': 'Deals Made For Families',
 		'desc': 'Click on the Brands below to find out more about the various deals that are Made For Families!'
+	})
+
+	+partners-logo({
+		'logos': [
+			{
+				'img': '/assets/images/partners/logo1.png',
+				'url': '#'
+			},
+			{
+				'img': '/assets/images/partners/logo2.png',
+				'url': '#'
+			},
+			{
+				'img': '/assets/images/partners/logo3.png',
+				'url': '#'
+			},
+			{
+				'img': '/assets/images/partners/logo4.png',
+				'url': '#'
+			},
+			{
+				'img': '/assets/images/partners/logo5.png',
+				'url': '#'
+			},
+			{
+				'img': '/assets/images/partners/logo6.png',
+				'url': '#'
+			},
+			{
+				'img': '/assets/images/partners/logo7.png',
+				'url': '#'
+			},
+			{
+				'img': '/assets/images/partners/logo8.png',
+				'url': '#'
+			}
+		]
 	})
 
 	+spotlight({

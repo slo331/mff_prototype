@@ -50,7 +50,7 @@ $(() => {
 
 		$listing.map((i,el) => {
       let $el = $(el);
-			new Listing($el);
+			new Listing($el, config);
     });
   }
 

@@ -5,7 +5,7 @@ mixin site-search(spec)
   - spec.__class = spec.__class || ''
 
   .site-search(class=spec.__class)&attributes(attributes)
-    .search-wrap(data-action="/search-results")
+    .search-wrap(data-action="/search-result")
       i.icon.icon-search
       input.search__input(type="search" placeholder="Search..." name="searchQuery")
     .search-button

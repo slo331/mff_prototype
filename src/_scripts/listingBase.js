@@ -302,7 +302,7 @@ export default class ListingBase {
   setupSearchbar(fieldName) {
     this.parameters[fieldName] = (this.queries[fieldName]) ? this.queries[fieldName] : '';
     this.updateSearchbarView(fieldName);
-    // this._addSearchbarListener(fieldName);
+    this._addSearchbarListener(fieldName);
   }
 
   updateSearchbarView(fieldName) {
@@ -311,16 +311,27 @@ export default class ListingBase {
 
   _addSearchbarListener(fieldName) {
     let inputTimeout;
-    $(`input[name="${fieldName}"]`).on('input', e => {
+    let $btnSearch = $(`input[name="${fieldName}"]`).siblings('.btn--search-bar');
+    // $(`input[name="${fieldName}"]`).on('input', e => {
+    $btnSearch.on('click', e => {
       let $this = $(e.target);
       clearTimeout(inputTimeout);
 
       inputTimeout = setTimeout(() => {
-        this.parameters[fieldName] = $this.val();
+        // this.parameters[fieldName] = $this.val();
+        this.parameters[fieldName] = $(`input[name="${fieldName}"]`).val();
         this.parameters.page = 1;
         this.getData();
         this.updateURL();
       }, 400);
+    });
+
+    $(`input[name="${fieldName}"]`).keyup((e) => {
+			e.preventDefault ? e.preventDefault() : (e.returnValue = false);
+
+			if (e.keyCode == 13 || e.which == 13) { // enter key maps to keycode `13`
+        $btnSearch.trigger('click');
+      }
     });
   }
 
@@ -383,9 +394,10 @@ export default class ListingBase {
 
     this.updatePaginationView(pagination, currentPage, totalPages, callback);
 
-    $('html, body').animate({
-      scrollTop: $('header').offset().top
-    }, 400);
+    // $('html, body').animate({
+    //   // scrollTop: $('header').offset().top
+    //   scrollTop: $('.listing').offset().top
+    // }, 400);
 
   }
 

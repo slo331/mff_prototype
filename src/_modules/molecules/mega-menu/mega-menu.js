@@ -3,6 +3,7 @@
 import $ from 'jquery';
 // import { times } from 'lodash';
 import enquire from 'enquire.js';
+
 export default class MegaMenu {
   constructor(config) {
     this.config = config;

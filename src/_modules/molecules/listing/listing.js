@@ -10,7 +10,7 @@ import Pagination from "../../molecules/pagination/pagination";
 import ListingBase from '../../../_scripts/listingBase.js';
 
 export default class Listing extends ListingBase {
-  constructor($selector) {
+  constructor($selector, config) {
     super();
 
     let $listing = $selector;
@@ -19,8 +19,8 @@ export default class Listing extends ListingBase {
     let $container = $('.row', $list);
     let $pagination = $('.pagination-wrap', $listing);
 
+    this.config = config;
     this.listFilter = new ListFilter();
-
     this.pagination = new Pagination($pagination);
 
     /* 1. Setup basic config */
@@ -85,32 +85,161 @@ export default class Listing extends ListingBase {
         // Partners Func
         let $partnersItem = $('.partners-item');
         let $partnersWrap = $('.partners-wrap', $partnersItem);
+        let $partnerLogo = $('.partners-logo', $partnersWrap);
+        let $btnClose = $('.btn--close', $partnersItem);
 
-        $partnersWrap.map((i,el) => {
+        $btnClose.map((i,el) => {
           let $el = $(el);
-          let $content = $('.partners-content', $el);
-          let $wrap = $('.partners-content__wrap', $content);
-          
+          let $parent = $el.parents('.partners-item');
+          let $content = $('.partners-content', $parent);
+          let $wrap = $('.partners-wrap', $parent);
+
           $el.on('click', e => {
+            e.preventDefault();
+            $content.slideUp('fast').removeClass('expanded');
+            // $wrap.removeAttr('style');
+            $('.partners-wrap').removeAttr('style');
+          })
+        })
+
+        $partnerLogo.map((i,el) => {
+          let $el = $(el);
+          let $grandparent = $el.parents('.partners-item');
+          let $parent = $el.parent('.partners-wrap');
+
+          $el.on('click', e => {
+            // let $content = $('.partners-content', $el);
+            let $content = $el.siblings('.partners-content');
+            let $wrap = $('.partners-content__wrap', $content);
+
             if(!$content.hasClass('expanded')) {
-              let $slideUp = () => {
-                $('.partners-content').removeClass('expanded').slideUp('fast');
-                $('.partners-wrap').css({
-                  height: '155px'
-                }).removeAttr('style');
-              }
+              enquire.register(`screen and (max-width: ${this.config.breakpoints.tablet - 1}px)`, {
+                match: () => {
+                  if($grandparent.data('index') % 2 === 1) {
+                    let $clear = () => {
+                      $('.partners-content').removeClass('expanded').slideUp('fast');
+                      $('.partners-wrap').removeAttr('style');
+                    }
+                    
+                    let $show = () => {
+                      $content.slideDown('fast').addClass('expanded');
+                    }
+      
+                    $.when($clear())
+                    .done(() => {
+                      setTimeout(() => {
+                        $show();
+                      }, 300);
+                    })
+                    .done(() => {
+                      setTimeout(() => {
+                        console.log($wrap.outerHeight());
 
-              let $slideDown = () => {
-                $content.slideDown('fast').addClass('expanded');
-                $el.css({
-                  height: $wrap.outerHeight() + 155
-                });
-              }
+                        $grandparent.next('.partners-item').find('.partners-wrap').css({
+                          paddingBottom: $wrap.outerHeight()
+                        });  
+      
+                        $parent.css({
+                          paddingBottom: $wrap.outerHeight()
+                        });
 
-              $.when($slideUp())
-              .done(() => {
-                $slideDown();
+                        $('html, body').animate({
+                          // scrollTop: $('header').offset().top
+                          scrollTop: $el.offset().top
+                        }, 400);
+                      }, 300);
+                    });
+                  } else {
+                    let $clear = () => {
+                      $('.partners-content').removeClass('expanded').slideUp('fast');
+                      $('.partners-wrap').removeAttr('style');
+                    }
+                    
+                    let $show = () => {
+                      $content.slideDown('fast').addClass('expanded');
+                    }
+      
+                    $.when($clear())
+                    .done(() => {
+                      setTimeout(() => {
+                        $show();
+                      }, 300);
+                    })
+                    .done(() => {
+                      setTimeout(() => {
+                        console.log($wrap.outerHeight());
+
+                        $parent.css({
+                          paddingBottom: $wrap.outerHeight()
+                        });
+
+                        $('html, body').animate({
+                          // scrollTop: $('header').offset().top
+                          scrollTop: $el.offset().top
+                        }, 400);
+                      }, 300);
+                    });
+                  }
+                },
+                unmatch: () => {
+                  $('.partners-content').slideUp('fast').removeClass('expanded')
+                  $('.partners-wrap').removeAttr('style');
+                }
               });
+
+              enquire.register(`screen and (min-width: ${this.config.breakpoints.tablet}px)`, {
+                match: () => {
+                  let $clear = () => {
+                    $('.partners-content').removeClass('expanded').slideUp('fast');
+                    $('.partners-wrap').removeAttr('style');
+                  }
+                  
+                  let $show = () => {
+                    $content.slideDown('fast').addClass('expanded');
+                  }
+    
+                  $.when($clear())
+                  .done(() => {
+                    setTimeout(() => {
+                      $show();
+                    }, 300);
+                  })
+                  .done(() => {
+                    setTimeout(() => {
+                      console.log($wrap.outerHeight());
+    
+                      $parent.css({
+                        paddingBottom: $wrap.outerHeight()
+                      });
+                    }, 300);
+                  });
+                },
+                unmatch: () => {
+                  $('.partners-content').slideUp('fast').removeClass('expanded')
+                  $('.partners-wrap').removeAttr('style');
+                }
+              });
+
+              
+
+              
+
+              // let $slideUp = () => {
+              //   $('.partners-wrap').removeAttr('style');
+              //   $('.partners-content').removeClass('expanded').slideUp('slow');
+              // }
+
+              // let $slideDown = () => {
+              //   $content.slideDown('slow').addClass('expanded');
+              //   $el.css({
+              //     paddingBottom: $wrap.outerHeight()
+              //   });
+              // }
+
+              // $.when($slideUp())
+              // .done(() => {
+              //   $slideDown();
+              // });
             }
           });
         });
