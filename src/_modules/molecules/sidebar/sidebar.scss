@@ -1,1 +1,83 @@
 //sidebar styles 
+.sidebar {
+  $p: &;
+
+  display: block;
+  text-align: left;
+
+  @include mobile {
+    display: none;
+  }
+
+  &-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    .menu {
+      &-item {
+        margin: 5px 0;
+        background: transparent;
+        
+        &:first-child {
+          margin: 0 0 5px;
+        }
+
+        &:last-child {
+          margin: 5px 0 0;
+        }
+
+        .menu-link {
+          display: block;
+          font-weight: $bold;
+          padding: 8px 10px;
+          background: transparent;
+          transition: all .2s ease-in-out;
+          
+          &:hover {
+            background: #f3f3f3;
+          }
+        }
+
+        &.active {
+          .menu-link {
+            background: #f3f3f3;
+          }
+
+          .menu {
+            &-sub {
+              display: block;
+            }
+          }
+        }
+      }
+
+      &-sub {
+        display: none;
+        margin: 8px 0;
+
+        .sub-nav {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+
+          .sub-item {
+            padding: 8px 10px;
+
+            .sub-link {
+              display: block;
+              font-weight: $normal;
+              color: $negro;
+              transition: all .2s ease-in-out;
+
+              &:hover,
+              &.active {
+                color: $purple;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

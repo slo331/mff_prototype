@@ -1,19 +1,16 @@
 //title-share styles 
 .title-share {
-  display: block;
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
 
-  padding: 2em 0 1em;
-
-  @include tablet {
-    padding: 1em 0 1em;
+  @include mobile {
+    display: block;
   }
 
-  @include desktop {
-    padding: 1em 0 1em;
-    width: 100%;
-    display: inline-flex;
-    justify-content: space-between;
-    align-items: center;
+  @include tablet {
+    display: block;
   }
 
   &__text {
@@ -32,9 +29,15 @@
 
   &__social {
     width: 100%;
+    margin: 30px 0 0;
+
+    @include tablet {
+      margin: 20px 0 0;
+    }
 
     @include desktop {
       width: auto;
+      margin: 0;
     }
 
     .share {
@@ -45,6 +48,18 @@
 
         .share-item {
           margin: 0 10px;
+
+          &:first-child {
+            margin: 0 10px 0 0;
+          }
+
+          @include desktop {
+            margin: 0 10px;
+
+            &:last-child {
+              margin: 0 0 0 10px;
+            }
+          }
 
           .share-link {
             font-size: calc-em(20px);

@@ -3,14 +3,10 @@
   $p: &;
 
   &__header {
-    padding: 2em 0 1em;
+    padding: 0 0 4em;
 
-    @include tablet {
-      padding: 3em 0;
-    }
-
-    @include desktop {
-      padding: 3em 0;
+    @include mobile {
+      padding: 0 0 1em;
     }
 
     .header {

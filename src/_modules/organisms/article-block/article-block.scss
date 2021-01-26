@@ -2,6 +2,16 @@
 .content-block {
   $p: &;
 
+  padding: 2em 0 1em;
+
+  @include tablet {
+    padding: 3em 0;
+  }
+
+  @include desktop {
+    padding: 3em 0;
+  }
+
   &__main {
     &:after {
       content: "";
@@ -100,18 +110,21 @@
 
   &.two-col-block {
     aside {
+      display: none;
       width: 100%;
       margin: 0 0 2em;
-      border-bottom: 1px solid $grey;
+      border-bottom: none;
 
       @include tablet {
+        display: inline-block;
         float: left;
-        width: 20%;
+        width: 30%;
         margin: 0;
         border-bottom: none;
       } 
 
       @include desktop {
+        display: inline-block;
         float: left;
         width: 20%;
         margin: 0;
@@ -124,14 +137,14 @@
 
       @include tablet {
         float: right;
-        width: 80%;
-        padding: 0 2em;
+        width: 70%;
+        padding: 0 0 0 2em;
       }
 
       @include desktop {
         float: right;
         width: 80%;
-        padding: 0 4em;
+        padding: 0 0 0 4em;
       }
     }
   }

@@ -5,12 +5,12 @@ mixin sidebar(spec)
 	.sidebar(class=spec.__class)&attributes(attributes)
 		ul.sidebar-menu
 			each link, index in spec.menu
-				li.menu-item
-					a(href=link.url)= link.title
+				li.menu-item(class=(link.active ? 'active' : ''))
+					a.menu-link(href=link.url)= link.title
 					
 					if link.sub
 						.menu-sub
 							ul.sub-nav
 								each sub, index in link.sub
 									li.sub-item
-										a(href=sub.url)= sub.title
+										a.sub-link(href=sub.url)= sub.title

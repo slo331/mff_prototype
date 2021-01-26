@@ -1,6 +1,7 @@
 extends ../_layouts/base
 
 include ../_modules/molecules/breadcrumbs/breadcrumbs
+include ../_modules/molecules/accordion/accordion
 include ../_modules/organisms/two-col-block/two-col-block
 
 block config
@@ -15,9 +16,7 @@ block content
 	+breadcrumbs({
 		'level1': 'FAQ',
 		'level1URL': '#',
-		'level2': 'Marriage',
-		'level2URL': '#',
-		'level3': 'Parenthood Priority Scheme'
+		'level2': 'Marriage'
 	})
 
 	+two-col-block({
@@ -49,7 +48,22 @@ block content
 		'sideBar': {
 			'menu': [
 				{
+					'active': true,
 					'title': 'Marriage',
+					'url': '#',
+					'sub': [
+						{
+							'title': 'Parenthood Priority Scheme',
+							'url': '/faq#priorityScheme'
+						},
+						{
+							'title': 'Parenthood Provisional Housing Scheme',
+							'url': '/faq#provisionalHousingScheme'
+						}
+					]
+				},
+				{
+					'title': 'Housing',
 					'url': '#',
 					'sub': [
 						{
@@ -63,9 +77,105 @@ block content
 					]
 				},
 				{
-					'title': 'Housing',
+					'title': 'Community and Workplace Support',
+					'url': '#'
+				},
+				{
+					'title': 'Preschool and Education',
+					'url': '#'
+				},
+				{
+					'title': 'Healthcare',
+					'url': '#'
+				},
+				{
+					'title': 'ChildRaising Support',
+					'url': '#'
+				},
+				{
+					'title': 'Transport and Infrstructure',
 					'url': '#'
 				}
 			]
 		}
 	})
+		+accordion({
+			'accLvl1': [
+				{
+					'accName': 'priorityScheme',
+					'accLabel': 'Parenthood Priority Scheme',
+					'accContent': '',
+					'accSub': {
+						'control': true,
+						'accLvl2': [
+							{
+								'accLabel': '1. What is Parenthood Priority Scheme and who is eligible?',
+								'accContent': '<p>The Parenthood Priority Scheme (PPS) provides priority allocation to first-timer married couples expecting a child, or who have a citizen child aged 18 years old and below. The PPS applies for both BTO and SBF sales exercises to better meet the housing needs of this group. To qualify, they must also satisfy all other eligibility conditions to buy a new HDB flat.</p>'
+							},
+							{
+								'accLabel': '2. What is the change in balloting rules with the PPS?',
+								'accContent': '<p>Under the Parenthood Priority Scheme, HDB will set aside up to 30% of BTO flats and 50% of SBF flats for first-timer married couples expecting a child, or who have a citizen child aged 18 years old and below.</p>'
+							},
+							{
+								'accLabel': '3. How does the PPS change the proportion of flats previously set aside for first-timers?',
+								'accContent': '<p>There is no change to the proportion of flat supply set aside for all first-timers. After setting aside flats for PPS applicants, the balance of the flat supply will still be set aside for other first-timers.</p>'
+							},
+							{
+								'accLabel': '4. Will I be assured a flat if I have a child/children and apply for the PPS?',
+								'accContent': '<p>If the number of applicants for the PPS exceeds the number of flats set aside for them, unsuccessful PPS applicants will subsequently be balloted again with other first-timers. PPS applicants thus enjoy a higher chance of securing a flat. However, as balloting is a random process, there is also a chance that they may not get a flat.</p>'
+							},
+							{
+								'accLabel': '5. As a second-timer, am I eligible for the PPS?',
+								'accContent': '<p>The main objective of the Parenthood Priority Scheme is to help first-timers expecting a child, or who have a child, to buy their first home. Hence, second-timers expecting a child, or who have a child, are not eligible for the PPS.</p>'
+							},
+							{
+								'accLabel': '6. Why are first-timer couples expecting a child, or who have a child, given more priority in flat allocation compared to other first-timer applicants?',
+								'accContent': '<p>First-timer applicants comprise various groups such as fiancé-fiancée couples, married couples with no children, and married couples with children. Amongst these groups, married couples with children typically have the greatest housing need. Hence, they are given more priority over other first-timer applicants.</p>'
+							}
+						]
+					}
+				},
+					{
+					'accName': 'provisionalHousingScheme',
+					'accLabel': 'Parenthood Provisional Housing Scheme',
+					'accContent': '',
+					'accSub': {
+						'control': true,
+						'accLvl2': [
+							{
+								'accLabel': '1. What is the Parenthood Provisional Housing Scheme?',
+								'accContent': '<p>The Parenthood Provisional Housing Scheme (PPHS) provides rental flats at selected sites to first-timer married couples, who need interim housing to support their family needs while they wait for the completion of their new HDB flats.</p>'
+							},
+							{
+								'accLabel': '2. Who qualifies for the Parenthood Provisional Housing Scheme?',
+								'accContent': '<p>To qualify for a PPHS flat, a married couple must:</p><p>(a) have signed the Agreement for Lease of an uncompleted flat offered under the Build-To-Order (BTO) or Sale of Balance Flats (SBF) exercise;</p><p>(b) form a first-timer citizen household in the BTO/SBF application;</p><p>(c) not be owners of an existing HDB flat, except if they are co-owners of the existing flat with other family members and undertake to relinquish their ownership in the existing flat within six months after taking possession of the PPHS flat.</p>'
+							},
+							{
+								'accLabel': '3. What are the citizenship requirements?',
+								'accContent': '<p>The applicant must be a Singapore Citizen at the point of application for the PPHS or BTO/SBF flat.</p>'
+							},
+							{
+								'accLabel': '4. Are there age requirements?',
+								'accContent': '<p>The applicant must be at least 21 years old at the point of application for the PPHS or BTO/SBF flat.</p>'
+							},
+							{
+								'accLabel': '5. Is there an income ceiling?',
+								'accContent': '<p>There is no income ceiling for as the PPHS is intended to support the temporary housing needs of households who have booked an uncompleted BTO/SBF flat.</p>'
+							},
+							{
+								'accLabel': '6. I am waiting for my DBSS flat or EC to be completed. Why can\'t I apply?',
+								'accContent': '<p>As the stock of PPHS flats is limited, the current priority is to avail them to married couples who have booked an uncompleted new HDB flat, and not buyers of DBSS flats or EC units.</p>'
+							},
+							{
+								'accLabel': '7. How can I apply for the PPHS?',
+								'accContent': '<p>HDB will announce details of application exercises. For more information on the PPHS, please visit HDB InfoWeb at <a href="https://www.hdb.gov.sg" target="_blank">www.hdb.gov.sg</a>.</p>'
+							},
+							{
+								'accLabel': '8. Why aren\'t the flats furnished?',
+								'accContent': '<p>The PPHS flats will not be furnished but will come with basic lightings (fluorescent tubes) and water heater in the kitchen toilet. This is to keep rentals affordable and allow households the flexibility to purchase furnishings that suit their own preferences. For those who require assistance, HDB can provide a list of companies that they can approach to lease the furniture and appliances.</p>'
+							}
+						]
+					}
+				}
+			]
+		})

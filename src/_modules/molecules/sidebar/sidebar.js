@@ -2,7 +2,8 @@
 
 export default class Sidebar {
   constructor() {
-    this.name = 'Sidebar';
-    console.log('Sidebar');
+    let $sidebar = $('.sidebar');
+    let $menuItem = $('.menu-item', $sidebar);
+    let $menuSub = $('.menu-sub', $menuItem);
   }
 }
