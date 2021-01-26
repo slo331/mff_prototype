@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: '#{$icomoon-font-family}';
-  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?3h93tp');
-  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?3h93tp#iefix') format('embedded-opentype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?3h93tp') format('truetype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?3h93tp') format('woff'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?3h93tp##{$icomoon-font-family}') format('svg');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?sbo5wo');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?sbo5wo#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?sbo5wo') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?sbo5wo') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?sbo5wo##{$icomoon-font-family}') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -120,6 +120,16 @@
 .icon-check {
   &:before {
     content: $icon-check; 
+  }
+}
+.icon-expand {
+  &:before {
+    content: $icon-expand; 
+  }
+}
+.icon-collapse {
+  &:before {
+    content: $icon-collapse; 
   }
 }
 

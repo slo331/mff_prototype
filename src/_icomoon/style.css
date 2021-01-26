@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?3h93tp');
-  src:  url('fonts/icomoon.eot?3h93tp#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?3h93tp') format('truetype'),
-    url('fonts/icomoon.woff?3h93tp') format('woff'),
-    url('fonts/icomoon.svg?3h93tp#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?sbo5wo');
+  src:  url('fonts/icomoon.eot?sbo5wo#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?sbo5wo') format('truetype'),
+    url('fonts/icomoon.woff?sbo5wo') format('woff'),
+    url('fonts/icomoon.svg?sbo5wo#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -81,4 +81,10 @@
 }
 .icon-check:before {
   content: "\ead9";
+}
+.icon-expand:before {
+  content: "\eada";
+}
+.icon-collapse:before {
+  content: "\eadb";
 }
