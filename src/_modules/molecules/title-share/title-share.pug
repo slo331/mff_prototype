@@ -1,0 +1,21 @@
+include ../../molecules/share/share
+
+mixin title-share(spec)
+  - spec = spec || {}
+  - spec.__class = spec.__class || ''
+
+  .title-share(class=spec.__class)&attributes(attributes)
+    .title-share__text
+      if spec.subtitle
+        .subtitle= spec.subtitle
+
+      h1.title= spec.title
+
+      if spec.desc
+        p.desc= spec.desc
+    
+    if spec.share
+      .title-share__social
+        +share({
+          'share': spec.share
+        })

@@ -1,0 +1,60 @@
+//title-share styles 
+.title-share {
+  display: block;
+
+  padding: 2em 0 1em;
+
+  @include tablet {
+    padding: 1em 0 1em;
+  }
+
+  @include desktop {
+    padding: 1em 0 1em;
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__text {
+    width: 100%;
+    padding: 0;
+
+    @include desktop {
+      width: 100%;
+      padding: 0 40px 0 0;
+    }
+
+    .title {
+      margin: 0;
+    }
+  }
+
+  &__social {
+    width: 100%;
+
+    @include desktop {
+      width: auto;
+    }
+
+    .share {
+      &-wrap {
+        display: inline-flex;
+        align-items: center;
+        padding: 0;
+
+        .share-item {
+          margin: 0 10px;
+
+          .share-link {
+            font-size: calc-em(20px);
+
+            @include desktop {
+              font-size: calc-em(24px);
+            }
+          }
+        }
+      }
+    }
+  }
+}

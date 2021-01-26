@@ -1,0 +1,18 @@
+
+include ../../molecules/sidebar/sidebar
+include ../../molecules/title-share/title-share
+
+mixin two-col-block(spec)
+  - spec = spec || {}
+  - spec.__class = spec.__class || ''
+
+  .content-block.two-col-block(class=spec.__class)&attributes(attributes)
+    .content-block__main
+      aside
+        +sidebar(spec.sideBar)
+      
+      article
+        +title-share(spec.titleShare)
+        
+        if block
+          block
