@@ -14,7 +14,30 @@ mixin article-block(spec)
 
     .content-block__main
       aside
-        +share()
+        +share({
+          'share': [
+            {
+              'social': 'facebook',
+              'url': '#'
+            },
+            {
+              'social': 'twitter',
+              'url': '#'
+            },
+            {
+              'social': 'linkedin',
+              'url': '#'
+            },
+            {
+              'social': 'whatsapp',
+              'url': '#'
+            },
+            {
+              'social': 'email',
+              'url': '#'
+            }
+          ]
+        })
       article
         if block
           block

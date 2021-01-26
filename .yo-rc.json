@@ -6,7 +6,9 @@
     "pages": [
       "article-page",
       "listing-filter",
-      "partners-page"
+      "partners-page",
+      "search-result",
+      "faq"
     ]
   }
 }

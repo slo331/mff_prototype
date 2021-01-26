@@ -1,21 +1,40 @@
 mixin share(spec)
 	- spec = spec || {}
 	- spec.__class = spec.__class || ''
+	- spec.share = spec.share || ''
 
 	.share(class=spec.__class)&attributes(attributes)
 		ul.share-wrap
-			li.share-item
-				a.share-link(href="#")
-					i.icon.icon-facebook
-			li.share-item
-				a.share-link(href="#")
-					i.icon.icon-twitter
-			li.share-item
-				a.share-link(href="#")
-					i.icon.icon-linkedin
-			li.share-item
-				a.share-link(href="#")
-					i.icon.icon-whatsapp
-			li.share-item
-				a.share-link(href="#")
-					i.icon.icon-email
+			each item, index in spec.share
+				li.share-item
+					a.share-link(href=item.url)
+						if item.social == 'facebook'
+							i.icon.icon-facebook
+						
+						if item.social == 'twitter'
+							i.icon.icon-twitter
+
+						if item.social == 'linkedin'
+							i.icon.icon-linkedin
+						
+						if item.social == 'whatsapp'
+							i.icon.icon-whatsapp
+						
+						if item.social == 'email'
+							i.icon.icon-email
+
+				//- li.share-item
+				//-   a.share-link(href="#")
+				//-     i.icon.icon-facebook
+				//- li.share-item
+				//-   a.share-link(href="#")
+				//-     i.icon.icon-twitter
+				//- li.share-item
+				//-   a.share-link(href="#")
+				//-     i.icon.icon-linkedin
+				//- li.share-item
+				//-   a.share-link(href="#")
+				//-     i.icon.icon-whatsapp
+				//- li.share-item
+				//-   a.share-link(href="#")
+				//-     i.icon.icon-email

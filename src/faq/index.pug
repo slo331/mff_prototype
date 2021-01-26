@@ -1,0 +1,71 @@
+extends ../_layouts/base
+
+include ../_modules/molecules/breadcrumbs/breadcrumbs
+include ../_modules/organisms/two-col-block/two-col-block
+
+block config
+	//- Correct base url pathing for this page
+	- isHome = false
+	- var pageTitle = 'FAQ'
+	- var page = 'faq'
+	- var site = htmlWebpackPlugin.options //global site data
+	- var baseUrl = '../'
+
+block content
+	+breadcrumbs({
+		'level1': 'FAQ',
+		'level1URL': '#',
+		'level2': 'Marriage',
+		'level2URL': '#',
+		'level3': 'Parenthood Priority Scheme'
+	})
+
+	+two-col-block({
+		'titleShare': {
+			'title': 'Marriage',
+			'share': [
+				{
+					'social': 'facebook',
+					'url': '#'
+				},
+				{
+					'social': 'twitter',
+					'url': '#'
+				},
+				{
+					'social': 'linkedin',
+					'url': '#'
+				},
+				{
+					'social': 'whatsapp',
+					'url': '#'
+				},
+				{
+					'social': 'email',
+					'url': '#'
+				}
+			]
+		},
+		'sideBar': {
+			'menu': [
+				{
+					'title': 'Marriage',
+					'url': '#',
+					'sub': [
+						{
+							'title': 'Parenthood Priority Scheme',
+							'url': '#'
+						},
+						{
+							'title': 'Parenthood Provisional Housing Scheme',
+							'url': '#'
+						}
+					]
+				},
+				{
+					'title': 'Housing',
+					'url': '#'
+				}
+			]
+		}
+	})

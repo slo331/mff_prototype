@@ -97,4 +97,42 @@
       }
     }
   }
+
+  &.two-col-block {
+    aside {
+      width: 100%;
+      margin: 0 0 2em;
+      border-bottom: 1px solid $grey;
+
+      @include tablet {
+        float: left;
+        width: 20%;
+        margin: 0;
+        border-bottom: none;
+      } 
+
+      @include desktop {
+        float: left;
+        width: 20%;
+        margin: 0;
+        border-bottom: none;
+      } 
+    }
+
+    article {
+      width: 100%;
+
+      @include tablet {
+        float: right;
+        width: 80%;
+        padding: 0 2em;
+      }
+
+      @include desktop {
+        float: right;
+        width: 80%;
+        padding: 0 4em;
+      }
+    }
+  }
 }
