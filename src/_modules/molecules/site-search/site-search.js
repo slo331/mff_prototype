@@ -2,9 +2,11 @@
 
 export default class SiteSearch {
   constructor() {
+    let $siteHeader = $('.site-header');
     let $siteSearch = $('.site-search');
+    let $mainSearch = $('.main-search', $siteHeader);
     let $searchWrap = $('.search-wrap', $siteSearch);
-    let $searchInput = $('.search__input', $searchWrap);
+    let $searchInput = $('.search__input', $siteHeader);
     let $searchBtnWrap = $('.search-button', $siteSearch);
     let $searchBtn = $('.btn--header-search', $searchBtnWrap);
 
@@ -28,12 +30,14 @@ export default class SiteSearch {
       if(!$searchBtn.hasClass('active')) {
         $searchBtn.addClass('active');
         $icon.removeClass('icon-search').addClass('icon-close');
-        $siteSearch.addClass('expanded');
+        // $siteSearch.addClass('expanded');
+        $mainSearch.addClass('expanded').slideDown('fast');
         $searchInput.focus();
       } else {
         $searchBtn.removeClass('active');
         $icon.removeClass('icon-close').addClass('icon-search');
-        $siteSearch.removeClass('expanded');
+        // $siteSearch.removeClass('expanded');
+        $mainSearch.removeClass('expanded').slideUp('fast');
         $searchInput.val('');
         $searchInput.blur();
       }      

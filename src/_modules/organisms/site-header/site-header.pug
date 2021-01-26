@@ -22,3 +22,7 @@ mixin site-header(spec)
 		+mega-menu({
 			"items": site.data.navigation.primaryNav
 		})
+		
+		.main-search.desktop-only(data-action="/search-result")
+			.container
+				input.search__input(type="search" placeholder="Search..." name="searchQuery")
