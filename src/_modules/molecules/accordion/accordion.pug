@@ -1,0 +1,27 @@
+mixin accordion(spec)
+  - spec = spec || {}
+  - spec.__class = spec.__class || ''
+  - spec.accLvl1 = spec.accLvl1 || ''
+
+  .accordion(class=spec.__class)&attributes(attributes)
+    ul.accordion-list
+      each item, index in spec.accLvl1
+        li.accordion-item.accordion-parent(data-accordion=item.accName)
+          .accordion-label.label-title
+            i.icon.icon-expand
+            span= item.accLabel
+          .accordion-content.content-wrap!= item.accContent
+            if item.accSub
+              .accordion-sub
+                if item.accSub.control == true
+                  .sub-control
+
+                ul.sub-accordion
+                  each sub, index in item.accSub.accLvl2
+                    li.sub-item.accordion-parent
+                      .sub-label.label-title
+                        i.icon.icon-expand
+                        span= sub.accLabel
+                      .sub-content.content-wrap!= sub.accContent
+
+
