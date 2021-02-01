@@ -12,7 +12,7 @@ mixin spotlight(spec)
 				.arrows.next.icon-arrow-right
 				
 			.spotlight-carousel
-				each item, index in spec.items
+				each item in spec.items
 					.spotlight-item
 						+card({
 							'img': item.img,

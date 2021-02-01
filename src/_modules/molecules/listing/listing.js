@@ -36,7 +36,16 @@ export default class Listing extends ListingBase {
     /* 2. Setup the listener (the following is available in the ListingBase, can reuse) */
     this.setupListeners(this.allFields);
 
-    // let $filterOpt = $('.filter-options', $selector);
+    let $filterBtn = $('.btn--filter', $selector);
+
+    $filterBtn.on('click', e => {
+      e.preventDefault();
+
+      this.parameters = this.getParameters(this.allFields);
+      this.getUrlQueries();
+      this.getData();
+      this.updateURL();
+    })
     
     // $filterOpt.map((i,el) => {
     //   let $el = $(el);

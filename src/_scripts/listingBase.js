@@ -293,8 +293,8 @@ export default class ListingBase {
         
         this.parameters = this.getParameters(this.allFields);
         this.parameters.page = 1;
-        this.getData();
-        this.updateURL();
+        // this.getData();
+        // this.updateURL();
       });
     });
   }
@@ -463,8 +463,8 @@ export default class ListingBase {
     $(`select[name="${fieldName}"]`).on('change', () => {
       this.parameters[fieldName] = $(`select[name="${fieldName}"]`).val();
       this.parameters.page = 1;
-      this.getData();
-      this.updateURL();
+      // this.getData();
+      // this.updateURL();
     });
   }
 

@@ -10,11 +10,12 @@ mixin listing(spec)
 
 	.listing(class=spec.__class)&attributes(attributes)
 		if spec.title
-		.listing-title
-			h2.title=spec.title
+			.listing-title
+				h2.title=spec.title
 
-			if spec.desc
-				p=spec.desc
+				if spec.desc
+					.rte
+						p!=spec.desc
 
 		.listing-wrap(data-endpoint=spec.endpoint)
 			if spec.filter

@@ -23,7 +23,17 @@
   padding: 2em 0 0;
 
   .title {
-    margin: 0;
+    margin: 0 0 10px;
+  }
+
+  &-title {
+    margin: 0 0 3em;
+    padding: 0;
+
+    @include desktop {
+      margin: 0 0 3em;
+      padding: 0 15em 0 0;
+    }
   }
 
   // &-wrap {

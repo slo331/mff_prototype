@@ -87,7 +87,7 @@ export default class MultiFilter {
 					// }				 
 					
           this._updateLabel();
-          this._hideOptions();
+          // this._hideOptions();
 				}, 150);
 			});
 		});
@@ -114,7 +114,7 @@ export default class MultiFilter {
         // }
         
         this._updateLabel();
-        this._hideOptions();
+        // this._hideOptions();
       });
 
       // $thisAll.prop('checked', true);

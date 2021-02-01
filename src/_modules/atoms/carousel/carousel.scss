@@ -8,11 +8,11 @@
 
     #{$p} {
       &-item {
-        height: 350px;
+        height: 625px;
 
         @include tablet {
           // height: auto;
-          height: 500px;
+          height: 625px;
         }
 
         @include desktop {
@@ -21,11 +21,11 @@
         }
 
         .item {
-          height: 350px;
+          height: 625px;
 
           @include tablet {
             // height: auto;
-            height: 500px;
+            height: 625px;
           }
 
           @include desktop {
@@ -35,12 +35,12 @@
 
           &-img {
             width: 100%;
-            height: 350px;
+            height: 625px;
             overflow: hidden;
 
             @include tablet {
               // height: auto;
-              height: 500px;
+              height: 625px;
             }
 
             @include desktop {

@@ -1,3 +1,5 @@
+include ../../atoms/button/button
+
 mixin accordion(spec)
   - spec = spec || {}
   - spec.__class = spec.__class || ''
@@ -15,6 +17,18 @@ mixin accordion(spec)
               .accordion-sub
                 if item.accSub.control == true
                   .sub-control
+                    +button({
+                      '__text': 'Expand All',
+                      '__type': 'button',
+                      '__class': 'btn--acc_expand',
+                      '__iconAfter': 'icon-expand'
+                    })
+                    +button({
+                      '__text': 'Collapse All',
+                      '__type': 'button',
+                      '__class': 'btn--acc_collapse',
+                      '__iconAfter': 'icon-collapse'
+                    })
 
                 ul.sub-accordion
                   each sub, index in item.accSub.accLvl2

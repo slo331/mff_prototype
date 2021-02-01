@@ -37,6 +37,7 @@ body {
   a {
     text-decoration: none;
     color: inherit;
+    transition: all .2s ease-in-out;
 
     &:hover,
     &:focus {
@@ -89,6 +90,122 @@ body {
           margin-top: 0;
         }
       }
+
+      a {
+        text-decoration: underline;
+        
+        &:hover {
+          color: $red;
+        }
+      }
+    }
+  }
+}
+
+*{
+  color-adjust: exact; 
+  -webkit-print-color-adjust: exact; 
+  print-color-adjust: exact; 
+}
+
+// Print layout
+@media print {
+  body {
+    header {
+      .nav-mobile {
+        display: none;
+      }
+    }
+    
+    .carousel-home {
+      .carousel-wrap {
+        .carousel-item {
+          .carousel-item__wrap {
+            .carousel-img {
+              position: relative;
+              height: 400px;
+              width: 100vw;
+  
+              img {
+                width: 100%;
+                height: auto;
+                
+                &.desktop-only {
+                  display: none;
+                }
+              }
+            }
+
+            .carousel-info {
+              width: 100vw;
+              height: 400px;
+              position: relative;
+              z-index: 2;
+              top: 0;
+              left: 0;
+
+              .info {
+                padding: 0;
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+
+      .carousel-dots {
+        position: relative;
+        margin: 20px 0 0;
+      }
+    }
+
+    .latest-updates {
+      .updates-wrap {
+        display: block;
+
+        .updates-item {
+          width: 100%;
+
+          .carousel {
+            .carousel-item {
+              height: 500px;
+            }
+          }
+        }
+      }
+    }
+
+    .partners-logo {
+      .row {
+        .partners-logo__item {
+          width: 50%;
+          height: 150px;
+        }
+      }
+    }
+
+    .listing-wrap {
+      .list {
+        .partners-item {
+          width: 100%;
+
+          .partners-wrap {
+            .partners-content {
+              position: relative;
+              padding: 0 10px;
+              width: 100%;
+              left: 0;
+              right: unset;
+              margin-left: 0;
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
+
+    footer {
+      background: $darkGrey;
     }
   }
 }

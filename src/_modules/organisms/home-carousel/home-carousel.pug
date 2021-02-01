@@ -11,6 +11,10 @@ mixin home-carousel(spec)
       each item, index in spec.carousel
         .carousel-item(data-index=(index + 1))
           .carousel-item__wrap
+            .carousel-img
+              img.desktop-only(src=item.imgDk alt=item.imgDkTitle title=item.imgDkTitle)
+              img.mobile-only(src=item.imgMb alt=item.imgMbTitle title=item.imgMbTitle)
+              
             .carousel-info
               .container
                 .info
@@ -23,9 +27,6 @@ mixin home-carousel(spec)
                       '__link': item.btnURL,
                       '__class': 'btn--carouselCTA btn--bg'
                     })
-            .carousel-img
-              img.desktop-only(src=item.imgDk alt=item.imgDkTitle title=item.imgDkTitle)
-              img.mobile-only(src=item.imgMb alt=item.imgMbTitle title=item.imgMbTitle)
     
     .carousel-dots
     .carousel-arrows

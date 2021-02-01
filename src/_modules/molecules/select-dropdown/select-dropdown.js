@@ -57,7 +57,7 @@ export default class SelectDropdown {
 			$(this).closest('.dropdown-select').find('.current').text(text);
       $(this).closest('.dropdown-select').prev('.custom-select').val($(this).data('value')).trigger('change');
 
-      console.log($(this).closest('.dropdown-select').prev('.custom-select').val($(this).data('value')).trigger('change'));
+      // console.log($(this).closest('.dropdown-select').prev('.custom-select').val($(this).data('value')).trigger('change'));
 		});
   }
 

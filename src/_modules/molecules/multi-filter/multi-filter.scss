@@ -6,12 +6,18 @@
 
   @include tablet {
     width: 45%;
+    // width: 100%;
+    // min-width: 50%;
+    // max-width: 50%;
     display: inline-block;
     margin: 0 10px 0 0;
   }
 
   @include desktop {
     width: 25%;
+    // width: 100%;
+    // min-width: 50%;
+    // max-width: 50%;
     display: inline-block;
     margin: 0 20px 0 0;
   }
@@ -23,7 +29,6 @@
   // }
   
   .filter-control {
-    height: 100%;
     margin: 15px 0 0;
 
     @include desktop {

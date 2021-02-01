@@ -1,3 +1,4 @@
+include ../../atoms/button/button
 include ../../molecules/multi-filter/multi-filter
 include ../../molecules/select-dropdown/select-dropdown
 include ../../molecules/search/search
@@ -18,6 +19,19 @@ mixin list-filter(spec)
 
 				if item.type == 'search'
 					+search(item.settings).search-filter
+			
+			+button({
+				'__text': 'Filter',
+				'__type': 'button',
+				'__class': 'btn--filter btn--bg'
+			})
+		
+		//- .filter-btn
+		//- 	+button({
+		//- 		'__text': 'Filter',
+		//- 		'__type': 'button',
+		//- 		'__class': 'btn--filter btn--bg'
+		//- 	})
 
 
 			//- +select-dropdown({

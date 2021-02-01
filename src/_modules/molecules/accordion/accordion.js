@@ -9,6 +9,9 @@ export default class Accordion {
     let $accLabel = $('.label-title', $accItem);
     let $icon = $('.icon', $accLabel);
 
+    let $expand = $('.btn--acc_expand', $accordion);
+    let $collapse = $('.btn--acc_collapse', $accordion);
+
     this.$accItem = $accItem;
 
     $accLabel.map((i,el) => {
@@ -43,6 +46,38 @@ export default class Accordion {
       });
     });
 
+    $expand.map((i,el) => {
+      let $el = $(el);
+      let $parent = $el.parent('.sub-control');
+      let $sibling = $parent.siblings('.sub-accordion');
+      let $accParent = $sibling.find('.accordion-parent');
+      let $contentWrap = $sibling.find('.content-wrap');
+      let $icon = $sibling.find('.icon');
+
+      $el.on('click', e => {
+        e.preventDefault();
+        $icon.removeClass('icon-expand').addClass('icon-collapse');
+        $contentWrap.slideDown('slow');
+        $accParent.addClass('is-open');
+      });
+    });
+
+    $collapse.map((i,el) => {
+      let $el = $(el);
+      let $parent = $el.parent('.sub-control');
+      let $sibling = $parent.siblings('.sub-accordion');
+      let $accParent = $sibling.find('.accordion-parent');
+      let $contentWrap = $sibling.find('.content-wrap');
+      let $icon = $sibling.find('.icon');
+
+      $el.on('click', e => {
+        e.preventDefault();
+        $contentWrap.slideUp('slow');
+        $icon.removeClass('icon-collapse').addClass('icon-expand');
+        $accParent.removeClass('is-open');
+      });
+    });
+
     $(document).ready(() => {
       if(window.location.hash) {
         this.triggerAcc();
@@ -65,6 +100,7 @@ export default class Accordion {
 
   triggerAcc() {
     let $hash = window.location.hash.slice(1);
+    console.log($hash);
 
     this.$accItem.map((i,el) => {
       let $el = $(el);
