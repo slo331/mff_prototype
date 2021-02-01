@@ -1,0 +1,114 @@
+extends ../_layouts/base
+
+include ../_modules/molecules/breadcrumbs/breadcrumbs
+include ../_modules/organisms/two-col-block/two-col-block
+
+block config
+	//- Correct base url pathing for this page
+	- isHome = false
+	- var pageTitle = 'Support Measures'
+	- var page = 'support'
+	- var site = htmlWebpackPlugin.options //global site data
+	- var baseUrl = '../'
+
+block content
+	+breadcrumbs({
+		'level1': 'Support Measures'
+	})
+
+	+two-col-block({
+		'titleShare': {
+			'title': 'Support Measures',
+			'share': [
+				{
+					'social': 'facebook',
+					'url': '#'
+				},
+				{
+					'social': 'twitter',
+					'url': '#'
+				},
+				{
+					'social': 'linkedin',
+					'url': '#'
+				},
+				{
+					'social': 'whatsapp',
+					'url': '#'
+				},
+				{
+					'social': 'email',
+					'url': '#'
+				}
+			]
+		},
+		'sideBar': {
+			'menu': [
+				{
+					'title': 'Marriage',
+					'url': '#',
+					'sub': [
+						{
+							'title': 'Parenthood Priority Scheme',
+							'url': '/faq#priorityScheme'
+						},
+						{
+							'title': 'Parenthood Provisional Housing Scheme',
+							'url': '/faq#provisionalHousingScheme'
+						}
+					]
+				},
+				{
+					'title': 'Housing',
+					'url': '#',
+					'sub': [
+						{
+							'title': 'Parenthood Priority Scheme',
+							'url': '#'
+						},
+						{
+							'title': 'Parenthood Provisional Housing Scheme',
+							'url': '#'
+						}
+					]
+				},
+				{
+					'title': 'Community and Workplace Support',
+					'url': '#'
+				},
+				{
+					'title': 'Preschool and Education',
+					'url': '#'
+				},
+				{
+					'title': 'Healthcare',
+					'url': '#'
+				},
+				{
+					'title': 'ChildRaising Support',
+					'url': '#'
+				},
+				{
+					'title': 'Transport and Infrstructure',
+					'url': '#'
+				}
+			]
+		}
+	})
+		.rte
+			p Getting married and starting a family is one of life's most fulfilling experiences.
+			
+			p For singles looking for opportunities to widen their social, the Social Development Network (SDN) engages and forms partnerships with the community and stakeholders from the dating industry to provide opportunities for singles to meet and interact.
+			
+			p For couples who are ready to get married, settle down to start their families, and are looking for their homes, the Marriage and Parenthood package includes housing schemes and grants to help couples take the next step.
+			
+			p Measures which make it faster and easier for couples to get housing include:
+
+			ol(type='a')
+				li Flats with shorter waiting times of about 2 to 3 years, compared to the usual 3 to 4 years.
+				li Parenthood Priority Scheme, which gives first-timer married couples with children (including those expecting a child) priority allocation when buying a HDB flat, by setting aside a proportion of flats for them.
+				li Parenthood Provisional Housing Scheme, which allows first-timer married couples to rent a flat from HDB at around half or less than half of market rental rates, while awaiting the completion of their new flats.
+				li Housing Grants (e.g. Enhanced CPF Housing Grant, CPF Housing Grant, Proximity Housing Grant) to help couples finance their flat purchase.
+				li Deferment of income assessment for housing grants and loans till just before key collection, for first-timer student/NSF couples who are ready to settle down.
+				
+			p Find out more in the "Setting Up a Home" section.
