@@ -42,18 +42,19 @@ mixin listingItem(spec)
 	script(type="text/x-dot-template" id="listingItem")
 		|{{? it}}
 		|{{~ it.listing :item}}
-		+card({
-			'img': '{{= item.img}}',
-			'imgTitle': '{{= item.imgTitle}}',
-			'subtitle': '{{= item.subtitle}}',
-			'title': '{{= item.title}}',
-			'desc': '{{= item.desc}}',
-			'details': '{{= item.details}}',
-			'date': '{{= item.details.date}}',
-			'shares': '{{= item.details.shares}}',
-			'views': '{{= item.details.views}}',
-			'url': '{{= item.url}}'
-		}).col-md-6.col-sm-6.col-xs-12
+		a.list-link.col-md-6.col-sm-6.col-xs-12(href='{{= item.url}}')
+			+card({
+				'img': '{{= item.img}}',
+				'imgTitle': '{{= item.imgTitle}}',
+				'subtitle': '{{= item.subtitle}}',
+				'title': '{{= item.title}}',
+				'desc': '{{= item.desc}}',
+				'details': '{{= item.details}}',
+				'date': '{{= item.details.date}}',
+				'shares': '{{= item.details.shares}}',
+				'views': '{{= item.details.views}}',
+				'url': '{{= item.url}}'
+			})
 		|{{~}}
 		|{{?}}
 	

@@ -118,6 +118,17 @@
             right: 15px;
             line-height: 0;
 
+            .icon {
+              position: relative;
+              padding: 0;
+              border: none;
+              font-size: calc-em(38px);
+              line-height: 0;
+              transform: translateX(0px);
+              transition: all .2s ease-in-out;
+              color: $red;
+            }
+
             .btn {
               position: relative;
               padding: 0;
@@ -136,5 +147,29 @@
         }
       }
     }
+
+    &:hover {
+      .list {
+        &-content {  
+          .details-info {
+            .cta {
+              .icon {
+                transform: translateX(5px);
+              }
+            }
+          }
+        }
+      }
+    }
   }
+
+  // &-link {
+  //   display: block;
+    
+  //   &:hover {
+  //     .icon {
+  //       transform: translateX(5px);
+  //     }
+  //   }
+  // }
 }

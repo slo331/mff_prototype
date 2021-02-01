@@ -199,6 +199,10 @@
             margin: 0;
 
             @include desktop {
+              height: auto;
+            }
+
+            @include lgDesktop {
               height: 155px;
             }
 
@@ -207,6 +211,11 @@
               height: auto;
 
               @include desktop {
+                width: 100%;
+                height: auto;
+              }
+
+              @include lgDesktop {
                 width: auto;
                 height: 100%;
               }

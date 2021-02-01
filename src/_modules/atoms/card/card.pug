@@ -31,13 +31,14 @@ mixin card(spec)
 							span.views= spec.views 
 								| Views
 					.cta
-						+button({
-							'__text': '',
-							'__type': 'anchor',
-							'__link': spec.url,
-							'__class': 'btn--listItem',
-							'__iconAfter': 'icon-larrow-right'
-						})
+						.icon.icon-larrow-right
+						//- +button({
+						//- 	'__text': '',
+						//- 	'__type': 'anchor',
+						//- 	'__link': spec.url,
+						//- 	'__class': 'btn--listItem',
+						//- 	'__iconAfter': 'icon-larrow-right'
+						//- })
 
 mixin card-spotlight(spec)
 	- spec = spec || {}
