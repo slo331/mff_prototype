@@ -30,6 +30,11 @@ body {
   color: $negro;
   line-height: $base-lineheight;
 
+  header {
+    position: relative;
+    z-index: 5;
+  }
+
   &.fixed {
     overflow: hidden;
   }
