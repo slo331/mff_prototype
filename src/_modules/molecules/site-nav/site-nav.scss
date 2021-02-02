@@ -150,6 +150,12 @@
             padding: 20px 0;
             border-bottom: 1px solid $grey;
 
+            &.mobile-only {
+              @include tablet {
+                display: block;
+              }
+            }
+
             &:first-child {
               padding: 0 0 20px;
             }
@@ -294,8 +300,56 @@
                         }
 
                         .item__child {
+                          position: relative;
+                          width: 100%;
+                          display: flex;
+                          align-items: center;
+                          justify-content: space-between;
+
                           a {
                             font-size: calc-em(17px);
+                          }
+
+                          .btn {
+                            &--mobileSubchild {
+                              padding: 0;
+                              border: none;
+                              font-size: calc-em(22px);
+                              color: $negro;
+                              line-height: 0;
+                              
+                              @include desktop {
+                                display: none;
+                              }
+          
+                              .icon {
+                                display: block;
+                                transition: all .5s ease-in-out;
+                              }
+          
+                              &.rotate {
+                                .icon {
+                                  transform: rotate(180deg);
+                                }
+                              }
+                            }
+                          }
+                        }
+
+                        .item__subchild {
+                          display: none;
+
+                          .subchild-links__wrap {
+                            .subchildlinks {
+                              display: block;
+                              margin: 0;
+                              padding: 1.5em 20px 0;
+                              list-style-type: none;
+
+                              &-item {
+                                padding: 1em 0;
+                              }
+                            }
                           }
                         }
                       }

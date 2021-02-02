@@ -72,6 +72,51 @@
     {
       "name": "Contact Us",
       "url": "#"
+    },
+    {
+      "name": "FAQ",
+      "ulr": "#",
+      "sub": [
+        {
+          "name": "Marriage",
+          "url": "/faq#priorityScheme",
+          "sub": [
+            {
+              "name": "Parenthood Priority Scheme",
+              "url": "/faq#priorityScheme"
+            },
+            {
+              "name": "Parenthood Provisional Housing Scheme",
+              "url": "/faq#provisionalHousingScheme"
+            }
+          ]
+        },
+        {
+          "name": "Housing",
+          "url": "#"
+        },
+        {
+          "name": "Community and Workplace Support",
+          "url": "#"
+        },
+        {
+          "name": "Preschool and Education",
+          "url": "#"
+        },
+        {
+          "name": "Healthcare",
+          "url": "#"
+        },
+        {
+          "name": "Child Raising Support",
+          "url": "#"
+        },
+        {
+          "name": "Transport and Infrastructure",
+          "url": "#"
+        }
+      ],
+      "mobile": true
     }
   ]
 }

@@ -16,7 +16,7 @@ mixin site-nav(spec)
 			.nav-links__wrap
 				ul.links
 					each item, index in spec.navs
-						li.links-item(data-menu="menu-" + (index + 1))
+						li.links-item(data-menu="menu-" + (index + 1) class=(item.mobile === true ? 'mobile-only' : ''))
 							.item__parent
 								a(href= item.url)= item.name
 								if item.sub
@@ -35,6 +35,21 @@ mixin site-nav(spec)
 													li.sublinks-item
 														.item__child
 															a(href= sub.url)= sub.name
-			
+															if sub.sub
+																+button({
+																	'__text': '',
+																	'__type': 'button',
+																	'__class': 'btn--mobileSubchild',
+																	'__iconAfter': 'icon-arrow-down'
+																})
+														if sub.sub
+															.item__subchild
+																.links-subchild__container
+																	.subchild-links__wrap
+																		ul.subchildlinks
+																			each child, index in sub.sub
+																				li.subchildlinks-item
+																					.item__subchild-item
+																						a(href= child.url)= child.name
 				+site-search()
 		.nav-overlay

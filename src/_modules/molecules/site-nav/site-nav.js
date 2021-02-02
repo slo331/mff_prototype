@@ -19,6 +19,7 @@ export default class SiteNav {
     let $navMenu = $('.nav-menu', $navMobile);
     let $mobileMenu = $('.hamburger-menu', $navMenu);
     let $mobileChildBtn = $('.btn--mobileSub', $navLinks);
+    let $mobileSubChildBtn = $('.btn--mobileSubchild', $navLinks);
 
     enquire.register(`screen and (max-width: ${this.config.breakpoints.desktop - 1}px)`, {
 			match: () => {
@@ -66,6 +67,28 @@ export default class SiteNav {
           let $gparent = $el.parents('.links-item');
           let $parent = $el.parent('.item__parent');
           let $sibling = $parent.siblings('.item__sub');
+
+          $el.on('click', e => {
+            e.preventDefault();
+            if(!$sibling.hasClass('expanded')) {
+              $parent.addClass('active');
+              $sibling.addClass('expanded')
+              $sibling.slideDown('slow');
+              $el.addClass('rotate');
+            } else {
+              $el.removeClass('rotate');
+              $sibling.removeClass('expanded')
+              $sibling.slideUp('slow');
+              $parent.removeClass('active');
+            }
+          });
+        });
+
+        $mobileSubChildBtn.map((i,el) => {
+          let $el = $(el);
+          let $gparent = $el.parents('.sublinks-item');
+          let $parent = $el.parent('.item__child');
+          let $sibling = $parent.siblings('.item__subchild');
 
           $el.on('click', e => {
             e.preventDefault();
