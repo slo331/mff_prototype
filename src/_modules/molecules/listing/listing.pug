@@ -17,7 +17,7 @@ mixin listing(spec)
 					.rte
 						p!=spec.desc
 
-		.listing-wrap(data-endpoint=spec.endpoint)
+		.listing-wrap(data-endpoint=spec.endpoint data-url=spec.url)
 			if spec.filter
 				+list-filter({
 					'filter': spec.filter

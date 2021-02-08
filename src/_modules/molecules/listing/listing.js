@@ -26,6 +26,7 @@ export default class Listing extends ListingBase {
     /* 1. Setup basic config */
     this.template = $listing.siblings('script[type="text/x-dot-template"]').html();
     this.endpoint = $listWrap.data('endpoint');
+    this.url = $listWrap.data('url');
 
     // Get all fields
     this.allFields = this.getAllFields($listing);

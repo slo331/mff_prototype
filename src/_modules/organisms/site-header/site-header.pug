@@ -23,6 +23,7 @@ mixin site-header(spec)
 			"items": site.data.navigation.primaryNav
 		})
 		
-		.main-search.desktop-only(data-action="/search-result")
+		.main-search.desktop-only
 			.container
-				input.search__input(type="search" placeholder="Search..." name="searchQuery")
+				.search-wrap(data-action='https://cse.google.com/cse' data-api='015729528517137884908:id9feqvbf9g')
+					input.search__input(type="search" placeholder="Search..." name="searchQuery")

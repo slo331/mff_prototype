@@ -12,15 +12,27 @@ export default class SiteSearch {
 
     this.$siteSearch = $siteSearch;
     this.$searchWrap = $searchWrap;
-    this.$input = $('input[type="search"]', this.$searchbar);
+    this.$input = $('input[type="search"]');
     this.url = this.$searchWrap.data('action');
+    this.api = this.$searchWrap.data('api');
 
-    this.$input.keyup((e) => {
-			e.preventDefault ? e.preventDefault() : (e.returnValue = false);
+    // this.$input.keyup((e) => {
+		// 	e.preventDefault ? e.preventDefault() : (e.returnValue = false);
 
-			if (e.keyCode == 13 || e.which == 13) { // enter key maps to keycode `13`
-        this.submitSearch();
-      }
+		// 	if (e.keyCode == 13 || e.which == 13) { // enter key maps to keycode `13`
+    //     this.submitSearch();
+    //   }
+    // });
+
+    this.$input.map((i,el) => {
+      let $el = $(el);
+      $el.on('keyup', e => {
+        e.preventDefault ? e.preventDefault() : (e.returnValue = false);
+        if (e.keyCode == 13 || e.which == 13) {
+          let $val = $el.val();
+          this.submitSearch($val);
+        }
+      });
     });
 
     $searchBtn.on('click', e => {
@@ -31,39 +43,40 @@ export default class SiteSearch {
         $searchBtn.addClass('active');
         $icon.removeClass('icon-search').addClass('icon-close');
         // $siteSearch.addClass('expanded');
-        $mainSearch.addClass('expanded').slideDown('fast');
-        $searchInput.focus();
+        $.when($mainSearch.addClass('expanded').slideDown('fast'))
+        .done(() => {
+          this.$input.focus();
+        });
       } else {
         $searchBtn.removeClass('active');
         $icon.removeClass('icon-close').addClass('icon-search');
         // $siteSearch.removeClass('expanded');
-        $mainSearch.removeClass('expanded').slideUp('fast');
-        $searchInput.val('');
-        $searchInput.blur();
+        $.when($mainSearch.removeClass('expanded').slideUp('fast'))
+        .done(() => {
+          // $searchInput.val('');
+          // $searchInput.blur();
+          this.$input.val('');
+          this.$input.attr('placeholder', 'Search...');
+          this.$input.blur();
+          $searchBtn.blur();
+        });
       }      
     })
   }
 
-  submit() {
-    let name = this.$input.attr('name');
-    let value = this.$input.val();
-    if (value.trim(' ').length == 0) {
-      if (!this.$siteSearch.find('.error-msg').length) {
-        this.$input.after('<p class="error-msg">Please enter a keyword to search.</p>')
-      }
+  getQuery(pageURL, value, api) {
+    // return pageURL + '?searchQuery=' + encodeURIComponent(value);
+    return pageURL + '?q=' + value + '&cx=' + api;
+  }
+
+  submitSearch(value) {
+    let url = this.getQuery(this.url, value, this.api);
+
+    if(value.length === 0) {
+      this.$input.attr('placeholder', 'Error - Please provide keyword for search.');
     } else {
-      this.$siteSearch.find('.error-msg').remove();
-      window.location.href = `${this.action}?${name}=${encodeURIComponent(value)}`;
+      window.open(url, '_blank');
+      this.$input.attr('placeholder', 'Search...');
     }
-  }
-
-  getQuery(pageURL, value) {
-    return pageURL + '?searchQuery=' + encodeURIComponent(value);
-  }
-
-  submitSearch() {
-    let searchValue = this.$input.val();
-
-    window.location.href = this.getQuery(this.url, searchValue);
   }
 }
