@@ -1,0 +1,836 @@
+extends ../_layouts/base
+
+include ../_modules/atoms/carousel/carousel
+include ../_modules/molecules/breadcrumbs/breadcrumbs
+include ../_modules/molecules/tabs/tabs
+
+block config
+	//- Correct base url pathing for this page
+	- isHome = false
+	- var pageTitle = 'Made For Families | Play-A-Part'
+	- var page = 'about us'
+	- var site = htmlWebpackPlugin.options //global site data
+	- var baseUrl = '../'
+
+block content
+	+breadcrumbs({
+		'level1': 'Support Measures',
+		'level1URL': '#',
+		'level2': 'Play A Part'
+	})
+
+	.content-block
+		.content-block__main
+			.row
+				.col-md-7.col-sm-7.col-xs-12
+					.sfContentBlock
+						.rte
+							h1 Citizens' Panel on Work-Life Harmony
+							
+							p
+								a(href='/assets/images/play-a-part/citizens-panel-2019-infographic.pdf' target='_blank')
+									img.img-responsive(src='/assets/images/play-a-part/citizens-panel-2019-infographic-01.png' data-displaymode='Original' alt='Citizens Panel 2019 Infographic' title='Citizens Panel 2019 Infographic' style='vertical-align: middle;')
+								br
+								| On 28 September 2019, a diverse mix of 55 Singaporeans – ranging from employers and employees from various occupations and sectors, to grandparents and homemakers – convened as a Citizens’ Panel to deliberate the issue of work-life harmony in Singapore. The challenge posed to them was to identify ways to create conditions for greater work-life harmony in Singapore, prioritising what can be acted upon in the next 12 months.
+							
+							p
+								| Meeting up every fortnight for four full Saturdays in total, the Panel examined the issue from different perspectives, identified the key barriers, consulted with subject matter experts, weighed the potential costs and benefits of their proposed solutions, and eventually converged on an agreed set of recommendations.
+							
+							p
+								| On 9 November 2019, the Panel shared their recommendations with community leaders, representatives from employer and employee groups, and political office holders – key stakeholders who could help to bring their proposals to fruition.
+							
+							p(style='text-align: left;')
+								| Click 
+								a(href='https://www.ideas.gov.sg/public/CitizensPanel_WorkLifeHarmony' target='_blank') here
+								|  to find out more.
+
+							hr
+							
+							h3(style='text-align: left;') Online Surveys
+							
+							p(style='text-align: left;')
+								| The 2016 Marriage and Parenthood Survey showed that a majority of Singaporeans aspire to get married and have children. As a society, how can we better support Singaporeans in achieving this aspiration?
+							
+							center(style='width: 65%')
+								img.img-responsive(src='/assets/images/play-a-part/survey-button-4-closed-01.png' data-displaymode='Original' alt='Survey 4 closed' title='Survey 4 closed')
+								img.img-responsive(src='/assets/images/play-a-part/survey-button-3-closed-01.png' data-displaymode='Original' alt='survey button 3 ' title='survey button 3 ')
+								img.img-responsive(src='/assets/images/play-a-part/survey-button-2-closed-01.png' data-displaymode='Original' alt='Closed: Survey 2' title='Closed: Survey 2' style='vertical-align: middle;')
+							
+							center(style='width: 65%')
+								img.img-responsive(title='Closed: Survey 1' style='vertical-align: middle;' alt='Closed: Survey 1' src='/assets/images/play-a-part/survey-button-1-grey-01c937b4bed7c14d18a9eef728e8bca2cf.png' data-displaymode='Original')
+
+					.sfContentBlock
+						.rte
+							p(style='text-align: left;')
+								| Thank you for taking part and sharing your views on 1) Making Singapore A Great Place for Families; 2) Shared Parental Responsibilities; 3) 		Work-Life Harmony and 4) Dating through our monthly thematic polls since April 2019. The surveys are now closed.
+							
+							p(style='text-align: left;')
+								| You can view the results to our surveys below.
+								br
+								br
+								center(style='width: 65%')
+									a(href='/assets/images/play-a-part/play-a-part-survey-infographic-(final).pdf')
+										img.img-responsive(src='/assets/images/play-a-part/play-a-part-survey-infographic-(final)-1.png' data-displaymode='Original' alt='Play A Part Survey Infographic' title='Play A Part Survey Infographic')
+								br
+								center(style='width: 65%')
+									a(href='/assets/images/play-a-part/play-a-part-dating-survey-infographic.pdf')
+										img.img-responsive(src='/assets/images/play-a-part/dating-infographic-5-oct-01.png' data-displaymode='Original' alt='Play A Part Dating Survey Infographic ' title='Play A Part Dating Survey Infographic ')
+
+					.tabbed-content
+						+tabs({
+							'tabs': [
+								{
+									'id': 'gallery',
+									'title': 'Gallery',
+									'img': '/assets/images/gallery.png'
+								},
+								{
+									'id': 'media',
+									'title': 'Media Highlights',
+									'img': '/assets/images/media-highlights.png'
+								},
+								{
+									'id': 'links',
+									'title': 'Useful Links',
+									'img': '/assets/images/useful-link.png'
+								}
+							]
+						})
+
+						.tabs__content
+							.content__wrap#gallery
+								#Title_C015_Col00.sf_colsIn(data-sf-element='tabs-content' data-placeholder-label='tabs-content')
+									.sfContentBlock
+										h2 Image Gallery
+										.embed-responsive.embed-responsive-16by9
+											//- iframe#gallery.embed-responsive-item(src='//www.madeforfamilies.gov.sg/madeforfamilies/PlayAPart/gallery-embed')
+									.sfContentBlock
+										h2 Video Gallery
+										strong
+											| Hari Raya with #HafandHaf
+											br
+										em by Gov.sg
+										br
+										br
+										| The time has come to gather the family, seek forgiveness and play catch up! But for singles like Haf, it's time to silat the (annoying) questions 🙅‍♀ But one Caffe Latte sends her Hari Raya on a completely different course...
+										br
+										br
+										iframe(src='https://www.youtube.com/embed/-PfAZHMVipY' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' width='100%' height='300' frameborder='0')
+										br
+										strong
+											br
+											| Be #BabyReady
+											br
+										em by HeyBaby and IKEA Singapore
+										br
+										br
+										| The #BabyReady campaign kicked off on 3 November 2018 with an event in partnership with IKEA Singapore, which aimed to encourage young couples to consider starting a family earlier. Parenthood can be challenging, involving additional financial costs and responsibilities to take on, and requiring greater demands on one’s time and attention. The series of videos aimed to show that with proper planning, realistic expectations, and community support, parenthood can be attainable. Click on the links below to find out more.
+										br
+										br
+										ul(style='list-style-type: none; margin: 0; padding: 0;')
+											li
+												| Video 1: 
+												a(href='https://www.youtube.com/watch?v=gN_evaFT4Lg' target='_blank') Fathers are a great source of support – Be #BabyReady
+											li
+												| Video 2: 
+												a(href='https://www.youtube.com/watch?v=0d6cAbSLeDM' target='_blank') Cost of raising a child can be manageable – Be #BabyReady
+											li
+												| Video 3: 
+												a(href='https://www.youtube.com/watch?v=Y-kOY0jupVg' target='_blank') Having a child doesn’t mean you have to give up your lifestyle – Be #BabyReady
+
+							.content__wrap#media
+								#Title_C017_Col00.sf_colsIn(data-sf-element='tabs-content' data-placeholder-label='tabs-content')
+									.sfContentBlock
+										ul(style='list-style-type: none; margin: 0; padding: 0;')
+											p
+												strong
+													span(style='font-size: 16px; color: #f79646;') Recommendations by the Citizens' Panel on Work-Life Harmony, 9 November 2019
+											ul
+												li
+													strong The Straits Times, 10 November 2019: 
+													a(href='https://www.straitstimes.com/singapore/citizens-panel-makes-17-recommendations-to-boost-work-life-harmony' target='_blank') Citizens' panel makes 17 recommendations to boost work-life harmony
+												li
+													strong Lianhe Zaobao, 10 November 2019: 
+													a(href='https://www.zaobao.com.sg/news/singapore/story20191110-1004030')
+														| 就雇用合同列灵活工作安排 公民咨询小组公布17项建议
+														em (
+														em Citizens' Panel makes 17 recommendations on flexi-work arrangements)
+											p
+												strong
+													span(style='font-size: 16px; color: #f79646;')
+														| Minister Josephine Teo at Citizens' Panel on Work-Life Harmony, 28 September 2019
+											ul
+												li
+													strong The Straits Times, 28 September 2019: 
+													a(href='https://www.straitstimes.com/singapore/citizens-panel-meets-for-first-of-4-sessions-to-discuss-work-life-harmony' target='_blank') Citizens' Panel meets for first of 4 sessions to discuss work-life harmony
+												li
+													strong Channel NewsAsia, 29 September 2019: 
+													a(href='https://www.channelnewsasia.com/news/singapore/citizens-panel-session-work-life-harmony-first-11952808' target='_blank') First Citizens’ Panel session held to look at work-life harmony in Singapore
+												li
+													strong Lianhe Zaobao, 29 September 2019: 
+													a(href='https://www.zaobao.com.sg/znews/singapore/story20190929-992838')
+														| 公民咨询小组58人 首次召集探讨工作与生活和谐 
+														em (
+														em
+															| 58 people in Citizens' Panel convened for the first time to discuss work-life harmony)
+											p
+												strong
+													span(style='font-size: 16px; color: #f79646;') Minister Josephine Teo at My Family Fiesta @ SAFRA Punggol, 8 September 2019
+											ul
+												li
+													strong The Straits Times, 9 September 2019: 
+													a(href='https://www.straitstimes.com/politics/fulfilling-aspirations-of-young-couples-key-part-of-4g-vision' target='_blank') Fulfilling aspirations of young couples key part of 4G vision
+												li
+													strong Lianhe Zaobao, 9 September 2019: 
+													a(href='https://www.zaobao.com.sg/znews/singapore/story20190908-987497' target='_blank')
+														| 杨莉明： 全民参与实现全民抱负 
+														em (
+														em Josephine Teo: Participation of all citizens to fulfil ambition of all citizens)
+											p
+												strong
+													span(style='font-size: 16px; color: #f79646;')
+														| Minister Josephine Teo, Minister Desmond Lee and Senior Minister of State Amy Khor at Joint Ministerial Media Conference on Marriage and Parenthood at My First Skool @ 2 Punggol Drive, 28 August 2019
+											ul
+												li
+													strong Lianhe Zaobao, 29 August 2019: 
+													a(href='https://www.zaobao.com.sg/news/singapore/story20190829-984658' target='_blank')
+														| 生儿育女无法单靠政策 杨莉明促国人各尽一份心力 
+														em
+															| (Parenthood not just about policies: Josephine Teo urges all Singaporeans to do their part)
+											span(style='text-decoration: underline;') Preschool
+											ul
+												li
+													strong The Straits Times, 29 August 2019: 
+													a(href='https://www.straitstimes.com/singapore/lower-pre-school-expenses-for-many-families-from-2020' target='_blank') Lower pre-school expenses for many families from 2020
+												li
+													strong The Straits Times, 29 August 2019
+													| : 
+													a(href='https://www.straitstimes.com/singapore/extra-subsidies-a-relief-for-couple-with-2-kids' target='_blank') Extra subsidies for pre-school fees a relief for couple with 2 kids
+												li
+													strong
+														strong Channel NewsAsia, 28 August 2019: 
+													em
+														a(href='https://www.straitstimes.com/singapore/call-to-give-young-people-more-time-to-start-family-manpower-minister-josephine-teo' target='_blank' data-saferedirecturl='https://www.google.com/url?q=https://www.straitstimes.com/singapore/call-to-give-young-people-more-time-to-start-family-manpower-minister-josephine-teo&source=gmail&ust=1565861252284000&usg=AFQjCNFmhxcGgQ_StX_ghL6FWhZ7IrHbuQ')
+													a(href='https://www.channelnewsasia.com/news/singapore/pre-school-subsidies-fees-increased-income-josephine-teo-11848782' target='_blank') Additional subsidies for pre-schools to increase from January 2020 
+												li
+													strong Lianhe Zaobao, 29 August 2019: 
+													a(href='https://www.zaobao.com.sg/znews/singapore/story20190829-984644' target='_blank')
+														| 新一轮结婚生育配套 低收入家庭全天托儿费可低至3元 
+														em (
+														em
+															| Latest marriage and parenthood package will bring full-day childcare costs for low-income families to as low as $3)
+												li
+													em
+													strong Lianhe Zaobao, 29 August 2019:  
+													a(href='https://www.zaobao.com.sg/sme/government-announcement/story20190829-984657' target='_blank')
+														| 政府计划后年起逐步降低伙伴业者收费近期内维持学前教育业者收费顶限 
+														em (
+														em
+															| Government plans to gradually lower partner operators’ fees from the year after, preschool fee cap will remain for now)
+												li
+													em
+													strong Berita Harian, 29 August 2019:  
+													a(href='https://www.beritaharian.sg/setempat/yuran-prasekolah-lebih-rendah-bantuan-kos-rawatan-kesuburan' target='_blank')
+														| Yuran prasekolah lebih rendah, bantuan kos rawatan kesuburan 
+														em (
+														em Lower preschool fees, assistance for fertility treatment costs)
+												li
+													strong Berita Harian, 29 August 2019: 
+													a(href='https://www.beritaharian.sg/setempat/70-keluarga-layak-terima-subsidi-prasekolah-lebih-tinggi' target='_blank')
+														| 70% keluarga layak terima subsidi prasekolah lebih tinggi 
+														em (
+														em 70% of families qualify to receive higher preschool subsidies)
+											span(style='text-decoration: underline;') Healthcare
+											ul
+												li
+													strong
+													strong Channel NewsAsia, 28 August 2019:  
+													a(href='https://www.channelnewsasia.com/news/singapore/ivf-treatments-age-limit-subsidies-iui-fertility-treatments-11848862' target='_blank') Singapore to remove age limit for IVF treatments, introduce new subsidies 
+												li
+													strong
+													strong TODAY, 28 August 2019:  
+													a(href='https://www.todayonline.com/singapore/age-limit-ivf-be-removed-more-funding-couples-seeking-fertility-treatments' target='_blank')
+														| Age limit for IVF to be removed, more funding for couples seeking fertility treatments
+												li
+													strong TODAY, 28 August 2019: 
+													a(href='https://www.todayonline.com/singapore/women-seeking-treatments-for-infertility-to-get-help-in-making-informed-decisions' target='_blank')
+														| Women seeking treatments for infertility to get help in making informed decisions
+												li
+													strong The Straits Times, 29 August 2019: 
+													a(href='https://www.straitstimes.com/singapore/health/age-limit-to-be-removed-for-women-seeking-ivf-treatment' target='_blank') Age limit to be removed for women seeking IVF treatment
+												li
+													strong Lianhe Zaobao, 29 August 2019: 
+													a(href='https://www.zaobao.com.sg/news/singapore/story20190829-984645' target='_blank')
+														| 明年起人工受孕年龄顶限与次数不再受限 
+														em (
+														em IVF age and cycle limits to be lifted next year)
+												li
+													strong Berita Harian, 29 August 2019: 
+													a(href='https://www.beritaharian.sg/setempat/tiada-had-usia-bagi-wanita-yang-mahu-jalani-rawatan-kesuburan' target='_blank')
+														| Tiada had usia bagi wanita yang mahu jalani rawatan kesuburan 
+														em (No age limit for women who wish to undergo fertility treatment)
+											p
+												strong
+													span(style='font-size: 16px; color: #f79646;') Minister Josephine Teo at the PCF Sparkletots @ Jalan Kayu visit, 2 August 2019
+											ul
+												li
+													strong The Straits Times, 13 August 2019: 
+													a(href='https://www.straitstimes.com/singapore/young-parents-want-to-continue-other-life-pursuits-says-manpower-minister-josephine-teo?utm_medium=Social&utm_campaign=STFB&utm_source=Facebook&fbclid=IwAR3Hy04gcXkFgPYYoX_v0-WmzeBWItB5eXZDbySk3ZDsYc_8J0x5pOfebbA#Echobox=1565656580' target='_blank')
+														| Young parents want to continue other life pursuits, says Manpower Minister Josephine Teo
+												li
+													strong Lianhe Zaobao, 13 August 2019: 
+													a(href='https://www.zaobao.com.sg/znews/singapore/story20190813-980375?utm_medium=Social&utm_source=Facebook&fbclid=IwAR3AjyF4lHboALItgl5M515m5BgZmrfg-dLdO-WyZR7oMHa_ohdOyONac8s#Echobox=1565658352' target='_blank')
+														| 仅45％国人能兼顾家庭事业与个人需要 
+														em (Just 45% of Singaporeans can juggle family, work and personal needs)
+												li
+													strong The Straits Times, 13 August 2019: 
+													em
+														a(href='https://www.straitstimes.com/singapore/call-to-give-young-people-more-time-to-start-family-manpower-minister-josephine-teo' target='_blank' data-saferedirecturl='https://www.google.com/url?q=https://www.straitstimes.com/singapore/call-to-give-young-people-more-time-to-start-family-manpower-minister-josephine-teo&source=gmail&ust=1565861252284000&usg=AFQjCNFmhxcGgQ_StX_ghL6FWhZ7IrHbuQ')
+													a(href='https://www.straitstimes.com/singapore/call-to-give-young-people-more-time-to-start-family-manpower-minister-josephine-teo' target='_blank' data-saferedirecturl='https://www.google.com/url?q=https://www.straitstimes.com/singapore/call-to-give-young-people-more-time-to-start-family-manpower-minister-josephine-teo&source=gmail&ust=1565861252284000&usg=AFQjCNFmhxcGgQ_StX_ghL6FWhZ7IrHbuQ') Call to give young people more time to start family
+												li
+													strong The Straits Times, 13 August 2019: 
+													a(href='https://www.straitstimes.com/singapore/shift-in-attitudes-on-flexi-work-and-paternity-leave-needed' target='_blank' data-saferedirecturl='https://www.google.com/url?q=https://www.straitstimes.com/singapore/shift-in-attitudes-on-flexi-work-and-paternity-leave-needed&source=gmail&ust=1565861252284000&usg=AFQjCNEQHZnIMuOR7P-XoTvZuN2HsjXTeg') Shift in attitudes on flexi-work and paternity leave needed
+												li
+													strong Lianhe Zaobao, 13 August 2019: 
+													a(href='https://www.zaobao.com.sg/znews/singapore/story20190813-980368' target='_blank')
+														| 鼓励生育从“整体社会”着手 (
+														em “Whole-of-society” approach needed to encourage births)
+												li
+													strong Lianhe Zaobao, 13 August 2019: 
+													em
+														em
+														a(href='https://www.zaobao.com.sg/news/singapore/story20190813-980376' target='_blank' data-saferedirecturl='https://www.google.com/url?q=https://www.zaobao.com.sg/news/singapore/story20190813-980376&source=gmail&ust=1565861252284000&usg=AFQjCNFO1SIPcg1KuN1ta06Uw7GRTrbuJw')
+															| 年轻人应在踏入职场前扩大社交圈子 (“
+															em Young people should widen their social circles before entering the workforce”)
+											p
+												strong
+													span(style='font-size: 16px; color: #f79646;') Deputy Prime Minister Heng Swee Keat at Dad’s Day Out, 16 June 2019
+											ul
+												li
+													strong The Straits Times, 17 June 2019: 
+													a(href='https://www.straitstimes.com/singapore/dialogues-planned-to-find-work-life-solutions-for-new-parents?xtor=CS3-18&utm_source=STiPhone&utm_medium=share&utm_term=2019-06-18%2012%3A06%3A14' target='_blank') Dialogues planned to find work-life solutions for new parents
+												li
+													strong Channel NewsAsia, 16 June 2019: 
+													a(href='https://www.channelnewsasia.com/news/singapore/balancing-work-family-time-a-struggle-for-parents-in-singapore-11632232' target='_blank') Balancing work, family time a struggle for parents in Singapore: Heng Swee Keat
+												li
+													strong Lianhe Zaobao, 17 June 2019: 
+													a(href='https://www.zaobao.com.sg/znews/singapore/story20190617-965021' target='_blank')
+														| 父亲节谈育儿经  王瑞杰夫妇感谢彼此 (
+														em
+															| Sharing parenting tips on Father’s Day, DPM Heng Swee Keat and wife express thanks to one another)
+											p
+												strong
+													span(style='font-size: 16px; color: #f79646;') Minister Josephine Teo’s Facebook Post on Father’s Day, 16 June 2019
+											ul
+												li
+													strong Lianhe Zaobao, 17 June 2019: 
+													a(href='https://www.zaobao.com.sg/news/singapore/story20190617-965030' target='_blank')
+														| 杨莉明：本地新手父亲陪产假使用率达53% 
+														em (Minister Josephine Teo: 53% of new fathers take paternity leave in Singapore)
+												li
+													strong  8world, 16 June 2019: 
+													a(href='https://www.8world.com/news/singapore/article/citizens-panel-843291' target='_blank')
+														| 杨莉明：我国有53%新手爸爸会拿育婴假 
+														em
+															| (Minister Josephine Teo: 53% of new fathers will take paternity leave in Singapore)
+											p
+												strong
+													span(style='font-size: 16px; color: #f79646;')
+														| Announcement of Citizens’ Panel on Work-Life at the REACH-CNA dialogue, 15 June 2019
+											ul
+												li
+													strong The Straits Times, 16 June 2019: 
+													a(href='https://www.straitstimes.com/singapore/panel-to-tap-citizens-views-for-work-life-harmony?xtor=CS3-18&utm_source=STiPhone&utm_medium=share&utm_term=2019-06-18%2011%3A06%3A12' target='_blank') Panel to tap citizens’ view for work-life harmony
+												li
+													strong Lianhe Zaobao, 16 June 2019: 
+													a(href='https://www.zaobao.com.sg/news/singapore/story20190616-964830' target='_blank')
+														| “专线队长”杨莉明领导公民咨询小组探讨工作生活平衡 
+														em (Minister Josephine Teo to lead Citizens’ Panel on Work-Life)
+												li
+													strong Lianhe Zaobao, 16 June 2019: 
+													a(href='https://www.zaobao.com.sg/realtime/singapore/story20190615-964742' target='_blank')
+														| 副总理王瑞杰：国人将有更多机会参与制定政策 
+														em
+															| (DPM Heng Swee Keat: Singaporeans will have more opportunities to play a part in designing policies)
+													strong
+												li
+													strong Channel NewsAsia, 3 Nov 2018: 
+													a(href='https://www.channelnewsasia.com/news/singapore/government-can-help-couples-be-baby-ready-josephine-teo-10894564' target='_blank') Government can help couples be 'baby ready': Josephine Teo
+												li
+													strong Berita Harian, 17 June 2019: 
+													a(href='https://www.beritaharian.sg/setempat/pemerintah-perkenal-siri-dialog-bantu-ibu-bapa-muda-dpm-heng' target='_blank')
+														| Pemerintah perkenal siri dialog bantu ibu bapa muda: DPM Heng  
+														em (Government to introduce a series of dialogues to help young parents: DPM Heng)
+											p
+												strong
+													span(style='font-size: 16px; color: #f79646;')
+														strong(style='font-size: 13px;')
+															span(style='font-size: 16px;') Minister Desmond Lee at Dads@School Forum, 12 May 2019
+														br
+											ul
+												li
+													strong Lianhe Zaobao, 12 May 2019: 
+													a(href='https://www.zaobao.com.sg/news/singapore/story20190512-955820' target='_blank')
+														| “终生为父” 运动10年 迎来 “终生为母” 运动 
+														em
+															| (Mums for Life movement launched after Dads for Life movements enter its 10th year)
+											p
+												strong
+													span(style='font-size: 16px; color: #f79646;')
+														| Minister Josephine Teo at the Embracing PArenthood Celebrations @ Bishan North, 21 April 2019
+											ul
+												li
+													strong Berita Harian, 20 April 2019: 
+													a(href='https://www.beritaharian.sg/setempat/wadah-galak-warga-singapura-kongsi-pandangan-tentang-kahwin-dan-mulakan-keluarga' target='_blank')
+														| Wadah galak warga Singapura kongsi pandangan tentang kahwin dan mulakan keluarga 
+														em
+															| (Platforms encouraging Singaporeans to share their views on marriage and starting a family)
+												li
+													strong Lianhe Zaobao, 21 April 2019: 
+													a(href='https://www.zaobao.com.sg/news/singapore/story20190421-950238' target='_blank')
+														| 参与Heybaby.sg网站调查 公众可对结婚
+														wbr
+														| 生子提供反馈 
+														em
+															| (Public may share feedback on marriage and parenthood through Heybaby.sg's survey)
+												li
+													strong The Straits Times, 21 April 2019: 
+													a(href='https://www.straitstimes.com/singapore/how-to-boost-family-support-share-your-views-on-heybabysg' target='_blank') How to boost family support? Share your views on Heybaby.sg
+												li
+													strong The Straits Times, 21 April 2019: 
+													a(href='https://www.straitstimes.com/singapore/sporeans-feedback-sought-on-marriage-and-parenthood' target='_blank') Singaporeans' feedback sought on marriage and parenthood
+											p
+												strong
+													span(style='font-size: 16px; color: #f79646;') Committee of Supply 2019, 28 February 2019
+											ul
+												li
+													strong Channel NewsAsia, 28 Feb 2019: 
+													a(href='https://www.channelnewsasia.com/news/singapore/government-to-consult-singaporeans-marriage-parenthood-11298294' target='_blank') Government to consult Singaporeans on concerns over marriage and parenthood
+												li
+													strong The Straits Times, 28 Feb 2019: 
+													a(href='https://www.straitstimes.com/politics/parliament-singapores-fertility-rate-looking-up' target='_blank')
+														| Parliament: Singapore's fertility rate looking up on the back of positive marriage trends
+												li
+													strong Lianhe Zaobao, 1 Mar 2019: 
+													a(href='https://www.zaobao.com.sg/sme/news/story20190301-935886' target='_blank')
+														| 新公司灵活工作安排 让夫妻俩兼顾家庭与事业 
+														em (New flexible work arrangements allow couple to juggle their family and career)
+												li
+													strong Lianhe Zaobao, 1 Mar 2019: 
+													a(href='https://www.zaobao.com.sg/znews/singapore/story20190301-935866' target='_blank')
+														| 杨莉明：整体生育率近年下跌 政府探讨措施更好支持计划生育国人 
+														em
+															| (Government exploring measures to strengthen support for marriage and parenthood)
+												li
+													strong The Business Times, 1 Mar 2019: 
+													a(href='https://www.businesstimes.com.sg/government-economy/singapores-total-fertility-rate-continues-to-dip-but-citizen-births-and-marriages' target='_blank')
+														| Singapore's total fertility rate continues to dip, but citizen births and marriages are up
+												li
+													strong The Straits Times, 1 Mar 2019: 
+													a(href='https://www.straitstimes.com/politics/flexi-work-benefits-firm-workers' target='_blank') Flexi-work benefits firm, workers
+												li
+													strong The Straits Times, 1 Mar 2019: 
+													a(href='https://www.straitstimes.com/politics/optimism-for-uptick-in-total-fertility-rate' target='_blank') Parliament: Optimism for uptick in total fertility rate
+											p
+												strong
+													span(style='font-size: 16px; color: #f79646;')
+														| Minister Josephine Teo at the KK Women's and Children's Hospital visit, 5 February 2019
+											ul
+												li
+													strong Channel News Asia, 5 Feb 2019: 
+													a(href='http://www.channelnewsasia.com/news/singapore/government-will-strengthen-support-for-young-families-josephine-11204660' target='_blank') Government will strengthen support for young families: Josephine Teo
+												li
+													strong Lianhe Zaobao, 7 Feb 2019: 
+													a(href='https://www.zaobao.com.sg/news/singapore/story20190207-929797' target='_blank')
+														| 学前教育学额2023年男至20万 
+														em (Preschool places to increase to 200,000 in 2023)
+											p
+												strong
+													span(style='font-size: 16px; color: #f79646;') Minister Josephine Teo at the Baby Ready Launch, 3 November 2018
+											ul
+												li
+													strong Channel NewsAsia, 3 Nov 2018: 
+													a(href='https://www.channelnewsasia.com/news/singapore/government-can-help-couples-be-baby-ready-josephine-teo-10894564' target='_blank') Government can help couples be 'baby ready': Josephine Teo
+												li
+													p
+														a(href='https://www.channelnewsasia.com/news/singapore/government-can-help-couples-be-baby-ready-josephine-teo-10894564' target='_blank')
+														strong Lianhe Zaobao, 4 Nov 2018: 
+														a(href='https://www.zaobao.com.sg/news/singapore/story20181104-904567' target='_blank')
+															| 杨莉明： 政府投入资源打造亲家庭环境盼国人生儿育女 
+															em
+																| (Josephine Teo: Government invested resources to create pro-family environment in hopes that Singaporeans will have children)
+
+							.content__wrap#links
+								#Title_C016_Col00.sf_colsIn(data-sf-element='tabs-content' data-placeholder-label='tabs-content')
+									.sfContentBlock
+										.row.bord-bot
+											.col-md-12.pad-10
+												strong Baby and maternity related matters
+										.row
+											.col-md-6.col-sm-12.pad-10 Baby Bonus Scheme -
+											.col-md-6.col-sm-12.pad-10
+												| Ministry of Social and Family Development (MSF)
+												br
+												| 1800 253 7707
+												br
+												a(href='https://www.babybonus.msf.gov.sg' target='_blank') www.babybonus.msf.gov.sg
+										.row.bord-bot
+											.col-md-6.col-sm-12.pad-10 Government-Paid Maternity Benefit -
+											.col-md-6.col-sm-12.pad-10
+												| Government Paid Leave Scheme (GPLS)
+												br
+												| Hotline
+												| 1800 253 4757
+												br
+												a(href='mailto:contactus@profamilyleave.gov.sg') contactus@profamilyleave.gov.sg
+												br
+												a(href='https://www.profamilyleave.gov.sg' target='_blank') www.profamilyleave.gov.sg
+										.row.bord-bot
+											.col-md-6.col-sm-12.pad-10
+												| MediSave
+												ul
+													li Assisted Conception Procedures (ACP) and Medisave Maternity Package
+													li MediSave Grant for Newborns
+													li MediShield Life Coverage from Birth
+											.col-md-6.col-sm-12.pad-10
+												| CPF Board
+												br
+												| 1800 227 1188
+												br
+												a(href='mailto:member@cpf.gov.sg') member@cpf.gov.sg
+												br
+												a(href='https://www.cpf.gov.sg' target='_blank') www.cpf.gov.sg
+										.row.bord-bot
+											.col-md-6.col-sm-12.pad-10 Co-Funding for Assisted Reproduction Technology (ART) Treatment -
+											.col-md-6.col-sm-12.pad-10
+												| Ministry of Health (MOH)
+												br
+												| 6325-9220
+												br
+												a(href='mailto:moh_qsm@moh.gov.sg') moh_qsm@moh.gov.sg
+												br
+												a(href='https://www.moh.gov.sg' target='_blank') www.moh.gov.sg
+										.row.bord-bot
+											.col-md-6.col-sm-12.pad-10 Pre-Pregnancy Preparation -
+											.col-md-6.col-sm-12.pad-10
+												| Health Hub
+												br
+												a(href='mailto:contactus@profamilyleave.gov.sg')
+												a(href='https://www.healthhub.sg/live-healthy/907/pregnancy-pre-pregnancy-preparation') https://www.healthhub.sg/live-healthy/907/pregnancy-pre-pregnancy-preparation
+										.row.bord-bot
+											.col-md-12.pad-10
+												strong Child care related matters
+										.row
+											.col-md-6.col-sm-12.pad-10 Enhanced Subsidies for Centre-Based Infant Care & Child Care -
+											.col-md-6.col-sm-12.pad-10
+												| Early Childhood Development Agency (ECDA)
+												br
+												| 6258 5812
+												br
+												a(href='mailto:contact@ecda.gov.sg') contact@ecda.gov.sg
+												br
+												a(href='https://www.ecda.gov.sg' target='_blank') www.ecda.gov.sg
+										.row.bord-bot
+											.col-md-6.col-sm-12.pad-10 Grow@Beanstalk -
+											.col-md-6.col-sm-12.pad-10
+												| Grow@Beanstalk
+												br
+												a(href='https://www.ecda.gov.sg/growatbeanstalk' target='_blank') www.ecda.gov.sg/growatbeanstalk
+										.row.bord-bot
+											.col-md-12.pad-10
+												strong Concession and tax relief related matters
+										.row
+											.col-md-6.col-sm-12.pad-10
+												| Enhanced Foreign Domestic Worker Levy Concession (Young Child/Grandchild/ Elderly Person Schemes) -
+											.col-md-6.col-sm-12.pad-10
+												| Ministry of Manpower (MOM)
+												br
+												| 6438 5122
+												br
+												a(href='https://www.mom.gov.sg' target='_blank') www.mom.gov.sg
+										.row.bord-bot
+											.col-md-6.col-sm-12.pad-10 Tax Measures
+											.col-md-6.col-sm-12.pad-10
+												| IRAS
+												br
+												| 1800 356 8300
+												br
+												a(href='https://www.iras.gov.sg' target='_blank') www.iras.gov.sg
+										.row.bord-bot
+											.col-md-12.pad-10
+												strong Housing related matters
+										.row
+											.col-md-6.col-sm-12.pad-10 Parenthood Priority Scheme (PPS) -
+											.col-md-6.col-sm-12.pad-10
+												| HDB
+												| 1800 866 3066
+												br
+												a(href='mailto:hdbsales@hdb.gov.sg') hdbsales@hdb.gov.sg
+												br
+												a(href='https://www.hdb.gov.sg' target='_blank') www.hdb.gov.sg
+										.row.bord-bot
+											.col-md-6.col-sm-12.pad-10 Parenthood Provisional Housing Scheme (PPHS) -
+											.col-md-6.col-sm-12.pad-10
+												| HDB
+												| 1800 225 5432
+												br
+												a(href='mailto:hdbrental@hdb.gov.sg') hdbrental@hdb.gov.sg
+												br
+												a(href='https://www.hdb.gov.sg' target='_blank') www.hdb.gov.sg
+										.row.bord-bot
+											.col-md-12.pad-10
+												strong Relationship building and marriage related matters
+										.row
+											.col-md-6.col-sm-12.pad-10 Registry of Marriages (ROM) -
+											.col-md-6.col-sm-12.pad-10
+												| ROM/ROMM
+												| 6338 7808
+												br
+												a(href='https://www.rom.gov.sg' target='_blank') www.rom.gov.sg
+												br
+												a(href='https://www.romm.gov.sg' target='_blank') www.romm.gov.sg
+										.row.bord-bot
+											.col-md-6.col-sm-12.pad-10 Social Development Network (SDN)
+											.col-md-6.col-sm-12.pad-10
+												| SDN
+												| 6838 3988
+												br
+												a(href='mailto:msf_sdn@msf.gov.sg') msf_sdn@msf.gov.sg
+												br
+												a(href='https://www.sdn.sg' target='_blank') www.sdn.sg
+										.row.bord-bot
+											.col-md-12.pad-10
+												strong Work-life related matters
+										.row
+											.col-md-6.col-sm-12.pad-10 Work-Life Grant -
+											.col-md-6.col-sm-12.pad-10
+												| SNEF
+												| 6827 6949
+												br
+												a(href='mailto:wdm@snef.org.sg') wdm@snef.org.sg
+												br
+												a(href='https://snef.org.sg/') www.snef.org.sg
+												br
+												| NTUC
+												br
+												| 6213 8383
+												br
+												a(href='mailto:wds@ntuc.org.sg') wds@ntuc.org.sg
+												br
+												a(href='https://www.ntuc.org.sg' target='_blank') www.ntuc.org.sg
+										.row.bord-bot
+											.col-md-12.pad-10
+												strong Community partners
+										.row
+											.col-md-6.col-sm-12.pad-10 Centre for Fathering -
+											.col-md-6.col-sm-12.pad-10
+												a(href='https://www.fathers.com.sg' target='_blank') www.fathers.com.sg
+										.row
+											.col-md-6.col-sm-12.pad-10 Focus on the Family Singapore -
+											.col-md-6.col-sm-12.pad-10
+												a(href='https://www.family.org.sg' target='_blank') www.family.org.sg
+										.row.bord-bot
+											.col-md-6.col-sm-12.pad-10 I Love Children Singapore -
+											.col-md-6.col-sm-12.pad-10
+												a(href='https://www.ilovechildren.sg' target='_blank') www.ilovechildren.sg
+										.row.bord-bot
+											.col-md-12.pad-10
+												strong Other useful links
+										.row
+											.col-md-6.col-sm-12.pad-10 Families for Life -
+											.col-md-6.col-sm-12.pad-10
+												a(href='https://www.familiesforlife.sg' target='_blank') www.familiesforlife.sg
+										.row
+											.col-md-6.col-sm-12.pad-10 Moments of Life -
+											.col-md-6.col-sm-12.pad-10
+												| Search for “
+												a(href='https://www.smartnation.sg/what-is-smart-nation/initiatives/Digital-Government-Services/moments-of-life-families' target='_blank') Moments of Life
+												| ” on iTunes or Google Play to download the app
+										.row.bord-bot
+											.col-md-6.col-sm-12.pad-10 Population.sg -
+											.col-md-6.col-sm-12.pad-10
+												a(href='https://www.population.sg' target='_blank') www.population.sg
+										.row.bord-bot
+											.col-md-12.pad-10
+												| Drop us a feedback 
+												a(href='https://www.heybaby.sg/feedback-form' target='_blank') here 
+												|  or e-mail 
+												a(href='mailto:sg_feedback@pmo.gov.sg') sg_feedback@pmo.gov.sg
+
+				.col-md-5.col-sm-5.col-xs-12
+					.sf_cols.sform
+						.sf_colsOut.sf_1col_1_100(style='')
+							#ShareThis_C011_Col00.sf_colsIn.sf_1col_1in_100
+								.suggestion(data-sf-role='form-container')
+									input(type='hidden' data-sf-role='form-id' value='68f77781-19a8-4dc2-a1b8-2dbeef6b26fc' name='FormId')
+									div(id='defaultFormctl00$ShareThis$C012' enctype='multipart/form-data')
+										.sf-fieldWrp(data-sf-role='paragraph-text-field-container')
+											input(type='hidden' data-sf-role='violation-messages' value='{"maxLength":"Please keep to a limit of 2000 characters for this field.", "required": "Suggestion field required for valid entry."}')
+											label(for='Textarea-1') Have a Suggestion?
+											textarea#Textarea-1(data-sf-role='paragraph-text-field-textarea' name='ParagraphTextFieldController' placeholder='Please leave your suggestion here (up to 2000 characters). You may wish to include your contact details (name, e-mail, mobile number) if you would like us to get in touch with you on your suggestion.' required='required' maxlength='2009')
+										.sf-fieldWrp(data-sf-role='field-captcha-container' style='display:none;')
+											div
+												img(data-sf-role='captcha-image' src='/Frontend-Assembly/Telerik.Sitefinity.Frontend/assets/dist/img/dummy.jpg')
+												button(data-sf-role='captcha-audio-btn' type='button') Read the code
+												audio(data-sf-role='captcha-audio' controls='' style='display:none')
+											a(data-sf-role='captcha-refresh-button') New code
+											div
+												input(data-sf-role='violation-messages' type='hidden' value='{"required": "{0} field input is required"}')
+												label(for='Textbox-1') Please type the code above
+												input#Textbox-1(type='text' data-sf-role='captcha-input' name='captcha-a' required='required')
+												p(data-sf-role='invalid-captcha-input')
+													| Incorrect value for the captcha image
+											input(type='hidden' data-sf-role='captcha-ca' name='captcha-ca')
+											input(type='hidden' data-sf-role='captcha-iv' name='captcha-iv')
+											input(type='hidden' data-sf-role='captcha-k' name='captcha-k')
+											input(type='hidden' data-sf-role='captcha-settings' value='/RestApi/comments-api/')
+										.sf-fieldWrp
+											button(type='submit') Submit
+									script(type='text/javascript').
+										(function($) {
+											$(function() {
+													var container = document.getElementById("defaultFormctl00$ShareThis$C012");
+													if (container === null)
+														return;
+													var inputs = container.querySelectorAll("input, textarea, select");
+													var allInputs = document.forms["aspnetForm"].querySelectorAll('input, textarea', 'select');
+													var widgetValidators = [];
+													for (var i = 0; i < allInputs.length; i++) {
+														if ($(allInputs[i]).data('widget-validator')) {
+															widgetValidators.push($(allInputs[i]).data('widget-validator'));
+														}
+														allInputs[i].addEventListener("invalid", function(event) {
+															if (Array.indexOf(inputs, document.activeElement) >= 0 && Array.indexOf(inputs, event.target) < 0)
+																event.preventDefault();
+														}, true);
+													}
+													var submitClick = function(sender) {
+														var isValid = true;
+														for (var i = 0; i < inputs.length; i++) {
+															if (typeof inputs[i].willValidate !== "undefined" && inputs[i].willValidate)
+																isValid = inputs[i].validity.valid && isValid;
+															if (isValid && typeof($(inputs[i]).data('sfvalidator')) === 'function')
+																isValid = $(inputs[i]).data('sfvalidator')();
+															if (typeof $ !== "undefined" && typeof $.validator !== "undefined")
+																isValid = $(inputs[i]).valid() && isValid;
+														}
+															if (isValid) {
+																sender.preventDefault();
+																var deferreds = [];
+																for (var i = 0; i < widgetValidators.length; i++) {
+																	deferreds.push(widgetValidators[i]());
+																}
+																$.when.apply($, deferreds).done(function() {
+																	for (var i = 0; i < widgetValidators.length; i++) {
+																		if (!arguments[i]) {
+																			return false;
+																		}
+																	}
+																	var form = document.createElement("form");
+																	form.style.display = "none";
+																	form.setAttribute("action", "/MadeForFamilies/PlayAPart?sf_cntrl_id=ctl00%24ShareThis%24C012");
+																	form.setAttribute("method", "POST");
+																	if (container.getAttribute("enctype"))
+																		form.setAttribute("enctype", container.getAttribute("enctype"));
+																	else
+																		form.setAttribute("enctype", document.forms["aspnetForm"].getAttribute("enctype"));
+																	form.setAttribute("encoding", document.forms["aspnetForm"].getAttribute("encoding"));
+																	form.appendChild(container);
+																	sender = sender.target || sender.srcElement;
+																	if (sender) {
+																		var submitHiddenInput = document.createElement("input");
+																		submitHiddenInput.setAttribute("type", "hidden");
+																		submitHiddenInput.setAttribute("name", sender.name);
+																		submitHiddenInput.setAttribute("value", sender.value || "Submit");
+																		form.appendChild(submitHiddenInput);
+																	}
+																	document.body.appendChild(form);
+																	// We prevent kendo upload widget from submitting empty inputs.
+																	var kInputs = container.querySelectorAll(".k-upload input[type='file']");
+																	for (var i = 0; i < kInputs.length; i++) {
+																		var kInput = kInputs[i];
+																		if (!kInput.value) {
+																			// Prevent submitting an empty input
+																			kInput.setAttribute("disabled", "disabled");
+																			window.setTimeout(function() {
+																					kInput.removeAttribute("disabled");
+																			}, 0);
+																		}
+																	}
+																	if (typeof MarketoSubmitScript !== 'undefined') {
+																		MarketoSubmitScript._populateFormId($('input[data-sf-role="form-id"]').val());
+																		var newSubmitButtons = $(form).find(MarketoSubmitScript._settings.externalFormSubmitButtonsQuery);
+																		if (newSubmitButtons.length > 0)
+																			MarketoSubmitScript._formFields = MarketoSubmitScript._getExternalFormFields(newSubmitButtons[0]);
+																		if (MarketoSubmitScript._formFields && MarketoSubmitScript._formFields.length === 0)
+																			MarketoSubmitScript._populateFieldsFromLabels(form);
+																		MarketoSubmitScript._formSubmitHandler();
+																	}
+																		form.submit();
+																		return false;
+																});
+															}
+													};
+													var handleFormSubmitElements = function(elementName) {
+														var allSubmitElements = container.getElementsByTagName(elementName);
+														var elementCount = allSubmitElements.length;
+														while (elementCount) {
+															typeAttr = allSubmitElements[elementCount - 1].getAttribute("type");
+															if (typeAttr == "submit") {
+																var currentClick = allSubmitElements[elementCount - 1].onclick;
+																if (currentClick)
+																	allSubmitElements[elementCount - 1].onclick = function() {
+																		if (currentClick()) return submitClick();
+																		else return false;
+																	};
+																else
+																	allSubmitElements[elementCount - 1].onclick = submitClick;
+															}
+															elementCount--;
+														}
+													};
+													handleFormSubmitElements("input");
+													handleFormSubmitElements("textarea");
+													handleFormSubmitElements("select");
+													handleFormSubmitElements("button");
+											})
+										});
+
+					.sfContentBlock
+						+carousel({
+							'type': 'social',
+							'carousel': [
+								{
+									'datahref': 'https://www.facebook.com/madeforfamiliessg',
+									'datatabs': 'timeline',
+									'cite': 'https://www.facebook.com/facebook',
+									'socialTitle': 'Facebook',
+									'href': 'https://www.facebook.com/facebook',
+									'title': 'Made for Families'
+								},
+								{
+									'datahref': 'https://www.facebook.com/DadsforLife/',
+									'datatabs': 'timeline',
+									'cite': 'https://www.facebook.com/facebook',
+									'socialTitle': 'Facebook',
+									'href': 'https://www.facebook.com/facebook',
+									'title': 'Dads for life'
+								},
+								{
+									'datahref': 'https://www.facebook.com/BabyBonusParenting/',
+									'datatabs': 'timeline',
+									'cite': 'https://www.facebook.com/facebook',
+									'socialTitle': 'Facebook',
+									'href': 'https://www.facebook.com/facebook',
+									'title': 'Baby Bonus Parenting'
+								},
+								{
+									'datahref': 'https://www.facebook.com/BeanstalkSingapore/',
+									'datatabs': 'timeline',
+									'cite': 'https://www.facebook.com/facebook',
+									'socialTitle': 'Facebook',
+									'href': 'https://www.facebook.com/facebook',
+									'title': 'Beanstalk Singapore'
+								}
+							]
+						})

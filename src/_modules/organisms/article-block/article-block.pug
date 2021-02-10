@@ -6,11 +6,12 @@ mixin article-block(spec)
   - spec.__class = spec.__class || ''
 
   .content-block(class=spec.__class)&attributes(attributes)
-    +article-header({
-      'title': 'Parenting Beyond Academic Achievements',
-      'subtitle': 'Support for Marriage and Parenthood',
-      'masthead': '/assets/images/article/article-masthead-img.png'
-    })
+    if spec.header
+      +article-header({
+        'title': spec.header.title,
+        'subtitle': spec.header.subtitle,
+        'masthead': spec.header.masthead
+      })
 
     .content-block__main
       aside

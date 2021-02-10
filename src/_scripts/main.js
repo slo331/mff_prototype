@@ -14,6 +14,7 @@ import SiteSearch from '../_modules/molecules/site-search/site-search';
 import Listing from '../_modules/molecules/listing/listing';
 import Spotlight from '../_modules/molecules/spotlight/spotlight';
 import Sidebar from '../_modules/molecules/sidebar/sidebar';
+import Tabs from '../_modules/molecules/tabs/tabs';
 import HomeCarousel from '../_modules/organisms/home-carousel/home-carousel';
 
 $(() => {
@@ -79,5 +80,9 @@ $(() => {
       new Accordion($el);
     });
   }
+
+  if($('.tabs__nav').length) {
+		new Tabs(config);
+	};
 });
 
