@@ -7,6 +7,7 @@ mixin listing(spec)
 	- spec = spec || {}
 	- spec.__class = spec.__class || ''
 	- spec.filter = spec.filter || ''
+	- spec.btnFilter = spec.btnFilter || ''
 
 	.listing(class=spec.__class)&attributes(attributes)
 		if spec.title
@@ -20,7 +21,8 @@ mixin listing(spec)
 		.listing-wrap(data-endpoint=spec.endpoint data-url=spec.url)
 			if spec.filter
 				+list-filter({
-					'filter': spec.filter
+					'filter': spec.filter,
+					'btnFilter': spec.btnFilter
 				})
 			
 			.list

@@ -37,6 +37,7 @@ export default class Listing extends ListingBase {
     /* 2. Setup the listener (the following is available in the ListingBase, can reuse) */
     this.setupListeners(this.allFields);
 
+    
     let $filterBtn = $('.btn--filter', $selector);
 
     $filterBtn.on('click', e => {
@@ -143,7 +144,7 @@ export default class Listing extends ListingBase {
                     })
                     .done(() => {
                       setTimeout(() => {
-                        console.log($wrap.outerHeight());
+                        // console.log($wrap.outerHeight());
 
                         $grandparent.next('.partners-item').find('.partners-wrap').css({
                           paddingBottom: $wrap.outerHeight()
@@ -177,7 +178,7 @@ export default class Listing extends ListingBase {
                     })
                     .done(() => {
                       setTimeout(() => {
-                        console.log($wrap.outerHeight());
+                        // console.log($wrap.outerHeight());
 
                         $parent.css({
                           paddingBottom: $wrap.outerHeight()
@@ -216,7 +217,7 @@ export default class Listing extends ListingBase {
                   })
                   .done(() => {
                     setTimeout(() => {
-                      console.log($wrap.outerHeight());
+                      // console.log($wrap.outerHeight());
     
                       $parent.css({
                         paddingBottom: $wrap.outerHeight()

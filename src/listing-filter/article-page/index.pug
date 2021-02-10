@@ -4,45 +4,51 @@ include ../../_modules/molecules/breadcrumbs/breadcrumbs
 include ../../_modules/organisms/article-block/article-block
 
 block config
-  //- Correct base url pathing for this page
-  - isHome = false
-  - var pageTitle = 'Parenting Beyond Academic Achievements'
-  - var page = 'resources'
-  - var site = htmlWebpackPlugin.options //global site data
-  - var baseUrl = '../../'
+	//- Correct base url pathing for this page
+	- isHome = false
+	- var pageTitle = 'Parenting Beyond Academic Achievements'
+	- var page = 'resources'
+	- var site = htmlWebpackPlugin.options //global site data
+	- var baseUrl = '../../'
 
 block content
-  +breadcrumbs({
-    'level1': 'Resources',
-    'level1URL': '#',
-    'level2': 'Made For Families Stories',
-    'level2URL': '/listing-filter',
-    'level3': 'Parenting Beyond Academic Achievements'
-  })
+	+breadcrumbs({
+		'level1': 'Resources',
+		'level1URL': '#',
+		'level2': 'Made For Families Stories',
+		'level2URL': '/listing-filter',
+		'level3': 'Parenting Beyond Academic Achievements'
+	})
 
-  +article-block()
-    .rte
-      p Singapore’s education system is well known to be one of the most rigorous in the world. Most students emerge with an above-average grasp of mathematics and science as compared to their peers around the world.
+	+article-block({
+		'header': {
+			'title': 'Parenting Beyond Academic Achievements',
+			'subtitle': 'Support for Marriage and Parenthood',
+			'masthead': '/assets/images/article/article-masthead-img.png'
+		}
+	})
+		.rte
+			p Singapore’s education system is well known to be one of the most rigorous in the world. Most students emerge with an above-average grasp of mathematics and science as compared to their peers around the world.
 
-      p There are kids who, with tuition classes or not, manage to cruise through more than a decade of formal education with relatively decent grades. For those who are not so academically inclined, the stress to up their grades can get immense.
+			p There are kids who, with tuition classes or not, manage to cruise through more than a decade of formal education with relatively decent grades. For those who are not so academically inclined, the stress to up their grades can get immense.
 
-      p Watching your kids wrestle with academic difficulties can trigger a boatload of emotions – from protectiveness to Tiger Mum instincts (bring on the private tutors!). Expectedly, things may start to get a little hairy at home.
-      
-      p At the end of the day, it is safe to say that all parents hope for their kids to grow up confident, resilient and well adjusted, no matter the kind of grades they receive or the schools they qualify for.
+			p Watching your kids wrestle with academic difficulties can trigger a boatload of emotions – from protectiveness to Tiger Mum instincts (bring on the private tutors!). Expectedly, things may start to get a little hairy at home.
+			
+			p At the end of the day, it is safe to say that all parents hope for their kids to grow up confident, resilient and well adjusted, no matter the kind of grades they receive or the schools they qualify for.
 
-      p The ways to get there may differ for unique individuals but here are some tips for you (your children’s best cheerleader) to consider if they start losing steam in schoolwork:
+			p The ways to get there may differ for unique individuals but here are some tips for you (your children’s best cheerleader) to consider if they start losing steam in schoolwork:
 
-      h3 1. The struggle is part of the process
-      p When they get angry and frustrated about not getting a subject concept, let them be, at least for a while. Experts around the world concur that figuring out how to get over challenges is a way for kids to learn resilience and resourcefulness. For example, if a particular text is proving too cheem, point junior to a dictionary instead of telling him or her the meanings of new words.
+			h3 1. The struggle is part of the process
+			p When they get angry and frustrated about not getting a subject concept, let them be, at least for a while. Experts around the world concur that figuring out how to get over challenges is a way for kids to learn resilience and resourcefulness. For example, if a particular text is proving too cheem, point junior to a dictionary instead of telling him or her the meanings of new words.
 
-      h3 2. Manage everyone’s expectations, including your own
-      p If you have only a few weeks before the start of exams, you and your child are better off mentally and emotionally gunning for a modest improvement rather than a three-grade jump. Smaller goals that are realistic can do so much more to lift a student’s confidence in a weak subject.
+			h3 2. Manage everyone’s expectations, including your own
+			p If you have only a few weeks before the start of exams, you and your child are better off mentally and emotionally gunning for a modest improvement rather than a three-grade jump. Smaller goals that are realistic can do so much more to lift a student’s confidence in a weak subject.
 
-      h3 3. Have a timeout
-      p Any parent who’s spent hours going over math problem sums with the kids will understand just how patience testing and unproductive these sessions can get. Sometimes, giving your kid (and yourself) a day off can help him or her come back more focused.
+			h3 3. Have a timeout
+			p Any parent who’s spent hours going over math problem sums with the kids will understand just how patience testing and unproductive these sessions can get. Sometimes, giving your kid (and yourself) a day off can help him or her come back more focused.
 
-      h3 4. Celebrate mastery of soft skills
-      p Academic excellence is great, but all adults know that grades do not define a person. Rather, big corporations are touting things like emotional intelligence, communication skills and flexibility as essential traits for the future workplace. Empathy and kindness are also highly regarded characteristics of a leader. When the kids demonstrate these qualities during their downtime or in school, be generous with your praise!
+			h3 4. Celebrate mastery of soft skills
+			p Academic excellence is great, but all adults know that grades do not define a person. Rather, big corporations are touting things like emotional intelligence, communication skills and flexibility as essential traits for the future workplace. Empathy and kindness are also highly regarded characteristics of a leader. When the kids demonstrate these qualities during their downtime or in school, be generous with your praise!
 
-      h3 5. Learn to deal with big emotions (both yours and your child’s)
-      p We all know how arguments between an upset child and parent lead to no man’s land. Plus, they create strain in your relationship. Just like you would calmly deal with conflicts at work, learn to catch the first signs of distress – notice your heaving chest or the kiddo’s teary eyes? – and take a break. And regardless of the outcome of tests and exams, take time to express your love and assure your child that you’re on his or her team every single day.
+			h3 5. Learn to deal with big emotions (both yours and your child’s)
+			p We all know how arguments between an upset child and parent lead to no man’s land. Plus, they create strain in your relationship. Just like you would calmly deal with conflicts at work, learn to catch the first signs of distress – notice your heaving chest or the kiddo’s teary eyes? – and take a break. And regardless of the outcome of tests and exams, take time to express your love and assure your child that you’re on his or her team every single day.

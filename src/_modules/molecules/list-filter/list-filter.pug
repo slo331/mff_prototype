@@ -7,9 +7,10 @@ mixin list-filter(spec)
 	- spec = spec || {}
 	- spec.__class = spec.__class || ''
 	- spec.filter = spec.filter || ''
+	- var button = spec.btnFilter
 
 	.filter(class=spec.__class)&attributes(attributes)
-		.filter-wrap
+		.filter-wrap(data-filter= (spec.btnFilter == false) ? 'standalone' : 'button')
 			each item, index in spec.filter
 				if item.type == 'checkbox'
 					+multi-filter(item.settings).category-filter
@@ -20,11 +21,12 @@ mixin list-filter(spec)
 				if item.type == 'search'
 					+search(item.settings).search-filter
 			
-			+button({
-				'__text': 'Filter',
-				'__type': 'button',
-				'__class': 'btn--filter btn--bg'
-			})
+			if spec.btnFilter == true
+				+button({
+					'__text': 'Filter',
+					'__type': 'button',
+					'__class': 'btn--filter btn--bg'
+				})
 		
 		//- .filter-btn
 		//- 	+button({

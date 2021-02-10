@@ -36,6 +36,12 @@ export default class ListingBase {
     this.getDataCallback = res => {
       console.log('Response from AJAX', res);
     };
+
+    // Check if filter is standalone
+    let $listing = $('.listing-wrap');
+    let $filter = $('.filter', $listing);
+    let $filterWrap = $('.filter-wrap', $filter);
+    this.$filterWrap = $filterWrap;
   }
 
   getData(before = this.beforeGetData, cb = this.getDataCallback) {
@@ -293,6 +299,12 @@ export default class ListingBase {
         
         this.parameters = this.getParameters(this.allFields);
         this.parameters.page = 1;
+
+        if (this.$filterWrap.data('filter') === 'standalone') {
+          this.getData();
+          this.updateURL();  
+        }
+
         // this.getData();
         // this.updateURL();
       });
@@ -465,6 +477,11 @@ export default class ListingBase {
       this.parameters.page = 1;
       // this.getData();
       // this.updateURL();
+
+      if (this.$filterWrap.data('filter') === 'standalone') {
+        this.getData();
+        this.updateURL();  
+      }
     });
   }
 
