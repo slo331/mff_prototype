@@ -1,0 +1,107 @@
+//tabs styles 
+.tabs {
+  $p: &;
+
+  &__nav {
+    margin: 4em 0 1em;
+    padding: 2em 0 0;
+    border-top: 1px solid $lightGrey;
+    border-bottom: 1px solid $lightGrey;
+
+    &--wrap {
+      display: inline-flex;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+    }
+
+    &--link {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+
+      &.is-active {
+        .btn--tabs {
+          .btn {
+            &__text {
+              font-weight: $bold;
+            }
+          }
+
+          &:after {
+            transform: scaleX(1);
+          }
+        }
+      }
+
+      .btn--tabs {
+        display: inline-flex;
+        align-items: center;
+        border: none;
+        border-radius: 0;
+        padding: 0 0 1em;
+        cursor: pointer;
+
+        &:after {
+          display: block;
+          content: '';
+          background: $red;
+          height: 3px;
+          width: 100%;
+          position: absolute;
+          bottom: 0;
+          transform: scaleX(0);
+          transition: all .2s ease-in-out;
+        }
+
+        .btn {
+          &__text {
+            width: 100%;
+            font-weight: $normal;
+            font-size: calc-em(19px);
+            color: $negro;
+            transition: all .2s ease-in-out;
+          }
+
+          &__img {
+            display: inline-block;
+            width: auto;
+            height: 25px;
+            margin: 0 0 0 20px;
+
+            img {
+              width: auto;
+              height: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__content {
+    .content {
+      &__wrap {
+        display: none;
+
+        .sfContentBlock {
+          margin: 0 0 3em;
+          padding: 0 0 3em;
+          border-bottom: 1px solid $lightGrey;
+
+          &:last-child {
+            margin: 0;
+            padding: 0;
+            border-bottom: none;
+          }
+        }
+
+        .row {
+          margin: 0;
+          padding: 1em 0;
+        }
+      }
+    }
+  }
+}

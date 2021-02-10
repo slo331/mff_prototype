@@ -1,0 +1,19 @@
+mixin tabs(spec)
+	- spec = spec || {}
+	- spec.__class = spec.__class || ''
+	- spec.tabs = spec.tabs || ''
+
+	.tabs__nav(class=spec.__class)&attributes(attributes)
+		.tabs__nav--dropdown
+			span
+			i.icon.icon-arrow_down 
+		ul.tabs__nav--wrap
+			each tab, index in spec.tabs
+				li.tabs__nav--link(class=(index === 0 ? 'is-active' : '') data-link=tab.id)
+					button.btn.btn--tabs(type='button')
+						span.btn__text= tab.title
+						span.btn__img
+							img(src=tab.img alt=tab.title)
+		
+	if block
+		block
