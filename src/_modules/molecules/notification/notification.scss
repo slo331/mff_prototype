@@ -1,0 +1,45 @@
+//notification styles 
+.notification {
+  $p: &;
+
+  background: $red;
+  color: $white;
+  display: none;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__content {
+    width: 100%;
+    padding: 0 10px 0 0;
+
+    @include desktop {
+      padding: 0;
+    }
+
+    #{$p}__item {
+      p{
+        font-weight: 200;
+        font-size: calc-em(17px);
+      }
+    }
+  }
+
+  &__buttons {
+    width: auto;
+    line-height: 0;
+
+    .btn {
+      &--close {
+        padding: 0;
+        border: none;
+        color: $white;
+        font-size: calc-em(22px);
+        line-height: 1;
+      }
+    }
+  }
+}

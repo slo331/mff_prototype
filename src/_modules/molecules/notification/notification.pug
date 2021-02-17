@@ -1,0 +1,17 @@
+include ../../atoms/button/button
+
+mixin notification(spec)
+	- spec = spec || {}
+	- spec.__class = spec.__class || ''
+
+	.notification(class=spec.__class)&attributes(attributes)
+		.container
+			.notification__content
+				.notification__item
+					p Maintenance Update: Sed ut perspiciatis unde omnis iste natus voluptatem doloremque laudantium
+			.notification__buttons
+				+button({
+					'__type': 'button',
+					'__class': 'btn--close',
+					'__iconBefore': 'icon-close'
+				})
