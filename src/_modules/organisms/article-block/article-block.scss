@@ -93,6 +93,7 @@
             }
 
             &-link {
+              display: inline-block;
               transition: all .2s ease-in-out;
               color: $red;
 
