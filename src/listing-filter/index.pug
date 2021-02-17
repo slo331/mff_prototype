@@ -26,7 +26,17 @@ block content
 	+listing({
 		'endpoint': '/api/storiesListing.json',
     'url': 'listing-filter',
+    'listType': 'stories',
 		'filter': [
+      {
+				'type': 'hidden',
+				'settings': {
+					"input": {
+						"name": "tags",
+						"id": "tags",
+					}
+				}
+			},
 			{
 				'type': 'checkbox',
 				'settings': {

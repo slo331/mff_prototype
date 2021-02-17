@@ -1,5 +1,6 @@
 include ../../atoms/sg-banner/sg-banner
 include ../../molecules/site-nav/site-nav
+include ../../molecules/notification/notification
 include ../../molecules/mega-menu/mega-menu
 
 mixin site-header(spec)
@@ -22,6 +23,8 @@ mixin site-header(spec)
 		+mega-menu({
 			"items": site.data.navigation.primaryNav
 		})
+
+		+notification()
 		
 		.main-search.desktop-only
 			.container

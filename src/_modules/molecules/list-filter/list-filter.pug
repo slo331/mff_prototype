@@ -20,6 +20,11 @@ mixin list-filter(spec)
 
 				if item.type == 'search'
 					+search(item.settings).search-filter
+
+				if item.type == 'hidden'
+					.hidden-input.vh
+						.filter-options.text-field
+							input.input-text(id=item.settings.input.id type='text' name=item.settings.input.name)
 			
 			if spec.btnFilter == true
 				+button({

@@ -15,6 +15,7 @@ import Listing from '../_modules/molecules/listing/listing';
 import Spotlight from '../_modules/molecules/spotlight/spotlight';
 import Sidebar from '../_modules/molecules/sidebar/sidebar';
 import Tabs from '../_modules/molecules/tabs/tabs';
+import Notification from '../_modules/molecules/notification/notification';
 import HomeCarousel from '../_modules/organisms/home-carousel/home-carousel';
 
 $(() => {
@@ -25,6 +26,10 @@ $(() => {
 			lgDesktop: 1280
 		}
   };
+
+  if($('.notification').length) {
+    new Notification();
+  }
 
   if($('.nav-wrap').length) {
     new SiteNav(config);

@@ -1,5 +1,9 @@
 //card styles
 .list {
+  .row {
+    margin: 0 -10px;
+  }
+
   &-item {
     margin: 0 0 22px;
   }
@@ -62,6 +66,15 @@
             .logo {
               display: block;
               margin: 1em 0 0;
+              height: auto;
+              width: 40%;
+              max-width: 45%;
+
+              img {
+                display: block;
+                width: 100%;
+                height: auto;
+              }
             }
           }
         }
@@ -163,13 +176,14 @@
     }
   }
 
-  // &-link {
-  //   display: block;
+  &-link {
+    display: block;
+    padding: 0 10px;
     
-  //   &:hover {
-  //     .icon {
-  //       transform: translateX(5px);
-  //     }
-  //   }
-  // }
+    &:hover {
+      .icon {
+        transform: translateX(5px);
+      }
+    }
+  }
 }
