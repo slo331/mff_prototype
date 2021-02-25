@@ -228,6 +228,27 @@ body {
   print-color-adjust: exact; 
 }
 
+// Galleria Widget
+.galleria-container {
+  &.galleria-theme-classic {
+    .galleria-counter {
+      position: absolute;
+      bottom: 10px;
+      left: unset !important;
+      right: 10px !important;
+      text-align: right;
+      color: #fff;
+      font: 400 11px/1 arial,sans-serif;
+      z-index: 1;
+    }
+
+    .galleria-info {
+      bottom: 75px !important;
+      top: auto !important;
+    }
+  }
+}
+
 // Print layout
 @media print {
   body {

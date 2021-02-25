@@ -16,6 +16,10 @@ export default class Tabs {
     let $options = $('.tabs__nav ul', $tabsNav);
 
     this.$contentWrap = $contentWrap;
+
+    $tabsLinkBtn.matchHeight({
+      byRow: false
+    });
     
     $tabsLink.map((i, el) => {
 			let $thisTab = $(el);

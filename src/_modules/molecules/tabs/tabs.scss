@@ -3,10 +3,32 @@
   $p: &;
 
   &__nav {
-    margin: 4em 0 1em;
-    padding: 2em 0 0;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    
+    padding: 0;
     border-top: 1px solid $lightGrey;
     border-bottom: 1px solid $lightGrey;
+
+    @include tablet {
+      width: 100%;
+      left: unset;
+      right: unset;
+      margin: 4em 0 1em;
+      padding: 0;
+    }
+
+    @include desktop {
+      width: 100%;
+      left: unset;
+      right: unset;
+      margin: 4em 0 1em;
+      padding: 2em 0 0;
+    }
 
     &--wrap {
       display: inline-flex;
@@ -20,6 +42,17 @@
       display: inline-block;
       width: 100%;
       text-align: center;
+      padding: 1em 0 0;
+      border-right: 1px solid $lightGrey;
+
+      &:last-child {
+        border-right: none;
+      }
+
+      @include desktop {
+        padding: 0;
+        border-right: none;
+      }
 
       &.is-active {
         .btn--tabs {
@@ -36,12 +69,28 @@
       }
 
       .btn--tabs {
+        width: 100%;
         display: inline-flex;
-        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        text-align: center;
         border: none;
         border-radius: 0;
         padding: 0 0 1em;
         cursor: pointer;
+
+        @include tablet {
+          padding: 0 10px 1em;
+        }
+
+        @include desktop {
+          width: auto;
+          display: inline-flex;
+          align-items: center;
+          flex-wrap: nowrap;
+          justify-content: space-between;
+          text-align: left;
+        }
 
         &:after {
           display: block;
@@ -62,13 +111,29 @@
             font-size: calc-em(19px);
             color: $negro;
             transition: all .2s ease-in-out;
+            text-align: center;
+            order: 2;
+
+            @include desktop {
+              text-align: left;
+              order: 1;
+            }
           }
 
           &__img {
             display: inline-block;
-            width: auto;
+            width: 100%;
             height: 25px;
-            margin: 0 0 0 20px;
+            margin: 0 0 10px;
+            text-align: center;
+            order: 1;
+
+            @include desktop {
+              width: auto;
+              text-align: left;
+              margin: 0 0 0 20px;
+              order: 2;
+            }
 
             img {
               width: auto;

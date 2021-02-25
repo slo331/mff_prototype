@@ -88,6 +88,24 @@ $(() => {
 
   if($('.tabs__nav').length) {
 		new Tabs(config);
-	};
+  };
+
+  // WOGAA Tracker
+  $(document).ready(function(){
+    if($('.wogaa-link').length) {
+        let $link = $('.wogaa-link');
+    
+      $link.map(function(i,el) {
+        let $thisLink = $(el);
+        let $trackerID = $thisLink.data('trackerid')
+        
+        $thisLink.on('click', function(e) {
+          window.wogaaCustom.startTransactionalService($trackerID);
+          window.wogaaCustom.completeTransactionalService($trackerID);
+          // console.log($trackerID);
+        });
+      });
+    }
+  }); 
 });
 

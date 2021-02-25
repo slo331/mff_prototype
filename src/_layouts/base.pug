@@ -27,6 +27,7 @@ head
 	link(rel='icon' type='image/png' href='/favicon.ico')
 	link(rel='apple-touch-icon' sizes='256×256' href='/assets/images/icons/app-icon-256x256.png')
 	block stylesheets
+		//- script(src= '/assets/scripts/themes/classic/galleria.classic.min.css')
 		link(rel='stylesheet', href= '/assets/styles/main.css')
 		link(rel='manifest', href= '/manifest.json')
 
@@ -48,9 +49,9 @@ body
 
 	block scripts
 		script(async defer crossorigin='anonymous' src='https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.3')
-		//- script(src= '/assets/scripts/')
-		//- script(src= '/assets/scripts/galleria-1.5.7.min.js')
-		//- script(src= '/assets/scripts/galleria.classic.min.js')
+		//- script(src= '/assets/scripts/jquery.min.js')
+		//- script(src= '/assets/scripts/galleria.min.js')
+		//- script(src= '/assets/scripts/themes/classic/galleria.classic.min.js')
 		script(src= '/assets/scripts/main.js')
-
+		script(src='https://assets.wogaa.sg/scripts/wogaa.js')
 </html>

@@ -14,7 +14,7 @@ mixin carousel(spec)
 									
 					else if spec.type == 'gallery'
 						.item.gallery(data-index=(index + 1))
-							a.item-link(href=item.href rel='noopener' target='_blank')
+							a.item-link(href=item.href rel='noopener' target='_blank' data-trackerid=item.trackerId class=item.class)
 								.item-img
 									img(src=item.img alt=item.imgTitle title=item.imgTitle)
 								.item-desc
