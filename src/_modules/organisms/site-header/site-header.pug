@@ -14,7 +14,7 @@ mixin site-header(spec)
 			.container
 				.logo-wrap
 					a(href="/")
-						img(src="/assets/images/mff_logo.png" title="Made For Families Logo")
+						img(src="/assets/images/mff_logo.png" title="Made For Families Logo" alt="Made for Families Logo" width="" height="")
 				
 				+site-nav({
 					"navs": site.data.navigation.primaryNav
@@ -29,4 +29,5 @@ mixin site-header(spec)
 		.main-search.desktop-only
 			.container
 				.search-wrap(data-action='https://cse.google.com/cse' data-api='015729528517137884908:id9feqvbf9g')
-					input.search__input(type="search" placeholder="Search..." name="searchQuery")
+					label.vh(for="searchDesktop") Search
+					input.search__input(type="search" placeholder="Search..." name="searchQuery" id="searchDesktop")

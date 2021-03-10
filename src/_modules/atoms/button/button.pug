@@ -9,15 +9,15 @@ mixin button(spec)
 	- spec.__iconBefore = spec.__iconBefore || ''
 
 	- var tag = 'button'
-	- var attributes = {"type" : "button"}
+	- var attributes = {"type" : "button", "aria-label": spec.__arialabel}
 		
 	if spec.__sort
 		- tag = 'button'
-		- attributes = {"type" : "button"}
+		- attributes = {"type" : "button" , "aria-label": spec.__arialabel}
 
 	if spec.__type == 'anchor'
 		- tag = 'a'
-		- attributes = {"href": spec.__link, "target": spec.__target}
+		- attributes = {"href": spec.__link, "target": spec.__target, "aria-label": spec.__arialabel}
 
 	if spec.__type == 'submit'
 		- tag = 'input'

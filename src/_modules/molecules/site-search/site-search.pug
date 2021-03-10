@@ -7,12 +7,14 @@ mixin site-search(spec)
 	.site-search(class=spec.__class)&attributes(attributes)
 		.search-wrap(data-action='https://cse.google.com/cse' data-api='015729528517137884908:id9feqvbf9g')
 			i.icon.icon-search
-			input.search__input(type="search" placeholder="Search..." name="searchQuery")
+			label.vh(for="searchMobile") Search
+			input.search__input(type="search" placeholder="Search..." name="searchQuery" id="searchMobile")
 		.search-button
 			+button({
 				'__text': '',
 				'__type': 'button',
 				'__class': 'btn--header-search',
-				'__iconAfter': 'icon-search'
+				'__iconAfter': 'icon-search',
+				'__arialabel': 'Search'
 			})
 

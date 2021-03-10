@@ -24,7 +24,8 @@ mixin site-nav(spec)
 										'__text': '',
 										'__type': 'button',
 										'__class': 'btn--mobileSub',
-										'__iconAfter': 'icon-arrow-down'
+										'__iconAfter': 'icon-arrow-down',
+                    '__arialabel': 'Submenu'
 									})
 							if item.sub
 								.item__sub
@@ -40,7 +41,8 @@ mixin site-nav(spec)
 																	'__text': '',
 																	'__type': 'button',
 																	'__class': 'btn--mobileSubchild',
-																	'__iconAfter': 'icon-arrow-down'
+																	'__iconAfter': 'icon-arrow-down',
+                                  '__arialabel': 'Submenu'
 																})
 														if sub.sub
 															.item__subchild

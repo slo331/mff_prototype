@@ -28,15 +28,6 @@ block content
     'url': 'listing-filter',
     'listType': 'stories',
 		'filter': [
-      {
-				'type': 'hidden',
-				'settings': {
-					"input": {
-						"name": "tags",
-						"id": "tags",
-					}
-				}
-			},
 			{
 				'type': 'checkbox',
 				'settings': {
@@ -67,6 +58,34 @@ block content
 							"id": "cat-op3",
 							"value": "cat-op3",
 							"label": "Work-life Harmony"
+						}
+					]
+				}
+			},
+      {
+				'type': 'select',
+				'settings': {
+					"input": {
+						"name": "tags",
+						"id": "tags",
+						"label": "Tags"
+					},
+					"options": [
+						{
+							'label': 'All',
+							'value': 'all'
+						},
+						{
+							'label': 'Child Development',
+							'value': 'childdevelopment'
+						},
+            {
+							'label': 'Child Education',
+							'value': 'childeducation'
+						},
+            {
+							'label': 'Tax Reliefs',
+							'value': 'taxreliefs'
 						}
 					]
 				}
