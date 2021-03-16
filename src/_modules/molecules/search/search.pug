@@ -9,7 +9,7 @@ mixin search(spec)
 				.filter-control__label
 					label(for= spec.input.id)= spec.input.label
 		.filter-options.text-field 
-			input.search-input.input-text(id=spec.input.id type="text" placeholder=spec.input.placeholder data-url=spec.input.url name=spec.input.name)
+			input.search-input.input-text(id=spec.input.id type="text" placeholder=spec.input.placeholder data-url=spec.input.url name=spec.input.name aria-label=spec.input.title)
 			+button({
 				'__text': '',
 				'__type': 'button',

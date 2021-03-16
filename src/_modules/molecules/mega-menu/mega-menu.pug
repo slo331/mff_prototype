@@ -8,7 +8,7 @@ mixin mega-menu(spec)
 				if item.sub
 					.mega-menu__content(id="menu-" + (index + 1))
 						.mega-menu__title
-							h3.title= item.title
+							span.title= item.title
 						.mega-menu__links
 							ul.mega-links
 								each sub, index in item.sub

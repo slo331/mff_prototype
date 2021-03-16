@@ -126,7 +126,7 @@ export default class MultiFilter {
 		let noOfOptions = this.$options.length;
     let checkedNo = 0;
     let allCheck = this.$options.parents('ul').siblings('.all-checkbox').children('.all-checkbox__wrap').find('input');
-
+    
 		this.$options.map((j, option) => {
 			let $option = $(option);
 			let $label = $('label', $option);

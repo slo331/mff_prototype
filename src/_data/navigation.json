@@ -2,7 +2,8 @@
   "primaryNav": [
     {
       "name": "Home",
-      "url": "/"
+      "url": "/",
+      "desktop": true
     },
     {
       "name": "About Us",
@@ -75,7 +76,8 @@
     },
     {
       "name": "FAQ",
-      "ulr": "#",
+      "url": "#",
+      "title": "FAQ",
       "sub": [
         {
           "name": "Marriage",
@@ -116,7 +118,7 @@
           "url": "#"
         }
       ],
-      "mobile": true
+      "desktop": false
     }
   ]
 }

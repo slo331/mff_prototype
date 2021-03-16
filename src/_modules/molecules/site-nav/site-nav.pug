@@ -16,7 +16,7 @@ mixin site-nav(spec)
 			.nav-links__wrap
 				ul.links
 					each item, index in spec.navs
-						li.links-item(data-menu="menu-" + (index + 1) class=(item.mobile === true ? 'mobile-only' : ''))
+						li.links-item(data-menu="menu-" + (index + 1) class=(item.desktop === false ? 'mobile-only' : ''))
 							.item__parent
 								a(href= item.url)= item.name
 								if item.sub
